@@ -6,14 +6,16 @@ import { Check, Instagram, ArrowRight, Sparkles } from "lucide-react";
 const schema = z.object({
   name: z.string().trim().min(2, "Будь ласка, введіть ім’я").max(80),
   contact: z.string().trim().min(4, "Вкажіть номер телефону або Telegram").max(120),
-  direction: z.enum(["acting", "journalism", "both"], { errorMap: () => ({ message: "Оберіть напрям, якщо вже визначилися" }) }),
+  direction: z.enum(["acting", "journalism", "undecided"], {
+    errorMap: () => ({ message: "Оберіть напрям, який вам ближчий" }),
+  }),
   comment: z.string().trim().max(600).optional(),
 });
 
 const directionLabels: Record<string, string> = {
   acting: "Акторська майстерність",
   journalism: "Журналістика",
-  both: "Поки не визначився(-лася)",
+  undecided: "Поки не визначився",
 };
 
 const Apply = () => {
@@ -25,13 +27,15 @@ const Apply = () => {
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    document.title = "Заявка — КіноPoint Film";
+    document.title = "Заявка — KinoPoint Film";
   }, []);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting || submitted) return;
     const result = schema.safeParse({ name, contact, direction, comment });
     if (!result.success) {
       const errs: Record<string, string> = {};
@@ -40,7 +44,12 @@ const Apply = () => {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSubmitting(true);
+    // simulate async + lock against double-submit
+    setTimeout(() => {
+      setSubmitted(true);
+      setSubmitting(false);
+    }, 400);
   };
 
   return (
@@ -51,10 +60,10 @@ const Apply = () => {
         <div className="container-narrow relative pt-16 pb-12">
           <div className="eyebrow mb-5">Заявка</div>
           <h1 className="h-display text-balance max-w-3xl">
-            Один короткий крок — і <span className="text-gold">ми зв’яжемося з вами.</span>
+            Один короткий крок — і <span className="text-primary">ми зв’яжемося з вами.</span>
           </h1>
           <p className="mt-5 text-lg text-foreground/75 max-w-2xl leading-relaxed">
-            Без зобов’язань. Заявка не запис на курс — це лише початок розмови, у якій ми спокійно з’ясуємо, чи це для вас.
+            Це не запис на курс — лише початок розмови. Спокійно з’ясуємо, чи цей формат вам підходить.
           </p>
         </div>
       </section>
@@ -70,7 +79,7 @@ const Apply = () => {
                     onChange={(e) => setName(e.target.value)}
                     maxLength={80}
                     placeholder="Як до вас звертатися"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                   />
                 </Field>
 
@@ -80,21 +89,21 @@ const Apply = () => {
                     onChange={(e) => setContact(e.target.value)}
                     maxLength={120}
                     placeholder="+380… або @username"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                   />
                 </Field>
 
                 <Field label="Напрям, який цікавить" error={errors.direction}>
                   <div className="grid sm:grid-cols-3 gap-2">
-                    {(["acting", "journalism", "both"] as const).map((v) => (
+                    {(["acting", "journalism", "undecided"] as const).map((v) => (
                       <button
                         key={v}
                         type="button"
                         onClick={() => setDirection(v)}
                         className={`px-4 py-3.5 rounded-xl border text-sm font-semibold transition-all ${
                           direction === v
-                            ? "bg-gold text-gold-foreground border-gold shadow-gold"
-                            : "bg-input border-border text-foreground/80 hover:border-gold/50"
+                            ? "bg-primary text-primary-foreground border-primary shadow-red"
+                            : "bg-input border-border text-foreground/80 hover:border-primary/50"
                         }`}
                       >
                         {directionLabels[v]}
@@ -110,15 +119,16 @@ const Apply = () => {
                     maxLength={600}
                     rows={4}
                     placeholder="Що було б важливо нам знати наперед"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all resize-none"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                   />
                 </Field>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold text-gold-foreground font-semibold hover:shadow-gold hover:scale-[1.01] transition-all"
+                  disabled={submitting}
+                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.01] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  Надіслати заявку <ArrowRight className="size-4" />
+                  {submitting ? "Надсилаємо…" : "Надіслати заявку"} <ArrowRight className="size-4" />
                 </button>
                 <p className="text-xs text-muted-foreground text-center">
                   Ми відповімо протягом робочого дня. Без розсилок і нав’язливих дзвінків.
@@ -137,7 +147,7 @@ const Apply = () => {
                   href="https://instagram.com/kinopoint.film"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-border-strong hover:border-gold hover:text-gold transition-all font-semibold"
+                  className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-all font-semibold"
                 >
                   <Instagram className="size-4" /> Перейти в Instagram
                 </a>
@@ -147,15 +157,15 @@ const Apply = () => {
 
           {/* Side */}
           <aside className="lg:col-span-5 space-y-4">
-            <div className="rounded-2xl border border-gold/30 bg-gradient-to-br from-surface to-background p-7">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold mb-3">
+            <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-surface to-background p-7">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary mb-3">
                 <Sparkles className="size-3.5" /> Пропозиція
               </div>
               <p className="font-display text-2xl font-bold leading-tight">
                 −50% на перший місяць навчання для нових учнів.
               </p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Це достатньо, щоб без ризику відчути формат і зрозуміти, чи це ваше.
+                Достатньо, щоб без ризику відчути формат і зрозуміти, чи це ваше.
               </p>
             </div>
 
@@ -168,7 +178,7 @@ const Apply = () => {
                 href="https://instagram.com/kinopoint.film"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-gold hover:text-gold transition-all font-semibold text-sm"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-all font-semibold text-sm"
               >
                 <Instagram className="size-4" /> Написати в Instagram
               </a>
@@ -176,7 +186,7 @@ const Apply = () => {
 
             <div className="rounded-2xl border border-border bg-surface p-7 space-y-3 text-sm">
               {[
-                "Ніяких прослуховувань або іспитів",
+                "Без прослуховувань і іспитів",
                 "Заявка не зобов’язує до запису на курс",
                 "Ми не передаємо ваші дані третім сторонам",
               ].map((t) => (
