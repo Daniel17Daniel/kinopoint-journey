@@ -6,7 +6,7 @@ import teacherImg from "@/assets/teacher-journalism.jpg";
 
 const Journalism = () => {
   useEffect(() => {
-    document.title = "Журналістика — КіноPoint Film";
+    document.title = "Журналістика — KinoPoint Film";
   }, []);
 
   return (

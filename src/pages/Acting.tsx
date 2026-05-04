@@ -7,12 +7,12 @@ import stageImg from "@/assets/hero-stage.jpg";
 
 const Acting = () => {
   useEffect(() => {
-    document.title = "Акторська майстерність — КіноPoint Film";
+    document.title = "Акторська майстерність — KinoPoint Film";
   }, []);
 
   return (
     <DirectionPage
-      accent="gold"
+      accent="red"
       eyebrow="Напрям 01 · Акторська майстерність"
       title="Сцена починається там, де"
       titleHighlight="ви дозволяєте собі бути."
