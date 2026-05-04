@@ -165,7 +165,7 @@ const Index = () => {
               <div className="eyebrow mb-4">Два напрями</div>
               <h2 className="h-section">Що вам ближче зараз?</h2>
             </div>
-            <button onClick={open} className="text-sm text-gold hover:text-gold-soft link-underline inline-flex items-center gap-1.5">
+            <button onClick={open} className="text-sm text-primary hover:text-primary-glow link-underline inline-flex items-center gap-1.5">
               Не знаю, що обрати <Compass className="size-4" />
             </button>
           </div>
@@ -174,21 +174,21 @@ const Index = () => {
             {/* Acting card */}
             <Link
               to="/acting"
-              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-gold/60 transition-all duration-500 min-h-[480px] flex flex-col justify-end"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[460px] flex flex-col justify-end"
             >
               <img
                 src={atmActing}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
-              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/15 backdrop-blur-md border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <Theater className="size-3.5" /> Напрям 01
               </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Акторська майстерність</h3>
-                <p className="text-foreground/80 text-lg mb-6 max-w-md">Свобода, емоції, сцена, самовираження.</p>
-                <span className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-3 transition-all">
+                <p className="text-foreground/75 text-lg mb-6 max-w-md">Тіло, голос, увага, присутність. Простір, де можна нарешті проявитися.</p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Перейти до напряму <ArrowRight className="size-4" />
                 </span>
               </div>
@@ -197,21 +197,21 @@ const Index = () => {
             {/* Journalism card */}
             <Link
               to="/journalism"
-              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[480px] flex flex-col justify-end"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[460px] flex flex-col justify-end"
             >
               <img
                 src={atmJourn}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
-              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 backdrop-blur-md border border-primary/40 text-primary-glow text-xs font-semibold uppercase tracking-wider">
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <Mic className="size-3.5" /> Напрям 02
               </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Журналістика</h3>
-                <p className="text-foreground/80 text-lg mb-6 max-w-md">Камера, мовлення, подача, медійність.</p>
-                <span className="inline-flex items-center gap-2 text-primary-glow font-semibold group-hover:gap-3 transition-all">
+                <p className="text-foreground/75 text-lg mb-6 max-w-md">Мовлення, подача, камера, структура думки. Для тих, кого мають почути.</p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Перейти до напряму <ArrowRight className="size-4" />
                 </span>
               </div>
