@@ -347,31 +347,35 @@ const Index = () => {
         <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           <div className="lg:col-span-5 flex flex-col justify-center">
             <div className="eyebrow mb-4">Де ми знаходимося</div>
-            <h2 className="h-section mb-5">Київ, у тихому місці в центрі.</h2>
+            <h2 className="h-section mb-5">Затишна студія в центрі міста.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Невелика затишна студія з добрим звуком і світлом. Сюди приємно повертатися — і це відчувається з першого заняття.
+              Камерний простір з добрим звуком і світлом. Сюди приємно повертатися — і це відчувається з першого заняття.
             </p>
-            <div className="flex items-start gap-3 mb-3">
-              <MapPin className="size-5 text-gold mt-0.5" />
-              <div>
-                <p className="font-semibold">вул. Антоновича, 47</p>
-                <p className="text-sm text-muted-foreground">3 хвилини від м. Олімпійська</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 mt-6">
-              <a
-                href="https://maps.google.com/?q=Антоновича+47+Київ"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-gold hover:text-gold transition-all font-semibold text-sm"
+            <ul className="space-y-3.5 text-[15px]">
+              {[
+                { k: "Місто", v: "Київ" },
+                { k: "Адреса", v: "Уточнюється" },
+                { k: "Графік", v: "За попереднім записом" },
+                { k: "Instagram", v: "@kinopoint.film" },
+              ].map((r) => (
+                <li key={r.k} className="flex items-center justify-between gap-4 border-b border-border/50 pb-3">
+                  <span className="text-muted-foreground uppercase tracking-wider text-xs">{r.k}</span>
+                  <span className="text-foreground font-medium">{r.v}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3 mt-7">
+              <Link
+                to="/apply"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground hover:shadow-red transition-all font-semibold text-sm"
               >
-                Побудувати маршрут <ArrowRight className="size-4" />
-              </a>
+                Залишити заявку <ArrowRight className="size-4" />
+              </Link>
               <a
                 href="https://instagram.com/kinopoint.film"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-foreground/80 hover:text-gold transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-colors font-semibold text-sm"
               >
                 <Instagram className="size-4" /> Написати в Instagram
               </a>
@@ -379,17 +383,21 @@ const Index = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative h-[420px] rounded-3xl overflow-hidden border border-border-strong shadow-elegant">
-              <iframe
-                title="Карта"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=30.510%2C50.430%2C30.530%2C50.445&layer=mapnik&marker=50.4375%2C30.5200"
-                className="absolute inset-0 w-full h-full grayscale contrast-125 brightness-75"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+            <div className="relative h-[420px] rounded-3xl overflow-hidden border border-border-strong shadow-elegant bg-surface flex items-center justify-center">
+              <div className="absolute inset-0 grid-frame opacity-[0.15]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-transparent to-background/80" />
+              <div className="relative text-center px-6">
+                <div className="inline-flex items-center justify-center size-14 rounded-full bg-primary/15 text-primary mb-4">
+                  <MapPin className="size-6" />
+                </div>
+                <p className="font-display text-xl font-bold mb-1">Точна адреса — після заявки</p>
+                <p className="text-sm text-muted-foreground max-w-sm">
+                  Локацію та маршрут надсилаємо особисто, щоб зберегти камерну атмосферу студії.
+                </p>
+              </div>
               <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/85 backdrop-blur-xl border border-border-strong">
                 <span className="size-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide">КіноPoint Film · студія</span>
+                <span className="text-xs font-semibold tracking-wide">KinoPoint Film · студія</span>
               </div>
             </div>
           </div>
