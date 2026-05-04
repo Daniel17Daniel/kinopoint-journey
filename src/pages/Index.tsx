@@ -103,16 +103,16 @@ const Index = () => {
           <div className="max-w-3xl">
             <div className="eyebrow mb-6 animate-fade-up">Приватна школа для дорослих · Київ</div>
             <h1 className="h-display text-foreground animate-fade-up text-balance" style={{ animationDelay: "60ms" }}>
-              Простір, де доросла людина знову <span className="text-gold">дозволяє собі звучати</span>.
+              Простір, де доросла людина знову <span className="text-primary">дозволяє собі звучати</span>.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/75 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "140ms" }}>
-              Камерна школа акторської майстерності та журналістики. Без шкільних етюдів, без тиску й театральщини — лише чесна робота над голосом, тілом і впевненістю.
+              KinoPoint Film — камерна школа акторської майстерності та журналістики. Без шкільних етюдів і без тиску. Лише доросла робота над голосом, тілом і впевненістю — у темпі, який витримуєте саме ви.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
               <button
                 onClick={open}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold text-gold-foreground font-semibold hover:shadow-gold hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all duration-300"
               >
                 Підібрати напрям <ArrowRight className="size-4" />
               </button>
@@ -165,7 +165,7 @@ const Index = () => {
               <div className="eyebrow mb-4">Два напрями</div>
               <h2 className="h-section">Що вам ближче зараз?</h2>
             </div>
-            <button onClick={open} className="text-sm text-gold hover:text-gold-soft link-underline inline-flex items-center gap-1.5">
+            <button onClick={open} className="text-sm text-primary hover:text-primary-glow link-underline inline-flex items-center gap-1.5">
               Не знаю, що обрати <Compass className="size-4" />
             </button>
           </div>
@@ -174,21 +174,21 @@ const Index = () => {
             {/* Acting card */}
             <Link
               to="/acting"
-              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-gold/60 transition-all duration-500 min-h-[480px] flex flex-col justify-end"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[460px] flex flex-col justify-end"
             >
               <img
                 src={atmActing}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
-              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/15 backdrop-blur-md border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <Theater className="size-3.5" /> Напрям 01
               </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Акторська майстерність</h3>
-                <p className="text-foreground/80 text-lg mb-6 max-w-md">Свобода, емоції, сцена, самовираження.</p>
-                <span className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-3 transition-all">
+                <p className="text-foreground/75 text-lg mb-6 max-w-md">Тіло, голос, увага, присутність. Простір, де можна нарешті проявитися.</p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Перейти до напряму <ArrowRight className="size-4" />
                 </span>
               </div>
@@ -197,21 +197,21 @@ const Index = () => {
             {/* Journalism card */}
             <Link
               to="/journalism"
-              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[480px] flex flex-col justify-end"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[460px] flex flex-col justify-end"
             >
               <img
                 src={atmJourn}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
-              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 backdrop-blur-md border border-primary/40 text-primary-glow text-xs font-semibold uppercase tracking-wider">
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <Mic className="size-3.5" /> Напрям 02
               </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Журналістика</h3>
-                <p className="text-foreground/80 text-lg mb-6 max-w-md">Камера, мовлення, подача, медійність.</p>
-                <span className="inline-flex items-center gap-2 text-primary-glow font-semibold group-hover:gap-3 transition-all">
+                <p className="text-foreground/75 text-lg mb-6 max-w-md">Мовлення, подача, камера, структура думки. Для тих, кого мають почути.</p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Перейти до напряму <ArrowRight className="size-4" />
                 </span>
               </div>
@@ -317,23 +317,23 @@ const Index = () => {
 
       {/* OFFER CTA */}
       <section className="container-wide py-12">
-        <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-br from-surface via-surface-2 to-background p-10 md:p-16">
-          <div className="absolute -top-32 -right-32 size-96 bg-gold/10 blur-3xl rounded-full" />
-          <div className="absolute -bottom-32 -left-32 size-96 bg-primary/10 blur-3xl rounded-full" />
+        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface via-surface-2 to-background p-10 md:p-16">
+          <div className="absolute -top-32 -right-32 size-96 bg-primary/15 blur-3xl rounded-full" />
+          <div className="absolute -bottom-32 -left-32 size-96 bg-gold/5 blur-3xl rounded-full" />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="eyebrow mb-4">Спеціальна пропозиція</div>
               <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-3 text-balance">
-                Для нових учнів діє знижка <span className="text-gold">50%</span> на перший місяць навчання.
+                Для нових учнів — знижка <span className="text-primary">50%</span> на перший місяць навчання.
               </h2>
               <p className="text-muted-foreground max-w-md leading-relaxed">
-                Це достатньо, щоб без зайвих ризиків відчути формат, групу й себе всередині процесу.
+                Достатньо, щоб без зайвих ризиків відчути формат, групу й себе всередині процесу.
               </p>
             </div>
             <div className="flex md:justify-end">
               <Link
                 to="/apply"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold text-gold-foreground font-semibold hover:shadow-gold hover:scale-[1.02] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all"
               >
                 Залишити заявку <ArrowRight className="size-4" />
               </Link>
@@ -347,31 +347,35 @@ const Index = () => {
         <div className="grid lg:grid-cols-12 gap-10 items-stretch">
           <div className="lg:col-span-5 flex flex-col justify-center">
             <div className="eyebrow mb-4">Де ми знаходимося</div>
-            <h2 className="h-section mb-5">Київ, у тихому місці в центрі.</h2>
+            <h2 className="h-section mb-5">Затишна студія в центрі міста.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Невелика затишна студія з добрим звуком і світлом. Сюди приємно повертатися — і це відчувається з першого заняття.
+              Камерний простір з добрим звуком і світлом. Сюди приємно повертатися — і це відчувається з першого заняття.
             </p>
-            <div className="flex items-start gap-3 mb-3">
-              <MapPin className="size-5 text-gold mt-0.5" />
-              <div>
-                <p className="font-semibold">вул. Антоновича, 47</p>
-                <p className="text-sm text-muted-foreground">3 хвилини від м. Олімпійська</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 mt-6">
-              <a
-                href="https://maps.google.com/?q=Антоновича+47+Київ"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-gold hover:text-gold transition-all font-semibold text-sm"
+            <ul className="space-y-3.5 text-[15px]">
+              {[
+                { k: "Місто", v: "Київ" },
+                { k: "Адреса", v: "Уточнюється" },
+                { k: "Графік", v: "За попереднім записом" },
+                { k: "Instagram", v: "@kinopoint.film" },
+              ].map((r) => (
+                <li key={r.k} className="flex items-center justify-between gap-4 border-b border-border/50 pb-3">
+                  <span className="text-muted-foreground uppercase tracking-wider text-xs">{r.k}</span>
+                  <span className="text-foreground font-medium">{r.v}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3 mt-7">
+              <Link
+                to="/apply"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground hover:shadow-red transition-all font-semibold text-sm"
               >
-                Побудувати маршрут <ArrowRight className="size-4" />
-              </a>
+                Залишити заявку <ArrowRight className="size-4" />
+              </Link>
               <a
                 href="https://instagram.com/kinopoint.film"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-foreground/80 hover:text-gold transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-colors font-semibold text-sm"
               >
                 <Instagram className="size-4" /> Написати в Instagram
               </a>
@@ -379,17 +383,21 @@ const Index = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative h-[420px] rounded-3xl overflow-hidden border border-border-strong shadow-elegant">
-              <iframe
-                title="Карта"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=30.510%2C50.430%2C30.530%2C50.445&layer=mapnik&marker=50.4375%2C30.5200"
-                className="absolute inset-0 w-full h-full grayscale contrast-125 brightness-75"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+            <div className="relative h-[420px] rounded-3xl overflow-hidden border border-border-strong shadow-elegant bg-surface flex items-center justify-center">
+              <div className="absolute inset-0 grid-frame opacity-[0.15]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-transparent to-background/80" />
+              <div className="relative text-center px-6">
+                <div className="inline-flex items-center justify-center size-14 rounded-full bg-primary/15 text-primary mb-4">
+                  <MapPin className="size-6" />
+                </div>
+                <p className="font-display text-xl font-bold mb-1">Точна адреса — після заявки</p>
+                <p className="text-sm text-muted-foreground max-w-sm">
+                  Локацію та маршрут надсилаємо особисто, щоб зберегти камерну атмосферу студії.
+                </p>
+              </div>
               <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/85 backdrop-blur-xl border border-border-strong">
                 <span className="size-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide">КіноPoint Film · студія</span>
+                <span className="text-xs font-semibold tracking-wide">KinoPoint Film · студія</span>
               </div>
             </div>
           </div>
