@@ -317,23 +317,23 @@ const Index = () => {
 
       {/* OFFER CTA */}
       <section className="container-wide py-12">
-        <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-br from-surface via-surface-2 to-background p-10 md:p-16">
-          <div className="absolute -top-32 -right-32 size-96 bg-gold/10 blur-3xl rounded-full" />
-          <div className="absolute -bottom-32 -left-32 size-96 bg-primary/10 blur-3xl rounded-full" />
+        <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface via-surface-2 to-background p-10 md:p-16">
+          <div className="absolute -top-32 -right-32 size-96 bg-primary/15 blur-3xl rounded-full" />
+          <div className="absolute -bottom-32 -left-32 size-96 bg-gold/5 blur-3xl rounded-full" />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="eyebrow mb-4">Спеціальна пропозиція</div>
               <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-3 text-balance">
-                Для нових учнів діє знижка <span className="text-gold">50%</span> на перший місяць навчання.
+                Для нових учнів — знижка <span className="text-primary">50%</span> на перший місяць навчання.
               </h2>
               <p className="text-muted-foreground max-w-md leading-relaxed">
-                Це достатньо, щоб без зайвих ризиків відчути формат, групу й себе всередині процесу.
+                Достатньо, щоб без зайвих ризиків відчути формат, групу й себе всередині процесу.
               </p>
             </div>
             <div className="flex md:justify-end">
               <Link
                 to="/apply"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold text-gold-foreground font-semibold hover:shadow-gold hover:scale-[1.02] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all"
               >
                 Залишити заявку <ArrowRight className="size-4" />
               </Link>
