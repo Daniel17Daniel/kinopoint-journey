@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Instagram } from "lucide-react";
-import logo from "@/assets/logo-full.png";
+import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -28,114 +28,145 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  return (
-    <header
-      className={cn(
-        "fixed top-0 inset-x-0 z-40 transition-all duration-500",
-        scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border/60 py-3"
-          : "bg-gradient-to-b from-background/70 to-transparent py-5"
-      )}
+  const Brand = ({ compact = false }: { compact?: boolean }) => (
+    <Link
+      to="/"
+      onClick={() => setOpen(false)}
+      className="flex items-center gap-2.5 shrink-0"
+      aria-label="KinoPoint Film"
     >
-      <div className="container-wide flex items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="КіноPoint Film">
-          <img src={logo} alt="" className={cn("transition-all duration-500", scrolled ? "h-9" : "h-11")} />
-        </Link>
+      <img
+        src={logoSymbol}
+        alt=""
+        className={cn("transition-all duration-500", compact ? "h-8" : "h-9")}
+      />
+      <span className="font-display font-bold tracking-tight text-lg md:text-xl">
+        Kino<span className="text-primary">Point</span>
+      </span>
+    </Link>
+  );
 
-        <nav className="hidden lg:flex items-center gap-1">
-          {NAV.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.to === "/"}
-              className={({ isActive }) =>
-                cn(
-                  "px-3 py-2 text-sm font-medium transition-colors rounded-md",
-                  isActive
-                    ? "text-gold"
-                    : "text-foreground/75 hover:text-foreground"
-                )
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="https://instagram.com/kinopoint.film"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-foreground/75 hover:text-gold transition-colors px-2 py-2"
-            aria-label="Instagram"
-          >
-            <Instagram className="size-4" />
-          </a>
-          <button
-            onClick={onOpenHelper}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gold text-gold-foreground font-semibold text-sm hover:shadow-gold hover:scale-[1.02] transition-all duration-300"
-          >
-            Підібрати напрям
-          </button>
-        </div>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 -mr-2 text-foreground"
-          aria-label={open ? "Закрити меню" : "Відкрити меню"}
-        >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
-      </div>
-
-      {/* Mobile sheet */}
-      <div
+  return (
+    <>
+      <header
         className={cn(
-          "lg:hidden fixed inset-x-0 top-[64px] bottom-0 bg-background/98 backdrop-blur-2xl transition-all duration-300 origin-top",
-          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          "fixed top-0 inset-x-0 z-40 transition-all duration-500",
+          scrolled
+            ? "bg-background/90 backdrop-blur-xl border-b border-border/60 py-3"
+            : "bg-gradient-to-b from-background/70 to-transparent py-4"
         )}
       >
-        <div className="container-wide pt-8 pb-10 flex flex-col h-full">
-          <nav className="flex flex-col gap-1">
+        <div className="container-wide flex items-center justify-between gap-6">
+          <Brand compact={scrolled} />
+
+          <nav className="hidden lg:flex items-center gap-1">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
-                onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "px-4 py-4 text-2xl font-display font-semibold border-b border-border/50",
-                    isActive ? "text-gold" : "text-foreground"
+                    "px-3 py-2 text-sm font-medium transition-colors rounded-md relative",
+                    isActive
+                      ? "text-primary"
+                      : "text-foreground/75 hover:text-foreground"
                   )
                 }
               >
                 {item.label}
               </NavLink>
             ))}
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="https://instagram.com/kinopoint.film"
               target="_blank"
               rel="noreferrer"
-              className="px-4 py-4 text-2xl font-display font-semibold border-b border-border/50 text-foreground flex items-center gap-3"
+              className="inline-flex items-center gap-2 text-sm text-foreground/75 hover:text-primary transition-colors px-2 py-2"
+              aria-label="Instagram"
             >
-              <Instagram className="size-5" /> Instagram
+              <Instagram className="size-4" />
             </a>
-          </nav>
+            <button
+              onClick={onOpenHelper}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:shadow-red hover:scale-[1.02] transition-all duration-300"
+            >
+              Підібрати напрям
+            </button>
+          </div>
+
           <button
-            onClick={() => {
-              setOpen(false);
-              onOpenHelper();
-            }}
-            className="mt-8 w-full py-4 rounded-full bg-gold text-gold-foreground font-semibold text-lg"
+            onClick={() => setOpen((v) => !v)}
+            className="lg:hidden p-2 -mr-2 text-foreground relative z-[110]"
+            aria-label={open ? "Закрити меню" : "Відкрити меню"}
           >
-            Підібрати напрям
+            {open ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile fullscreen menu */}
+      {open && (
+        <div className="lg:hidden fixed inset-0 z-[100] bg-background animate-fade-in flex flex-col">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-border/60">
+            <Brand compact />
+            <button
+              onClick={() => setOpen(false)}
+              className="p-2 -mr-2 text-foreground"
+              aria-label="Закрити меню"
+            >
+              <X className="size-6" />
+            </button>
+          </div>
+          <nav className="flex-1 overflow-y-auto px-5 pt-6 pb-8 flex flex-col">
+            <ul className="space-y-1">
+              {NAV.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    end={item.to === "/"}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      cn(
+                        "flex items-center justify-between py-4 text-2xl font-display font-semibold border-b border-border/40",
+                        isActive ? "text-primary" : "text-foreground"
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://instagram.com/kinopoint.film"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 py-4 text-2xl font-display font-semibold border-b border-border/40 text-foreground"
+                >
+                  <Instagram className="size-5" /> Instagram
+                </a>
+              </li>
+            </ul>
+
+            <button
+              onClick={() => {
+                setOpen(false);
+                setTimeout(() => onOpenHelper(), 220);
+              }}
+              className="mt-auto w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red"
+              style={{ marginBottom: "env(safe-area-inset-bottom)" }}
+            >
+              Підібрати напрям
+            </button>
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
