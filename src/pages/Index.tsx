@@ -103,16 +103,16 @@ const Index = () => {
           <div className="max-w-3xl">
             <div className="eyebrow mb-6 animate-fade-up">Приватна школа для дорослих · Київ</div>
             <h1 className="h-display text-foreground animate-fade-up text-balance" style={{ animationDelay: "60ms" }}>
-              Простір, де доросла людина знову <span className="text-gold">дозволяє собі звучати</span>.
+              Простір, де доросла людина знову <span className="text-primary">дозволяє собі звучати</span>.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/75 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "140ms" }}>
-              Камерна школа акторської майстерності та журналістики. Без шкільних етюдів, без тиску й театральщини — лише чесна робота над голосом, тілом і впевненістю.
+              KinoPoint Film — камерна школа акторської майстерності та журналістики. Без шкільних етюдів і без тиску. Лише доросла робота над голосом, тілом і впевненістю — у темпі, який витримуєте саме ви.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
               <button
                 onClick={open}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold text-gold-foreground font-semibold hover:shadow-gold hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all duration-300"
               >
                 Підібрати напрям <ArrowRight className="size-4" />
               </button>
