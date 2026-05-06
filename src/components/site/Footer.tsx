@@ -10,11 +10,11 @@ export const Footer = () => {
           <Link to="/" className="inline-flex items-center gap-2.5 mb-5">
             <img src={logoSymbol} alt="" className="h-10" />
             <span className="font-display font-bold text-2xl tracking-tight">
-              Kino<span className="text-primary">Point</span>
+              <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
             </span>
           </Link>
           <p className="text-muted-foreground max-w-sm leading-relaxed">
-            Камерна школа акторської майстерності та журналістики для дорослих. Без тиску, без театральщини — лише доросла робота над собою у творчому середовищі.
+            Камерна творча школа в Одесі. Акторська майстерність, сценарне мистецтво та експрес-курс тележурналістики — для тих, хто хоче бути живим у кадрі, на сцені й у власній історії.
           </p>
           <Link
             to="/apply"
@@ -29,7 +29,8 @@ export const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li><Link to="/" className="text-foreground/80 hover:text-primary transition-colors">Головна</Link></li>
             <li><Link to="/acting" className="text-foreground/80 hover:text-primary transition-colors">Акторська майстерність</Link></li>
-            <li><Link to="/journalism" className="text-foreground/80 hover:text-primary transition-colors">Журналістика</Link></li>
+            <li><Link to="/screenwriting" className="text-foreground/80 hover:text-primary transition-colors">Сценарне мистецтво</Link></li>
+            <li><Link to="/journalism" className="text-foreground/80 hover:text-primary transition-colors">Тележурналістика</Link></li>
             <li><Link to="/apply" className="text-foreground/80 hover:text-primary transition-colors">Заявка</Link></li>
           </ul>
         </div>
@@ -43,11 +44,11 @@ export const Footer = () => {
             className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4"
           >
             <Instagram className="size-5" />
-            <span>@kinopoint.film</span>
+            <span>Instagram</span>
           </a>
           <div className="flex items-start gap-3 text-muted-foreground">
             <MapPin className="size-5 mt-0.5 text-primary/80 shrink-0" />
-            <span>Київ · точна адреса студії — після заявки</span>
+            <span>Одеса · адреса студії — після заявки</span>
           </div>
         </div>
       </div>

@@ -1,13 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X, Instagram, Compass } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: "/", label: "Головна" },
   { to: "/acting", label: "Акторська майстерність" },
-  { to: "/journalism", label: "Журналістика" },
+  { to: "/screenwriting", label: "Сценарне мистецтво" },
+  { to: "/journalism", label: "Тележурналістика" },
   { to: "/apply", label: "Заявка" },
 ];
 
@@ -44,7 +45,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
         className={cn("transition-all duration-500", compact ? "h-8" : "h-9")}
       />
       <span className="font-display font-bold tracking-tight text-lg md:text-xl">
-        Kino<span className="text-primary">Point</span>
+        <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
       </span>
     </Link>
   );
@@ -123,8 +124,8 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
               <X className="size-6" />
             </button>
           </div>
-          <nav className="flex-1 overflow-y-auto px-5 pt-6 pb-8 flex flex-col">
-            <ul className="space-y-1">
+          <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-8 flex flex-col">
+            <ul className="space-y-0">
               {NAV.map((item) => (
                 <li key={item.to}>
                   <NavLink
@@ -133,7 +134,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center justify-between py-4 text-2xl font-display font-semibold border-b border-border/40",
+                        "flex items-center justify-between py-4 text-xl font-display font-semibold border-b border-border/40",
                         isActive ? "text-primary" : "text-foreground"
                       )
                     }
@@ -147,7 +148,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                   href="https://instagram.com/kinopoint.film"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 py-4 text-2xl font-display font-semibold border-b border-border/40 text-foreground"
+                  className="flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-border/40 text-foreground"
                 >
                   <Instagram className="size-5" /> Instagram
                 </a>
@@ -159,10 +160,10 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                 setOpen(false);
                 setTimeout(() => onOpenHelper(), 220);
               }}
-              className="mt-auto w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red"
+              className="mt-auto w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red inline-flex items-center justify-center gap-2"
               style={{ marginBottom: "env(safe-area-inset-bottom)" }}
             >
-              Підібрати напрям
+              <Compass className="size-5" /> Підібрати напрям
             </button>
           </nav>
         </div>
