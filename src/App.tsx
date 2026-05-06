@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
 import Index from "./pages/Index.tsx";
 import Acting from "./pages/Acting.tsx";
+import Screenwriting from "./pages/Screenwriting.tsx";
 import Journalism from "./pages/Journalism.tsx";
 import Apply from "./pages/Apply.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -36,6 +37,7 @@ const Shell = () => {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/acting" element={<Acting />} />
+          <Route path="/screenwriting" element={<Screenwriting />} />
           <Route path="/journalism" element={<Journalism />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />

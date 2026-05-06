@@ -6,16 +6,16 @@ import { Check, Instagram, ArrowRight, Sparkles } from "lucide-react";
 const schema = z.object({
   name: z.string().trim().min(2, "Будь ласка, введіть ім’я").max(80),
   contact: z.string().trim().min(4, "Вкажіть номер телефону або Telegram").max(120),
-  direction: z.enum(["acting", "journalism", "undecided"], {
-    errorMap: () => ({ message: "Оберіть напрям, який вам ближчий" }),
+  direction: z.enum(["acting", "screenwriting", "journalism"], {
+    errorMap: () => ({ message: "Оберіть напрям, якщо вже визначилися" }),
   }),
   comment: z.string().trim().max(600).optional(),
 });
 
 const directionLabels: Record<string, string> = {
   acting: "Акторська майстерність",
-  journalism: "Журналістика",
-  undecided: "Поки не визначився",
+  screenwriting: "Сценарне мистецтво",
+  journalism: "Тележурналістика",
 };
 
 const Apply = () => {
@@ -95,14 +95,14 @@ const Apply = () => {
 
                 <Field label="Напрям, який цікавить" error={errors.direction}>
                   <div className="grid sm:grid-cols-3 gap-2">
-                    {(["acting", "journalism", "undecided"] as const).map((v) => (
+                    {(["acting", "screenwriting", "journalism"] as const).map((v) => (
                       <button
                         key={v}
                         type="button"
                         onClick={() => setDirection(v)}
-                        className={`px-4 py-3.5 rounded-xl border text-sm font-semibold transition-all ${
+                        className={`px-4 py-3.5 rounded-xl border text-sm font-semibold transition-all text-left leading-tight ${
                           direction === v
-                            ? "bg-primary text-primary-foreground border-primary shadow-red"
+                            ? "bg-primary/10 text-foreground border-primary glow-red"
                             : "bg-input border-border text-foreground/80 hover:border-primary/50"
                         }`}
                       >
