@@ -1,65 +1,132 @@
 import { useEffect } from "react";
-import { DirectionPage } from "@/components/site/DirectionPage";
+import { Link } from "react-router-dom";
+import { ArrowRight, Check, Instagram, Tv, Star, Sparkles } from "lucide-react";
 import heroImg from "@/assets/journalism-hero.jpg";
-import atm from "@/assets/atmosphere-journalism.jpg";
-import teacherImg from "@/assets/teacher-journalism.jpg";
+
+const GIVES = [
+  "розуміння, як реально працює телебачення",
+  "досвід роботи в кадрі",
+  "навички інтерв’ю, репортажу та розслідування",
+  "доступ до реальної “кухні” телеканалу",
+  "можливість працювати з реальними героями, подіями та проблемами міста",
+  "досвід створення контенту, який впливає на думки людей",
+];
+
+const AFTER = [
+  "унікальний досвід праці на телебаченні",
+  "якісне портфоліо",
+  "розуміння професії зсередини",
+  "рекомендації від практиків",
+];
+
+const FACTS = ["1 місяць", "2 рази на тиждень", "3000 грн / місяць"];
 
 const Journalism = () => {
-  useEffect(() => {
-    document.title = "Журналістика — KinoPoint Film";
-  }, []);
+  useEffect(() => { document.title = "Експрес-курс “Тележурналістика” — KinoPoint Film"; }, []);
 
   return (
-    <DirectionPage
-      accent="red"
-      eyebrow="Напрям 02 · Журналістика"
-      title="Говорити так, щоб"
-      titleHighlight="вас почули і запам’ятали."
-      subtitle="Дорослий курс про мовлення, подачу й роботу перед камерою. Для тих, хто хоче впевнено триматися — у кадрі, на зустрічі, на сцені, у будь-якій публічній ситуації."
-      heroImg={heroImg}
-      applyDirection="journalism"
-      forWho={[
-        "Хочуть звучати чітко і зібрано — у дзвінках, презентаціях, записах",
-        "Працюють з аудиторією: керівники, експерти, лектори, підприємці",
-        "Думають про власний блог, подкаст, колонку — і хочуть зробити це професійно",
-        "Виходять у публічний простір і хочуть позбутися “дерев’яності” перед камерою",
-        "Хочуть навчитися вести інтерв’ю — у роботі чи в особистих проєктах",
-        "Просто прагнуть, щоб мова перестала бути перешкодою",
-      ]}
-      gives={[
-        { title: "Постановка голосу", text: "Дикція, темп, опора. Голос перестає “сідати” після десяти хвилин розмови." },
-        { title: "Поведінка в кадрі", text: "Як стояти, дивитися, тримати думку — і не виглядати скутим." },
-        { title: "Робота з мікрофоном", text: "Подача, дистанція, дихання. Звичні навички, які роблять запис професійним." },
-        { title: "Структура мови", text: "Як говорити коротко й точно. Як починати, тримати лінію й завершувати." },
-        { title: "Інтерв’ю", text: "Як ставити запитання, чути відповіді й вести розмову, а не зачитувати анкету." },
-        { title: "Робота з текстом", text: "Сценарії, новини, авторські формати. Від чорновика до запису." },
-      ]}
-      feel={[
-        "Перші зйомки — і ви бачите себе на відео інакше: тримаєтеся прямо й говорите по суті.",
-        "Зникає звичка “мукати” й заповнювати паузи. З’являється спокій між фразами.",
-        "Робочі дзвінки стають коротшими — бо ви чіткіше формулюєте думку.",
-        "З’являється відчуття, що камера — інструмент, а не суддя.",
-      ]}
-      classes={[
-        { t: "Камерні групи", d: "До 10 дорослих учнів. Кожен працює перед камерою щотижня — з розбором і зворотним зв’язком." },
-        { t: "Двічі на тиждень", d: "Заняття по 2 години у вечірній час. Поєднується з роботою або власним розкладом." },
-        { t: "Студія з обладнанням", d: "Камера, мікрофон, світло. Усе, що потрібно, щоб бачити прогрес у записах." },
-        { t: "Реальні практичні роботи", d: "Стендапи, сюжети, інтерв’ю, авторські випуски. Готові матеріали, які можна показати." },
-      ]}
-      teacher={{
-        name: "Викладач напряму",
-        role: "Журналістика та мовлення",
-        img: teacherImg,
-        bio: "Досвід у телевізійній та digital-журналістиці — як ведучий, продюсер і автор сюжетів. Веде курс так, щоб після завершення людина могла самостійно зняти й змонтувати свій матеріал — і не соромитися його показати.",
-      }}
-      gallery={[atm, heroImg, atm, heroImg, atm]}
-      faq={[
-        { q: "Чи треба мати журналістську освіту?", a: "Ні. Курс розрахований на дорослих з різних сфер. Освіта не має значення — важливо ваше бажання працювати з мовою й голосом." },
-        { q: "А якщо я погано говорю на камеру?", a: "Це майже у всіх на старті. Ми не вимагаємо результату з першого тижня — а працюємо з тим, що є, крок за кроком." },
-        { q: "Чи допоможе курс у моїй основній роботі?", a: "Так — про це говорять найчастіше. Учасники відмічають впевненіші презентації, чіткіші дзвінки, кращі публічні виступи." },
-        { q: "Чи можна потім вести власний блог або подкаст?", a: "Так. До кінця курсу ви матимете реальні записи, базу й розуміння процесу — від ідеї до публікації." },
-      ]}
-    />
+    <div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+          <div className="absolute inset-0 grid-frame opacity-[0.06]" />
+        </div>
+        <div className="container-wide relative pt-20 pb-20 md:pt-28 md:pb-28">
+          <div className="flex flex-wrap gap-2 mb-6 animate-fade-up">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+              <Sparkles className="size-3" /> Експрес-курс
+            </span>
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-surface border border-border-strong text-foreground/80 text-xs font-semibold uppercase tracking-wider">
+              Спеціальний формат
+            </span>
+          </div>
+          <h1 className="h-display max-w-4xl text-balance animate-fade-up">
+            Експрес-курс <span className="text-primary">“Тележурналістика”</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg md:text-xl text-foreground/80 leading-relaxed animate-fade-up">
+            Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-2 animate-fade-up">
+            {FACTS.map((f) => (
+              <span key={f} className="px-4 py-2 rounded-full border border-gold/40 bg-surface/70 text-sm text-foreground/90 backdrop-blur">
+                {f}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up">
+            <Link to="/apply?direction=journalism" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red transition-all">
+              Залишити заявку <ArrowRight className="size-4" />
+            </Link>
+            <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
+              <Instagram className="size-4" /> Написати в Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Curator (text only, no portrait) */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="max-w-3xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 p-8 md:p-12">
+          <div className="eyebrow mb-4">Куратор курсу</div>
+          <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight">Надія Бондаренко</h2>
+          <p className="text-foreground/85 text-lg leading-relaxed">
+            Журналістка, телеведуча, сценаристка, режисерка та редакторка. 19 років у медіа, робота на провідних телеканалах Одеси та досвід у міжнародному французькому виданні.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Що дає курс</div>
+            <h2 className="h-section text-balance">Реальна медійна практика — без теоретичної води.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {GIVES.map((g, i) => (
+              <div key={i} className="p-7 rounded-2xl bg-background border border-border hover:border-gold/40 transition-colors">
+                <span className="inline-flex items-center justify-center size-10 rounded-xl bg-gold/10 text-gold mb-4">
+                  <Tv className="size-5" />
+                </span>
+                <p className="text-foreground/90 leading-relaxed">{g}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-wide py-20 md:py-28">
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Після завершення курсу</div>
+          <h2 className="h-section">Що ви забираєте із собою.</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {AFTER.map((a) => (
+            <div key={a} className="p-6 rounded-2xl bg-surface border border-border-strong flex items-start gap-3">
+              <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
+                <Check className="size-3.5" />
+              </span>
+              <p className="text-foreground/90 leading-relaxed">{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-gold/40 bg-gradient-to-br from-gold/10 to-transparent p-7 md:p-9 flex items-start gap-4">
+          <Star className="size-6 text-gold shrink-0 mt-1" />
+          <p className="font-display text-lg md:text-xl font-semibold leading-snug">
+            Кращі студенти отримають можливість працевлаштування на одеському телеканалі.
+          </p>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link to="/apply?direction=journalism" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
+            Залишити заявку <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 
