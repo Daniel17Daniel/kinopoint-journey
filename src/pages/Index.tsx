@@ -211,12 +211,8 @@ const Index = () => {
               <p className="text-foreground/80 text-lg leading-relaxed max-w-2xl mb-6">
                 Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["1 місяць", "2 рази на тиждень", "3000 грн / місяць"].map((f) => (
-                  <span key={f} className="px-3.5 py-1.5 rounded-full border border-border-strong bg-background/60 text-sm text-foreground/85">
-                    {f}
-                  </span>
-                ))}
+              <div className="mb-6">
+                <FactChips facts={JOURN_FACTS} />
               </div>
               <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                 Перейти до курсу <ArrowRight className="size-4" />
