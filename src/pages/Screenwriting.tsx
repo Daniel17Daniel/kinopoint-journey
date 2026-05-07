@@ -179,7 +179,10 @@ const Screenwriting = () => {
           </p>
         </div>
       </section>
-
+      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
+        <div className="container-wide grid lg:grid-cols-2 gap-10">
+          <div>
+            <div className="eyebrow mb-4">Фінальний результат</div>
             <h2 className="h-section text-balance mb-8">З чим ви виходите з курсу.</h2>
             <ul className="space-y-3">
               {FINAL.map((s) => (
