@@ -105,9 +105,28 @@ const Journalism = () => {
         </div>
       </section>
 
+      {/* FORMAT */}
       <section className="container-wide py-20 md:py-28">
-        <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Після завершення курсу</div>
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Як проходить курс</div>
+          <h2 className="h-section text-balance">Формат — практика в медіасередовищі.</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {FORMAT.map((f) => {
+            const Icon = f.icon;
+            return (
+              <div key={f.t} className="group p-7 rounded-2xl bg-surface border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="size-5" />
+                </span>
+                <p className="font-display font-semibold text-lg mb-2">{f.t}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
           <h2 className="h-section">Що ви забираєте із собою.</h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
