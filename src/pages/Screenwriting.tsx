@@ -78,12 +78,8 @@ const Screenwriting = () => {
             Ідея — це лише початок. Сценарій — це форма, яка дозволяє їй існувати в кіно, театрі або будь-якому іншому візуальному середовищі. Цей курс — про роботу з історією як із конструкцією: точною, структурованою і готовою до реалізації.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-2 animate-fade-up">
-            {FACTS.map((f) => (
-              <span key={f} className="px-4 py-2 rounded-full border border-border-strong bg-surface/70 text-sm text-foreground/85 backdrop-blur">
-                {f}
-              </span>
-            ))}
+          <div className="mt-10 animate-fade-up">
+            <FactChips facts={FACTS} />
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up">
