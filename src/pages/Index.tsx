@@ -54,7 +54,7 @@ const Index = () => {
 
         <div className="container-wide relative pt-20 pb-28 md:pt-28 md:pb-40">
           <div className="max-w-3xl">
-            <div className="eyebrow mb-6 animate-fade-up">Камерна творча школа · Одеса</div>
+            <div className="eyebrow mb-6 animate-fade-up">Твоя улюблена кіношкола · Одеса</div>
             <h1 className="h-display text-foreground animate-fade-up text-balance" style={{ animationDelay: "60ms" }}>
               Простір, де не грають ролі — <span className="text-primary">тут стають собою</span>
             </h1>
