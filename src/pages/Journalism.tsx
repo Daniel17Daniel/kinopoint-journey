@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Tv, Star, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } from "lucide-react";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/journalism-hero.jpg";
 
 const GIVES = [
@@ -19,7 +20,18 @@ const AFTER = [
   "рекомендації від практиків",
 ];
 
-const FACTS = ["1 місяць", "2 рази на тиждень", "3000 грн / місяць"];
+const FACTS: Fact[] = [
+  { kind: "duration", value: "1 місяць" },
+  { kind: "frequency", value: "2 рази на тиждень" },
+  { kind: "price", value: "3000 грн / місяць" },
+];
+
+const FORMAT = [
+  { icon: Camera, t: "Робота в кадрі", d: "Подача, тримання уваги, природність перед камерою." },
+  { icon: Mic, t: "Інтерв’ю та репортаж", d: "Як говорити, питати, тримати героя в розмові." },
+  { icon: Video, t: "Реальні зйомки", d: "Виходи у місто, реальні події та герої." },
+  { icon: Tv, t: "Кухня телеканалу", d: "Як влаштована робота телебачення зсередини." },
+];
 
 const Journalism = () => {
   useEffect(() => { document.title = "Експрес-курс “Тележурналістика” — KinoPoint Film"; }, []);
@@ -48,12 +60,8 @@ const Journalism = () => {
             Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-2 animate-fade-up">
-            {FACTS.map((f) => (
-              <span key={f} className="px-4 py-2 rounded-full border border-gold/40 bg-surface/70 text-sm text-foreground/90 backdrop-blur">
-                {f}
-              </span>
-            ))}
+          <div className="mt-10 animate-fade-up">
+            <FactChips facts={FACTS} />
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up">
@@ -94,6 +102,28 @@ const Journalism = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FORMAT */}
+      <section className="container-wide py-20 md:py-28">
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Як проходить курс</div>
+          <h2 className="h-section text-balance">Формат — практика в медіасередовищі.</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {FORMAT.map((f) => {
+            const Icon = f.icon;
+            return (
+              <div key={f.t} className="group p-7 rounded-2xl bg-surface border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="size-5" />
+                </span>
+                <p className="font-display font-semibold text-lg mb-2">{f.t}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 

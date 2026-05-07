@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard } from "lucide-react";
+import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool } from "lucide-react";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 
 const FOR_WHO = [
@@ -50,7 +51,11 @@ const RECEIVE = [
   "матеріал для подальшого просування або подачі",
 ];
 
-const FACTS = ["3 місяці", "2 рази на тиждень", "4000 грн / місяць"];
+const FACTS: Fact[] = [
+  { kind: "duration", value: "3 місяці" },
+  { kind: "frequency", value: "2 рази на тиждень" },
+  { kind: "price", value: "4000 грн / місяць" },
+];
 
 const Screenwriting = () => {
   useEffect(() => { document.title = "Сценарне мистецтво — KinoPoint Film"; }, []);
@@ -73,12 +78,8 @@ const Screenwriting = () => {
             Ідея — це лише початок. Сценарій — це форма, яка дозволяє їй існувати в кіно, театрі або будь-якому іншому візуальному середовищі. Цей курс — про роботу з історією як із конструкцією: точною, структурованою і готовою до реалізації.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-2 animate-fade-up">
-            {FACTS.map((f) => (
-              <span key={f} className="px-4 py-2 rounded-full border border-border-strong bg-surface/70 text-sm text-foreground/85 backdrop-blur">
-                {f}
-              </span>
-            ))}
+          <div className="mt-10 animate-fade-up">
+            <FactChips facts={FACTS} />
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up">
@@ -166,6 +167,18 @@ const Screenwriting = () => {
         </div>
       </section>
 
+      {/* TEACHER placeholder */}
+      <section className="container-wide pb-4">
+        <div className="max-w-3xl rounded-3xl border border-border-strong bg-surface/60 p-8 md:p-12">
+          <div className="eyebrow mb-4 inline-flex items-center gap-2"><PenTool className="size-3.5" /> Викладач курсу</div>
+          <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
+            Авторський курс від практикуючого сценариста.
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Деталі про викладача будуть оновлені незабаром. Курс веде практик зі сценарної роботи в кіно, рекламі та театрі.
+          </p>
+        </div>
+      </section>
       <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
         <div className="container-wide grid lg:grid-cols-2 gap-10">
           <div>

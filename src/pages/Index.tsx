@@ -1,14 +1,35 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Tv, Compass, Instagram, MapPin,
+  Heart, Mic, Lightbulb, Users, Calendar, Send,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/hero-stage.jpg";
 import atmActing from "@/assets/atmosphere-acting.jpg";
 import atmJourn from "@/assets/atmosphere-journalism.jpg";
+
+const JOURN_FACTS: Fact[] = [
+  { kind: "duration", value: "1 місяць" },
+  { kind: "frequency", value: "2 рази на тиждень" },
+  { kind: "price", value: "3000 грн / місяць" },
+];
+
+const TRAINING_GIVES = [
+  { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
+  { icon: Mic, t: "Голос і подача", d: "Робота з тілом, голосом і дикцією — щоб звучати вільно і впевнено." },
+  { icon: Lightbulb, t: "Своя історія", d: "Розуміння драматургії — як народжується ідея і стає сценарієм." },
+  { icon: Users, t: "Безпечна група", d: "Камерний формат, де можна пробувати, помилятися й рости разом." },
+];
+
+const HOW_IT_WORKS = [
+  { n: "01", t: "Оберіть напрям", d: "Дослідіть сторінки курсів або пройдіть короткий орієнтир, який підкаже найближчий вам шлях.", icon: Compass },
+  { n: "02", t: "Залиште заявку", d: "Коротка форма — ім’я, контакт і напрям. Без іспитів і прослуховувань.", icon: Send },
+  { n: "03", t: "Ми зв’яжемося", d: "Спокійно з’ясуємо, чи цей формат вам підходить, і розкажемо про деталі та старт групи.", icon: Calendar },
+];
 
 const FOR_WHO = [
   "для тих, хто хоче почуватися впевненіше в житті",
@@ -54,7 +75,7 @@ const Index = () => {
 
         <div className="container-wide relative pt-20 pb-28 md:pt-28 md:pb-40">
           <div className="max-w-3xl">
-            <div className="eyebrow mb-6 animate-fade-up">Камерна творча школа · Одеса</div>
+            <div className="eyebrow mb-6 animate-fade-up">Твоя улюблена кіношкола · Одеса</div>
             <h1 className="h-display text-foreground animate-fade-up text-balance" style={{ animationDelay: "60ms" }}>
               Простір, де не грають ролі — <span className="text-primary">тут стають собою</span>
             </h1>
@@ -190,12 +211,8 @@ const Index = () => {
               <p className="text-foreground/80 text-lg leading-relaxed max-w-2xl mb-6">
                 Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["1 місяць", "2 рази на тиждень", "3000 грн / місяць"].map((f) => (
-                  <span key={f} className="px-3.5 py-1.5 rounded-full border border-border-strong bg-background/60 text-sm text-foreground/85">
-                    {f}
-                  </span>
-                ))}
+              <div className="mb-6">
+                <FactChips facts={JOURN_FACTS} />
               </div>
               <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                 Перейти до курсу <ArrowRight className="size-4" />
@@ -209,6 +226,53 @@ const Index = () => {
             </div>
           </div>
         </Link>
+      </section>
+
+      {/* WHAT TRAINING GIVES */}
+      <section className="bg-surface/40 border-y border-border/60 py-24 md:py-28">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Що дає навчання</div>
+            <h2 className="h-section text-balance">Чотири лінії, які змінюють найбільше.</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {TRAINING_GIVES.map((g) => {
+              const Icon = g.icon;
+              return (
+                <div key={g.t} className="group p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                  <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="size-5" />
+                  </span>
+                  <p className="font-display font-semibold text-lg mb-2">{g.t}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{g.d}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="container-wide py-24 md:py-28">
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Як це працює</div>
+          <h2 className="h-section text-balance">Шлях від рішення до першого заняття.</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          {HOW_IT_WORKS.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.n} className="relative p-7 rounded-2xl bg-surface border border-border-strong overflow-hidden">
+                <span className="absolute top-4 right-5 font-display text-5xl font-bold text-gold/15 select-none">{s.n}</span>
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5">
+                  <Icon className="size-5" />
+                </span>
+                <h3 className="font-display font-bold text-xl mb-2">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
 
       {/* FAQ */}
