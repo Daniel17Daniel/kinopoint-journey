@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard } from "lucide-react";
+import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool } from "lucide-react";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 
 const FOR_WHO = [
