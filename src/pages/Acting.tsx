@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Award, Theater } from "lucide-react";
+import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Heart, Sparkles } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/acting-hero.jpg";
+import atmImg from "@/assets/atmosphere-acting.jpg";
 
 const FOR_WHO = [
   "хоче вийти на сцену або почати з нуля",
@@ -12,6 +15,13 @@ const FOR_WHO = [
   "хоче спробувати щось нове",
   "готовий поступово виходити із зони звичного і досліджувати себе",
   "хоче бути живим у кадрі та на сцені",
+];
+
+const HOW = [
+  { icon: Activity, t: "Робота з тілом", d: "Розкріпачення, рух, сценічна координація і присутність." },
+  { icon: Mic, t: "Голос і дикція", d: "Дихання, чіткість, інтонація — щоб голос звучав вільно." },
+  { icon: Heart, t: "Внутрішня свобода", d: "Робота з затиском, страхом сцени та довірою до себе." },
+  { icon: Theater, t: "Сценічна практика", d: "Етюди, сцени, акторські вправи в безпечній групі." },
 ];
 
 const GIVES = [
@@ -27,12 +37,17 @@ const AFTER = [
   { icon: Theater, t: "Випускний показ на сцені театру" },
 ];
 
-const FACTS = [
-  "Від 13 років",
-  "Групи по 10–12 учнів",
-  "11 місяців",
-  "2 рази на тиждень",
-  "2500 грн / місяць",
+const FACTS: Fact[] = [
+  { kind: "age", value: "Від 13 років" },
+  { kind: "group", value: "10–12 учнів" },
+  { kind: "duration", value: "11 місяців" },
+  { kind: "frequency", value: "2 рази на тиждень" },
+  { kind: "price", value: "2500 грн / місяць" },
+];
+
+const FAQ = [
+  { q: "Чи можна прийти без жодного досвіду?", a: "Так. Більшість наших учнів починають з нуля. Ми працюємо з людьми, які ніколи не виходили на сцену й не стояли перед камерою." },
+  { q: "Що робити, якщо я дуже сором’язлива людина?", a: "Ніхто не змусить вас робити те, до чого ви не готові. Перші заняття — про звикання й довіру, а не про “проявися негайно”." },
 ];
 
 const Acting = () => {
@@ -55,12 +70,8 @@ const Acting = () => {
             Курс про внутрішню свободу та живу присутність. Робота з тілом, голосом і дикцією. Формування впевненості через дію, практику та поступове розкриття себе.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-2 animate-fade-up">
-            {FACTS.map((f) => (
-              <span key={f} className="px-4 py-2 rounded-full border border-border-strong bg-surface/70 text-sm text-foreground/85 backdrop-blur">
-                {f}
-              </span>
-            ))}
+          <div className="mt-10 animate-fade-up">
+            <FactChips facts={FACTS} />
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up">
@@ -93,24 +104,86 @@ const Acting = () => {
         </div>
       </section>
 
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
-        <div className="container-wide">
+      {/* HOW */}
+      <section className="relative py-20 md:py-28 bg-surface/40 border-y border-border/60 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08]">
+          <img src={atmImg} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="container-wide relative">
           <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-4">Що дає курс</div>
-            <h2 className="h-section text-balance">Конкретні зміни — і всередині, і назовні.</h2>
+            <div className="eyebrow mb-4">Як проходять заняття</div>
+            <h2 className="h-section text-balance">Чотири живі лінії роботи на кожному занятті.</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {GIVES.map((g, i) => (
-              <div key={i} className="p-7 rounded-2xl bg-background border border-border">
-                <span className="font-display text-3xl font-bold text-gold/40 block mb-3">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-foreground/90 leading-relaxed">{g}</p>
-              </div>
-            ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {HOW.map((h) => {
+              const Icon = h.icon;
+              return (
+                <div key={h.t} className="group p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                  <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="size-5" />
+                  </span>
+                  <p className="font-display font-semibold text-lg mb-2">{h.t}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{h.d}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* GIVES */}
       <section className="container-wide py-20 md:py-28">
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Що дає курс</div>
+          <h2 className="h-section text-balance">Конкретні зміни — і всередині, і назовні.</h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {GIVES.map((g, i) => (
+            <div key={i} className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors">
+              <span className="font-display text-3xl font-bold text-gold/40 block mb-3">{String(i + 1).padStart(2, "0")}</span>
+              <p className="text-foreground/90 leading-relaxed">{g}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TEACHER (placeholder, no fake bio) */}
+      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-24">
+        <div className="container-wide">
+          <div className="max-w-3xl rounded-3xl border border-border-strong bg-background/60 p-8 md:p-12">
+            <div className="eyebrow mb-4">Викладач курсу</div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
+              Практик з акторської майстерності.
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Деталі про викладача будуть оновлені незабаром. Заняття веде практикуючий фахівець із досвідом сценічної та акторської роботи.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SHORT QUESTIONS */}
+      <section className="container-wide py-20 md:py-28">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Короткі запитання</div>
+            <h2 className="h-section text-balance">Те, що часто запитують перед стартом.</h2>
+          </div>
+          <div className="lg:col-span-8">
+            <Accordion type="single" collapsible className="space-y-3">
+              {FAQ.map((f, i) => (
+                <AccordionItem key={i} value={`a-${i}`} className="border border-border rounded-xl bg-surface px-5 data-[state=open]:border-primary/50 data-[state=open]:bg-surface-2 transition-colors">
+                  <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline py-5">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5 text-base">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* AFTER + CTA */}
+      <section className="container-wide pb-24">
         <div className="max-w-2xl mb-10">
           <div className="eyebrow mb-4">Після завершення курсу</div>
           <h2 className="h-section">Що ви забираєте із собою.</h2>
@@ -129,10 +202,17 @@ const Acting = () => {
           })}
         </div>
 
-        <div className="mt-14 flex justify-center">
-          <Link to="/apply?direction=acting" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
-            Залишити заявку <ArrowRight className="size-4" />
-          </Link>
+        <div className="mt-14 relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14 text-center">
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-96 blur-3xl rounded-full bg-primary/15" />
+          <div className="relative max-w-xl mx-auto">
+            <Sparkles className="size-7 text-gold mx-auto mb-4" />
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight text-balance">
+              Готові спробувати? <span className="text-primary">Перший крок — найлегший.</span>
+            </h3>
+            <Link to="/apply?direction=acting" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
+              Залишити заявку <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>
