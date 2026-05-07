@@ -228,6 +228,53 @@ const Index = () => {
         </Link>
       </section>
 
+      {/* WHAT TRAINING GIVES */}
+      <section className="bg-surface/40 border-y border-border/60 py-24 md:py-28">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Що дає навчання</div>
+            <h2 className="h-section text-balance">Чотири лінії, які змінюють найбільше.</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {TRAINING_GIVES.map((g) => {
+              const Icon = g.icon;
+              return (
+                <div key={g.t} className="group p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
+                  <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="size-5" />
+                  </span>
+                  <p className="font-display font-semibold text-lg mb-2">{g.t}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{g.d}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="container-wide py-24 md:py-28">
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Як це працює</div>
+          <h2 className="h-section text-balance">Шлях від рішення до першого заняття.</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          {HOW_IT_WORKS.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.n} className="relative p-7 rounded-2xl bg-surface border border-border-strong overflow-hidden">
+                <span className="absolute top-4 right-5 font-display text-5xl font-bold text-gold/15 select-none">{s.n}</span>
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5">
+                  <Icon className="size-5" />
+                </span>
+                <h3 className="font-display font-bold text-xl mb-2">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="container-wide py-20 md:py-28">
         <div className="grid lg:grid-cols-12 gap-10">
