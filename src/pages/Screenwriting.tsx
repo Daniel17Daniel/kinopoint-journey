@@ -167,10 +167,19 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
-        <div className="container-wide grid lg:grid-cols-2 gap-10">
-          <div>
-            <div className="eyebrow mb-4">Фінальний результат</div>
+      {/* TEACHER placeholder */}
+      <section className="container-wide pb-4">
+        <div className="max-w-3xl rounded-3xl border border-border-strong bg-surface/60 p-8 md:p-12">
+          <div className="eyebrow mb-4 inline-flex items-center gap-2"><PenTool className="size-3.5" /> Викладач курсу</div>
+          <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
+            Авторський курс від практикуючого сценариста.
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Деталі про викладача будуть оновлені незабаром. Курс веде практик зі сценарної роботи в кіно, рекламі та театрі.
+          </p>
+        </div>
+      </section>
+
             <h2 className="h-section text-balance mb-8">З чим ви виходите з курсу.</h2>
             <ul className="space-y-3">
               {FINAL.map((s) => (
