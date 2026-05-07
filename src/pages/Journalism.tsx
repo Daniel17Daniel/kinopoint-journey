@@ -127,6 +127,9 @@ const Journalism = () => {
         </div>
       </section>
 
+      <section className="container-wide py-20 md:py-28">
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Після завершення курсу</div>
           <h2 className="h-section">Що ви забираєте із собою.</h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
