@@ -51,7 +51,11 @@ const RECEIVE = [
   "матеріал для подальшого просування або подачі",
 ];
 
-const FACTS = ["3 місяці", "2 рази на тиждень", "4000 грн / місяць"];
+const FACTS: Fact[] = [
+  { kind: "duration", value: "3 місяці" },
+  { kind: "frequency", value: "2 рази на тиждень" },
+  { kind: "price", value: "4000 грн / місяць" },
+];
 
 const Screenwriting = () => {
   useEffect(() => { document.title = "Сценарне мистецтво — KinoPoint Film"; }, []);
