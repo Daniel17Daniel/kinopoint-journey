@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Tv, Star, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } from "lucide-react";
+import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/journalism-hero.jpg";
 
 const GIVES = [
