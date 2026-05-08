@@ -35,14 +35,14 @@ export const FactChips = ({
             key={f.kind + f.value}
             className={`group inline-flex items-center gap-2.5 rounded-xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${pad} ${
               isPrice
-                ? "border-primary/40 hover:border-primary hover:shadow-[0_0_24px_-6px_hsl(var(--primary)/0.6)]"
+                ? "border-success/40 hover:border-success/70 shadow-[0_0_18px_-8px_hsl(var(--success)/0.55)] hover:shadow-[0_0_28px_-6px_hsl(var(--success)/0.65)] animate-pulse-glow"
                 : "border-border-strong/70 hover:border-gold/50"
             }`}
           >
             <span
               className={`inline-flex items-center justify-center size-7 rounded-lg shrink-0 transition-colors ${
                 isPrice
-                  ? "bg-primary/15 text-primary group-hover:bg-primary/25"
+                  ? "bg-success/15 text-success group-hover:bg-success/25"
                   : "bg-background/60 text-gold/90"
               }`}
             >
