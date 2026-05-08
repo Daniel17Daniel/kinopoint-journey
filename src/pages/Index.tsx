@@ -82,8 +82,9 @@ const Index = () => {
             <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "140ms" }}>
               KinoPoint Film — камерна творча школа, де акторська майстерність і сценарне мистецтво стають точкою входу в живу творчу практику. Тут ти вчишся не просто виконувати роль, а відчувати себе, працювати з тілом, голосом, історією та присутністю — у кадрі, на сцені й у творчому процесі.
             </p>
-            <p className="mt-5 text-base text-gold animate-fade-up" style={{ animationDelay: "180ms" }}>
-              <span className="text-foreground">Kino</span><span className="text-gold">Point</span> — твоя точка старту.
+            <p className="mt-5 text-base animate-fade-up font-display font-semibold tracking-tight" style={{ animationDelay: "180ms" }}>
+              <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
+              <span className="text-primary"> — твоя точка старту.</span>
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
