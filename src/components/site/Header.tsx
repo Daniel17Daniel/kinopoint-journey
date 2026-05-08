@@ -72,8 +72,8 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
         <div className="container-wide flex items-center justify-between gap-6">
           <Brand compact={scrolled} />
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map((item) => (
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+            {NAV_DESKTOP.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
