@@ -80,7 +80,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                 end={item.to === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "px-3 py-2 text-sm font-medium transition-colors rounded-md relative",
+                    "px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors rounded-md relative whitespace-nowrap",
                     isActive
                       ? "text-primary"
                       : "text-foreground/75 hover:text-foreground"
