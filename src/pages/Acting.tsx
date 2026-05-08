@@ -161,17 +161,29 @@ const Acting = () => {
         </div>
       </section>
 
-      {/* TEACHER (placeholder, no fake bio) */}
+      {/* TEACHER */}
       <section className="bg-surface/40 border-y border-border/60 py-20 md:py-24">
         <div className="container-wide">
-          <div className="max-w-3xl rounded-3xl border border-border-strong bg-background/60 p-8 md:p-12">
-            <div className="eyebrow mb-4">Викладач курсу</div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
-              Практик з акторської майстерності.
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Деталі про викладача будуть оновлені незабаром. Заняття веде практикуючий фахівець із досвідом сценічної та акторської роботи.
-            </p>
+          <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-background/60 overflow-hidden grid md:grid-cols-12 gap-0">
+            <div className="md:col-span-5 relative bg-gradient-to-br from-surface to-background min-h-[280px] md:min-h-full flex items-center justify-center">
+              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+              <div className="relative text-center px-6">
+                <div className="inline-flex items-center justify-center size-24 rounded-full bg-primary/10 border border-primary/30 text-primary mb-4">
+                  <Theater className="size-10" />
+                </div>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
+                <p className="text-sm text-muted-foreground/80 mt-1">з’явиться незабаром</p>
+              </div>
+            </div>
+            <div className="md:col-span-7 p-8 md:p-12">
+              <div className="eyebrow mb-4">Викладач курсу</div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                Практик з акторської майстерності.
+              </h2>
+              <p className="text-foreground/85 leading-relaxed">
+                Заняття веде практикуючий фахівець із досвідом сценічної та акторської роботи. Підхід — уважна робота з тілом, голосом і присутністю в безпечній групі. Деталі про викладача будуть оновлені незабаром.
+              </p>
+            </div>
           </div>
         </div>
       </section>
