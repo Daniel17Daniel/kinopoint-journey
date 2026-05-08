@@ -223,6 +223,31 @@ const Screenwriting = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Короткі запитання</div>
+            <h2 className="h-section text-balance">Те, що часто запитують перед стартом.</h2>
+          </div>
+          <div className="lg:col-span-8">
+            <Accordion type="single" collapsible className="space-y-3">
+              {[
+                { q: "Чи можна прийти на курс без досвіду у сценарній справі?", a: "Так. Курс підходить тим, хто хоче навчитися писати сценарії з нуля, а також тим, хто вже працює з ідеями, текстом або відео й хоче зробити це більш професійно." },
+                { q: "Чи обов’язково вже мати готову ідею?", a: "Ні. Якщо у вас уже є ідея — ми працюємо з нею. Якщо ідеї ще немає або вона не сформована, курс допоможе знайти форму, структуру й напрямок для подальшої роботи." },
+                { q: "Що саме я буду робити під час навчання?", a: "Під час курсу ви працюватимете з ідеєю, логлайном, синопсисом, структурою, персонажами, сценами та діалогами. Навчання побудоване так, щоб поступово привести вас до завершеного сценарного проєкту." },
+                { q: "Який результат я зможу отримати в кінці курсу?", a: "Фінальним результатом може стати сценарій короткометражного фільму, розробка повнометражного проєкту або театральний сценарій — залежно від формату, з яким ви працюєте під час навчання." },
+              ].map((f, i) => (
+                <AccordionItem key={i} value={`s-${i}`} className="border border-border rounded-xl bg-surface px-5 data-[state=open]:border-primary/50 data-[state=open]:bg-surface-2 transition-colors">
+                  <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline py-5">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5 text-base">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       <section className="container-wide py-20 md:py-28">
         <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14">
           <div className="absolute -top-32 -right-32 size-96 blur-3xl rounded-full bg-primary/15" />
