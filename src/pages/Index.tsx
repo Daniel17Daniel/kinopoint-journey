@@ -350,21 +350,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CONTACTS */}
+      {/* LOCATION / MAP */}
       <section className="container-wide pb-24">
-        <div className="grid md:grid-cols-2 gap-4">
-          <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors flex items-start gap-4">
-            <Instagram className="size-6 text-gold shrink-0 mt-1" />
-            <div>
-              <p className="font-display text-lg font-bold mb-1">Instagram</p>
-              <p className="text-muted-foreground text-sm">Найшвидший спосіб зв’язатися та побачити атмосферу школи.</p>
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Де ми знаходимося</div>
+          <h2 className="h-section text-balance">Завжди раді бачити вас у KinoPoint.</h2>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-5">
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-7 rounded-2xl bg-surface border border-border-strong">
+              <div className="flex items-start gap-4">
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <MapPin className="size-5" />
+                </span>
+                <div>
+                  <p className="eyebrow mb-2">Адреса</p>
+                  <p className="font-display text-xl font-bold mb-2">Одеса</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Точну адресу студії надішлемо разом із підтвердженням заявки.
+                  </p>
+                </div>
+              </div>
             </div>
-          </a>
-          <div className="p-7 rounded-2xl bg-surface border border-border flex items-start gap-4">
-            <MapPin className="size-6 text-primary shrink-0 mt-1" />
-            <div>
-              <p className="font-display text-lg font-bold mb-1">Одеса</p>
-              <p className="text-muted-foreground text-sm">Точну адресу студії надішлемо разом із підтвердженням заявки.</p>
+            <a
+              href="https://instagram.com/kinopoint.film"
+              target="_blank"
+              rel="noreferrer"
+              className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors flex items-start gap-4"
+            >
+              <Instagram className="size-6 text-gold shrink-0 mt-1" />
+              <div>
+                <p className="font-display text-lg font-bold mb-1">Instagram</p>
+                <p className="text-muted-foreground text-sm">Найшвидший спосіб зв’язатися та побачити атмосферу школи.</p>
+              </div>
+            </a>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface aspect-[4/3] lg:aspect-auto lg:h-full min-h-[320px]">
+              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-gold/8" />
+              <div className="relative h-full flex flex-col items-center justify-center text-center px-8">
+                <span className="inline-flex items-center justify-center size-16 rounded-full bg-background/70 border border-border-strong text-primary mb-5">
+                  <MapPin className="size-7" />
+                </span>
+                <p className="font-display text-2xl font-bold mb-2">Карта</p>
+                <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+                  Інтерактивна карта з’явиться тут після підтвердження локації студії.
+                </p>
+              </div>
             </div>
           </div>
         </div>
