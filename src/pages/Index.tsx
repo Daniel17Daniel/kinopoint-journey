@@ -132,6 +132,29 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ABOUT */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Про KinoPoint</div>
+            <h2 className="h-section text-balance">
+              Школа, де <span className="text-primary">людина важлива</span> не менше за результат.
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-5 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              KinoPoint — це простір, де творчість поєднується з практикою, а навчання будується на уважній роботі з людиною. Тут важливо не просто отримати досвід, а поступово відчути більше свободи, впевненості та ясності у власному прояві.
+            </p>
+            <p>
+              Ми поєднуємо різні творчі напрями — акторську майстерність, сценарну роботу та тележурналістику — і в кожному з них для нас важливі жива присутність, увага до деталей і реальний розвиток через практику.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold link-underline pt-2">
+              Дізнатися більше <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* MAIN DIRECTIONS */}
       <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
         <div className="container-wide">
