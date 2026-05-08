@@ -4,11 +4,20 @@ import { Menu, X, Instagram, Compass } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
-const NAV = [
+const NAV_DESKTOP = [
+  { to: "/acting", label: "Акторська майстерність" },
+  { to: "/screenwriting", label: "Сценарне мистецтво" },
+  { to: "/journalism", label: "Тележурналістика" },
+  { to: "/about", label: "Про кіношколу" },
+  { to: "/apply", label: "Заявка" },
+];
+
+const NAV_MOBILE = [
   { to: "/", label: "Головна" },
   { to: "/acting", label: "Акторська майстерність" },
   { to: "/screenwriting", label: "Сценарне мистецтво" },
   { to: "/journalism", label: "Тележурналістика" },
+  { to: "/about", label: "Про кіношколу" },
   { to: "/apply", label: "Заявка" },
 ];
 
