@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/journalism-hero.jpg";
 
