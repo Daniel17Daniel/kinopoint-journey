@@ -135,7 +135,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
           </div>
           <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-8 flex flex-col">
             <ul className="space-y-0">
-              {NAV.map((item) => (
+              {NAV_MOBILE.map((item) => (
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
