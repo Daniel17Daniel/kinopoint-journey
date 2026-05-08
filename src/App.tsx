@@ -41,6 +41,7 @@ const Shell = () => {
           <Route path="/screenwriting" element={<Screenwriting />} />
           <Route path="/journalism" element={<Journalism />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </SiteLayout>
