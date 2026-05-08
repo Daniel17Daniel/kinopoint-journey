@@ -9,6 +9,7 @@ import Acting from "./pages/Acting.tsx";
 import Screenwriting from "./pages/Screenwriting.tsx";
 import Journalism from "./pages/Journalism.tsx";
 import Apply from "./pages/Apply.tsx";
+import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { SiteLayout } from "./components/site/SiteLayout.tsx";
 import { HelperProvider, useHelper } from "./components/site/HelperContext.tsx";
@@ -40,6 +41,7 @@ const Shell = () => {
           <Route path="/screenwriting" element={<Screenwriting />} />
           <Route path="/journalism" element={<Journalism />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </SiteLayout>

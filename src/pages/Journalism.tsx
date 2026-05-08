@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/journalism-hero.jpg";
 
@@ -75,14 +76,26 @@ const Journalism = () => {
         </div>
       </section>
 
-      {/* Curator (text only, no portrait) */}
+      {/* TEACHER */}
       <section className="container-wide py-20 md:py-24">
-        <div className="max-w-3xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 p-8 md:p-12">
-          <div className="eyebrow mb-4">Куратор курсу</div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight">Надія Бондаренко</h2>
-          <p className="text-foreground/85 text-lg leading-relaxed">
-            Журналістка, телеведуча, сценаристка, режисерка та редакторка. 19 років у медіа, робота на провідних телеканалах Одеси та досвід у міжнародному французькому виданні.
-          </p>
+        <div className="max-w-5xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 overflow-hidden grid md:grid-cols-12">
+          <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
+            <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+            <div className="relative text-center px-6">
+              <div className="inline-flex items-center justify-center size-24 rounded-full bg-gold/10 border border-gold/30 text-gold mb-4">
+                <Tv className="size-10" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
+              <p className="text-sm text-muted-foreground/80 mt-1">з’явиться незабаром</p>
+            </div>
+          </div>
+          <div className="md:col-span-7 p-8 md:p-12">
+            <div className="eyebrow mb-4">Куратор курсу</div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight">Надія Бондаренко</h2>
+            <p className="text-foreground/85 text-lg leading-relaxed">
+              Журналістка, телеведуча, сценаристка, режисерка та редакторка. 19 років у медіа, робота на провідних телеканалах Одеси та досвід у міжнародному французькому виданні.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -150,11 +163,38 @@ const Journalism = () => {
           </p>
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <Link to="/apply?direction=journalism" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
-            Залишити заявку <ArrowRight className="size-4" />
-          </Link>
+      </section>
+
+      {/* FAQ */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Короткі запитання</div>
+            <h2 className="h-section text-balance">Те, що часто запитують перед стартом.</h2>
+          </div>
+          <div className="lg:col-span-8">
+            <Accordion type="single" collapsible className="space-y-3">
+              {[
+                { q: "Чи можна спробувати себе в тележурналістиці без досвіду?", a: "Так. Експрес-курс підходить тим, хто хоче вперше спробувати себе в кадрі, краще зрозуміти медійне середовище та побачити, як реально працює телебачення." },
+                { q: "Що саме буде на курсі?", a: "На курсі буде практика, пов’язана з роботою в кадрі, інтерв’ю, репортажем, спостереженням за медійним процесом і зануренням у реальну “кухню” тележурналістики." },
+                { q: "Чи буде реальна робота в кадрі?", a: "Так, курс передбачає досвід роботи в кадрі та знайомство з тим, як поводитися перед камерою, працювати з подачею, мовленням і матеріалом." },
+                { q: "Що я отримаю після завершення експрес-курсу?", a: "Після завершення курсу ви отримаєте практичний досвід, краще розуміння професії зсередини, матеріал для портфоліо та рекомендації від практиків. Для кращих студентів також передбачена можливість працевлаштування на одеському телеканалі." },
+              ].map((f, i) => (
+                <AccordionItem key={i} value={`j-${i}`} className="border border-border rounded-xl bg-surface px-5 data-[state=open]:border-primary/50 data-[state=open]:bg-surface-2 transition-colors">
+                  <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline py-5">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5 text-base">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container-wide pb-24 flex justify-center">
+        <Link to="/apply?direction=journalism" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
+          Залишити заявку <ArrowRight className="size-4" />
+        </Link>
       </section>
     </div>
   );

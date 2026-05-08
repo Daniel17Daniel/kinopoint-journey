@@ -4,11 +4,20 @@ import { Menu, X, Instagram, Compass } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
-const NAV = [
+const NAV_DESKTOP = [
+  { to: "/acting", label: "Акторська майстерність" },
+  { to: "/screenwriting", label: "Сценарне мистецтво" },
+  { to: "/journalism", label: "Тележурналістика" },
+  { to: "/about", label: "Про кіношколу" },
+  { to: "/apply", label: "Заявка" },
+];
+
+const NAV_MOBILE = [
   { to: "/", label: "Головна" },
   { to: "/acting", label: "Акторська майстерність" },
   { to: "/screenwriting", label: "Сценарне мистецтво" },
   { to: "/journalism", label: "Тележурналістика" },
+  { to: "/about", label: "Про кіношколу" },
   { to: "/apply", label: "Заявка" },
 ];
 
@@ -63,15 +72,15 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
         <div className="container-wide flex items-center justify-between gap-6">
           <Brand compact={scrolled} />
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map((item) => (
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+            {NAV_DESKTOP.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "px-3 py-2 text-sm font-medium transition-colors rounded-md relative",
+                    "px-2.5 xl:px-3 py-2 text-[13px] xl:text-sm font-medium transition-colors rounded-md relative whitespace-nowrap",
                     isActive
                       ? "text-primary"
                       : "text-foreground/75 hover:text-foreground"
@@ -126,11 +135,38 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
           </div>
           <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-8 flex flex-col">
             <ul className="space-y-0">
-              {NAV.map((item) => (
+              {NAV_MOBILE.slice(0, 4).map((item) => (
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
                     end={item.to === "/"}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      cn(
+                        "flex items-center justify-between py-4 text-xl font-display font-semibold border-b border-border/40",
+                        isActive ? "text-primary" : "text-foreground"
+                      )
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(() => onOpenHelper(), 220);
+                  }}
+                  className="w-full flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-border/40 text-primary"
+                >
+                  <Compass className="size-5" /> Підібрати напрям
+                </button>
+              </li>
+              {NAV_MOBILE.slice(4).map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       cn(
@@ -154,17 +190,15 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                 </a>
               </li>
             </ul>
-
-            <button
-              onClick={() => {
-                setOpen(false);
-                setTimeout(() => onOpenHelper(), 220);
-              }}
-              className="mt-auto w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red inline-flex items-center justify-center gap-2"
-              style={{ marginBottom: "env(safe-area-inset-bottom)" }}
-            >
-              <Compass className="size-5" /> Підібрати напрям
-            </button>
+            <div style={{ marginBottom: "env(safe-area-inset-bottom)" }} className="mt-auto pt-6">
+              <Link
+                to="/apply"
+                onClick={() => setOpen(false)}
+                className="w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red inline-flex items-center justify-center gap-2"
+              >
+                Залишити заявку
+              </Link>
+            </div>
           </nav>
         </div>
       )}

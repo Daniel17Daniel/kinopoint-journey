@@ -75,15 +75,16 @@ const Index = () => {
 
         <div className="container-wide relative pt-20 pb-28 md:pt-28 md:pb-40">
           <div className="max-w-3xl">
-            <div className="eyebrow mb-6 animate-fade-up">Твоя улюблена кіношкола · Одеса</div>
+            <div className="eyebrow mb-6 animate-fade-up">Твоя улюблена кіношкола</div>
             <h1 className="h-display text-foreground animate-fade-up text-balance" style={{ animationDelay: "60ms" }}>
               Простір, де не грають ролі — <span className="text-primary">тут стають собою</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "140ms" }}>
               KinoPoint Film — камерна творча школа, де акторська майстерність і сценарне мистецтво стають точкою входу в живу творчу практику. Тут ти вчишся не просто виконувати роль, а відчувати себе, працювати з тілом, голосом, історією та присутністю — у кадрі, на сцені й у творчому процесі.
             </p>
-            <p className="mt-5 text-base text-gold animate-fade-up" style={{ animationDelay: "180ms" }}>
-              <span className="text-foreground">Kino</span><span className="text-gold">Point</span> — твоя точка старту.
+            <p className="mt-5 text-base animate-fade-up font-display font-semibold tracking-tight" style={{ animationDelay: "180ms" }}>
+              <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
+              <span className="text-primary"> — твоя точка старту.</span>
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
@@ -128,6 +129,29 @@ const Index = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Про KinoPoint</div>
+            <h2 className="h-section text-balance">
+              Школа, де <span className="text-primary">людина важлива</span> не менше за результат.
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-5 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              KinoPoint — це простір, де творчість поєднується з практикою, а навчання будується на уважній роботі з людиною. Тут важливо не просто отримати досвід, а поступово відчути більше свободи, впевненості та ясності у власному прояві.
+            </p>
+            <p>
+              Ми поєднуємо різні творчі напрями — акторську майстерність, сценарну роботу та тележурналістику — і в кожному з них для нас важливі жива присутність, увага до деталей і реальний розвиток через практику.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold link-underline pt-2">
+              Дізнатися більше <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -326,21 +350,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CONTACTS */}
+      {/* LOCATION / MAP */}
       <section className="container-wide pb-24">
-        <div className="grid md:grid-cols-2 gap-4">
-          <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors flex items-start gap-4">
-            <Instagram className="size-6 text-gold shrink-0 mt-1" />
-            <div>
-              <p className="font-display text-lg font-bold mb-1">Instagram</p>
-              <p className="text-muted-foreground text-sm">Найшвидший спосіб зв’язатися та побачити атмосферу школи.</p>
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Де ми знаходимося</div>
+          <h2 className="h-section text-balance">Завжди раді бачити вас у KinoPoint.</h2>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-5">
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-7 rounded-2xl bg-surface border border-border-strong">
+              <div className="flex items-start gap-4">
+                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <MapPin className="size-5" />
+                </span>
+                <div>
+                  <p className="eyebrow mb-2">Адреса</p>
+                  <p className="font-display text-xl font-bold mb-2">Одеса</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Точну адресу студії надішлемо разом із підтвердженням заявки.
+                  </p>
+                </div>
+              </div>
             </div>
-          </a>
-          <div className="p-7 rounded-2xl bg-surface border border-border flex items-start gap-4">
-            <MapPin className="size-6 text-primary shrink-0 mt-1" />
-            <div>
-              <p className="font-display text-lg font-bold mb-1">Одеса</p>
-              <p className="text-muted-foreground text-sm">Точну адресу студії надішлемо разом із підтвердженням заявки.</p>
+            <a
+              href="https://instagram.com/kinopoint.film"
+              target="_blank"
+              rel="noreferrer"
+              className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors flex items-start gap-4"
+            >
+              <Instagram className="size-6 text-gold shrink-0 mt-1" />
+              <div>
+                <p className="font-display text-lg font-bold mb-1">Instagram</p>
+                <p className="text-muted-foreground text-sm">Найшвидший спосіб зв’язатися та побачити атмосферу школи.</p>
+              </div>
+            </a>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface aspect-[4/3] lg:aspect-auto lg:h-full min-h-[320px]">
+              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-gold/8" />
+              <div className="relative h-full flex flex-col items-center justify-center text-center px-8">
+                <span className="inline-flex items-center justify-center size-16 rounded-full bg-background/70 border border-border-strong text-primary mb-5">
+                  <MapPin className="size-7" />
+                </span>
+                <p className="font-display text-2xl font-bold mb-2">Карта</p>
+                <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+                  Інтерактивна карта з’явиться тут після підтвердження локації студії.
+                </p>
+              </div>
             </div>
           </div>
         </div>

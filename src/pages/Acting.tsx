@@ -46,8 +46,22 @@ const FACTS: Fact[] = [
 ];
 
 const FAQ = [
-  { q: "Чи можна прийти без жодного досвіду?", a: "Так. Більшість наших учнів починають з нуля. Ми працюємо з людьми, які ніколи не виходили на сцену й не стояли перед камерою." },
-  { q: "Що робити, якщо я дуже сором’язлива людина?", a: "Ніхто не змусить вас робити те, до чого ви не готові. Перші заняття — про звикання й довіру, а не про “проявися негайно”." },
+  {
+    q: "Чи можна прийти на курс без досвіду?",
+    a: "Так, курс підходить і тим, хто тільки починає. Важливіше не досвід, а готовність пробувати, працювати з собою та поступово розкриватися в процесі.",
+  },
+  {
+    q: "Чи підійде курс, якщо я соромлюся або відчуваю внутрішній затиск?",
+    a: "Так. Для багатьох саме це і є одна з причин прийти. Заняття допомагають краще відчувати себе, свій голос, тіло та поступово ставати вільнішими у самовираженні.",
+  },
+  {
+    q: "Як проходять заняття?",
+    a: "Заняття побудовані на практиці: робота з тілом, голосом, увагою, присутністю, емоціями та взаємодією. Це живий процес, у якому важливо не просто виконувати вправи, а поступово входити в більш вільний контакт із собою.",
+  },
+  {
+    q: "Що я отримаю після завершення курсу?",
+    a: "Після завершення курсу ви отримаєте більше впевненості, кращий контакт із голосом і тілом, досвід сценічної практики, сертифікат і випускний показ на сцені театру.",
+  },
 ];
 
 const Acting = () => {
@@ -147,17 +161,29 @@ const Acting = () => {
         </div>
       </section>
 
-      {/* TEACHER (placeholder, no fake bio) */}
+      {/* TEACHER */}
       <section className="bg-surface/40 border-y border-border/60 py-20 md:py-24">
         <div className="container-wide">
-          <div className="max-w-3xl rounded-3xl border border-border-strong bg-background/60 p-8 md:p-12">
-            <div className="eyebrow mb-4">Викладач курсу</div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
-              Практик з акторської майстерності.
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Деталі про викладача будуть оновлені незабаром. Заняття веде практикуючий фахівець із досвідом сценічної та акторської роботи.
-            </p>
+          <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-background/60 overflow-hidden grid md:grid-cols-12 gap-0">
+            <div className="md:col-span-5 relative bg-gradient-to-br from-surface to-background min-h-[280px] md:min-h-full flex items-center justify-center">
+              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+              <div className="relative text-center px-6">
+                <div className="inline-flex items-center justify-center size-24 rounded-full bg-primary/10 border border-primary/30 text-primary mb-4">
+                  <Theater className="size-10" />
+                </div>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
+                <p className="text-sm text-muted-foreground/80 mt-1">з’явиться незабаром</p>
+              </div>
+            </div>
+            <div className="md:col-span-7 p-8 md:p-12">
+              <div className="eyebrow mb-4">Викладач курсу</div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                Практик з акторської майстерності.
+              </h2>
+              <p className="text-foreground/85 leading-relaxed">
+                Заняття веде практикуючий фахівець із досвідом сценічної та акторської роботи. Підхід — уважна робота з тілом, голосом і присутністю в безпечній групі. Деталі про викладача будуть оновлені незабаром.
+              </p>
+            </div>
           </div>
         </div>
       </section>
