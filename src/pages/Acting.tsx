@@ -7,6 +7,10 @@ import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-acting.png";
+import cardStage from "@/assets/card-acting-stage.png";
+import cardExpression from "@/assets/card-acting-expression.png";
+import cardVoice from "@/assets/card-acting-voice.png";
+import cardGroup from "@/assets/card-acting-group.png";
 
 const FOR_WHO = [
   "хоче вийти на сцену або почати з нуля",
@@ -27,11 +31,10 @@ const HOW = [
 ];
 
 const GIVES_CARDS: CarouselCard[] = [
-  { icon: <Smile className="size-6" />, title: "Впевненість", text: "Більше впевненості в собі і своєму прояві." },
-  { icon: <Volume2 className="size-6" />, title: "Голос і дикція", text: "Кращий контакт з тілом, голосом і дикцією." },
-  { icon: <Dumbbell className="size-6" />, title: "Сценічна практика", text: "Досвід акторської роботи в безпечній групі." },
-  { icon: <Heart className="size-6" />, title: "Свобода виразу", text: "Більше свободи у самовираженні і живій присутності." },
-  { icon: <Users className="size-6" />, title: "Безпечний простір", text: "Камерна група, де можна пробувати і помилятися." },
+  { image: cardStage, title: "Сценічна присутність", text: "Навчишся бути живим у кадрі і на сцені." },
+  { image: cardVoice, title: "Голос і дикція", text: "Чіткість, інтонація і виразність." },
+  { image: cardExpression, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості." },
+  { image: cardGroup, title: "Безпечна група", text: "Камерний формат, де можна пробувати і помилятися." },
 ];
 
 const AFTER = [

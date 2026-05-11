@@ -6,6 +6,8 @@ import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-screenwriting.png";
+import cardWriting from "@/assets/card-screen-writing.png";
+import cardLaptop from "@/assets/card-screen-laptop.png";
 
 const FOR_WHO = [
   "для тих, хто хоче навчитися писати сценарії з нуля",
@@ -55,12 +57,12 @@ const RECEIVE = [
 ];
 
 const PROCESS_CARDS: CarouselCard[] = [
-  { icon: <Lightbulb className="size-6" />, title: "Ідея та логлайн", text: "Знаходимо і формулюємо вашу ідею — стисло і точно." },
-  { icon: <AlignLeft className="size-6" />, title: "Синопсис", text: "Розгортаємо логлайн у повноцінний короткий виклад." },
-  { icon: <Layers className="size-6" />, title: "Структура", text: "Будуємо каркас: акти, повороти, ритм оповіді." },
-  { icon: <Users className="size-6" />, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
-  { icon: <MessageSquare className="size-6" />, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним темпом і ритмом." },
-  { icon: <PenLine className="size-6" />, title: "Фідбек і редагування", text: "Регулярні розбори, правки і розвиток проєкту." },
+  { image: cardWriting, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею — стисло і точно." },
+  { image: cardLaptop, title: "Структура і синопсис", text: "Будуємо каркас історії покрок за кроком." },
+  { image: cardWriting, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
+  { image: cardLaptop, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним ритмом." },
+  { image: cardWriting, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток проєкту." },
+  { image: cardLaptop, title: "Готовий сценарій", text: "Виходите з проєктом, з яким можна працювати далі." },
 ];
 
 const FACTS: Fact[] = [
