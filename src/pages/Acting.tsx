@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Heart, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Heart, Sparkles, Smile, Volume2, Dumbbell } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
+import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-acting.png";
@@ -25,12 +26,12 @@ const HOW = [
   { icon: Theater, t: "Сценічна практика", d: "Етюди, сцени, акторські вправи в безпечній групі." },
 ];
 
-const GIVES = [
-  "більше впевненості в собі",
-  "кращий контакт із тілом, голосом і дикцією",
-  "досвід сценічної та акторської практики",
-  "більше свободи у самовираженні",
-  "безпечний простір для розвитку через практику",
+const GIVES_CARDS: CarouselCard[] = [
+  { icon: <Smile className="size-6" />, title: "Впевненість", text: "Більше впевненості в собі і своєму прояві." },
+  { icon: <Volume2 className="size-6" />, title: "Голос і дикція", text: "Кращий контакт з тілом, голосом і дикцією." },
+  { icon: <Dumbbell className="size-6" />, title: "Сценічна практика", text: "Досвід акторської роботи в безпечній групі." },
+  { icon: <Heart className="size-6" />, title: "Свобода виразу", text: "Більше свободи у самовираженні і живій присутності." },
+  { icon: <Users className="size-6" />, title: "Безпечний простір", text: "Камерна група, де можна пробувати і помилятися." },
 ];
 
 const AFTER = [
@@ -166,19 +167,12 @@ const Acting = () => {
       </section>
 
       {/* GIVES */}
-      <section className="container-wide py-20 md:py-28">
-        <div className="max-w-2xl mb-12">
+      <section className="container-wide py-20 md:py-24">
+        <div className="max-w-2xl mb-10">
           <div className="eyebrow mb-4">Що дає курс</div>
           <h2 className="h-section text-balance">Конкретні зміни — і всередині, і назовні.</h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {GIVES.map((g, i) => (
-            <div key={i} className="p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors">
-              <span className="font-display text-3xl font-bold text-gold/40 block mb-3">{String(i + 1).padStart(2, "0")}</span>
-              <p className="text-foreground/90 leading-relaxed">{g}</p>
-            </div>
-          ))}
-        </div>
+        <CourseCarousel cards={GIVES_CARDS} />
       </section>
 
       {/* TEACHER */}

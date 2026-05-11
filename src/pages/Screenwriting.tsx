@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool } from "lucide-react";
+import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool, PenLine, AlignLeft, Users, Layers, MessageSquare, Lightbulb } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
+import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-screenwriting.png";
 
@@ -51,6 +52,15 @@ const RECEIVE = [
   "розуміння структури історії",
   "практичний досвід роботи зі сценарієм",
   "матеріал для подальшого просування або подачі",
+];
+
+const PROCESS_CARDS: CarouselCard[] = [
+  { icon: <Lightbulb className="size-6" />, title: "Ідея та логлайн", text: "Знаходимо і формулюємо вашу ідею — стисло і точно." },
+  { icon: <AlignLeft className="size-6" />, title: "Синопсис", text: "Розгортаємо логлайн у повноцінний короткий виклад." },
+  { icon: <Layers className="size-6" />, title: "Структура", text: "Будуємо каркас: акти, повороти, ритм оповіді." },
+  { icon: <Users className="size-6" />, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
+  { icon: <MessageSquare className="size-6" />, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним темпом і ритмом." },
+  { icon: <PenLine className="size-6" />, title: "Фідбек і редагування", text: "Регулярні розбори, правки і розвиток проєкту." },
 ];
 
 const FACTS: Fact[] = [
@@ -155,37 +165,13 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-20 md:py-28">
-        <div className="grid lg:grid-cols-2 gap-10">
-          <div>
-            <div className="eyebrow mb-4">Ти навчишся</div>
-            <h2 className="h-section text-balance mb-8">Конкретні навички сценариста.</h2>
-            <ul className="space-y-3">
-              {SKILLS.map((s) => (
-                <li key={s} className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border">
-                  <span className="mt-0.5 inline-flex items-center justify-center size-6 rounded-full bg-primary/15 text-primary-glow shrink-0">
-                    <Check className="size-3.5" />
-                  </span>
-                  <span className="text-foreground/90">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div className="eyebrow mb-4">Як проходять заняття</div>
-            <h2 className="h-section text-balance mb-8">Формат — практика, не лекції.</h2>
-            <ul className="space-y-3">
-              {HOW.map((s, i) => (
-                <li key={s} className="flex items-start gap-4 p-4 rounded-xl bg-surface border border-border">
-                  <span className="inline-flex items-center justify-center size-8 rounded-lg bg-gold/15 text-gold font-display font-bold text-sm shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-foreground/90">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* PROCESS CAROUSEL — replaces SKILLS + HOW lists */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Як ми працюємо</div>
+          <h2 className="h-section text-balance">Від ідеї до готового сценарію — крок за кроком.</h2>
         </div>
+        <CourseCarousel cards={PROCESS_CARDS} />
       </section>
 
       {/* TEACHER */}
