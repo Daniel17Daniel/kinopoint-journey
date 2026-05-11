@@ -102,12 +102,6 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
             >
               <Instagram className="size-4" />
             </a>
-            <button
-              onClick={onOpenHelper}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:shadow-red hover:scale-[1.02] transition-all duration-300"
-            >
-              Підібрати напрям
-            </button>
           </div>
 
           <button
