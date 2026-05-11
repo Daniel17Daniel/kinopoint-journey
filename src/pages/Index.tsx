@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Tv, Compass, Instagram, MapPin,
   Heart, Mic, Lightbulb, Users, Calendar, Send,
@@ -64,7 +64,7 @@ const Index = () => {
   const { open } = useHelper();
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -357,8 +357,7 @@ const Index = () => {
                 </span>
                 <div className="min-w-0">
                   <p className="eyebrow mb-1">Адреса</p>
-                  <p className="font-display font-semibold text-base">Одеса</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Точну адресу надішлемо після підтвердження заявки.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Надішлемо після підтвердження заявки.</p>
                 </div>
               </div>
             </div>

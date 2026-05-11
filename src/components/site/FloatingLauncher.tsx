@@ -15,7 +15,7 @@ export const FloatingLauncher = ({ onClick, visible }: FloatingLauncherProps) =>
       }`}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <span className="relative flex items-center justify-center size-14 md:size-16 rounded-full bg-background border border-border-strong shadow-elegant hover:border-primary/60 transition-all duration-300 animate-pulse-glow">
+      <span className="relative flex items-center justify-center size-14 md:size-16 rounded-full bg-background border border-border-strong shadow-elegant hover:border-primary/60 transition-all duration-300">
         <img src={logoSymbol} alt="" className="size-8 md:size-9" />
         <span className="absolute -top-0.5 -right-0.5 flex size-3">
           <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-70 animate-ping" />

@@ -33,16 +33,12 @@ export const FactChips = ({
         return (
           <div
             key={f.kind + f.value}
-            className={`group inline-flex items-center gap-2.5 rounded-xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${pad} ${
-              isPrice
-                ? "border-success/30 hover:border-success/50 shadow-[0_0_14px_-6px_hsl(var(--success)/0.30)] hover:shadow-[0_0_20px_-4px_hsl(var(--success)/0.40)]"
-                : "border-border-strong/70 hover:border-gold/50"
-            }`}
+            className={`group inline-flex items-center gap-2.5 rounded-xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${pad} border-border-strong/70 hover:border-gold/50`}
           >
             <span
               className={`inline-flex items-center justify-center size-7 rounded-lg shrink-0 transition-colors ${
                 isPrice
-                  ? "bg-success/15 text-success group-hover:bg-success/25"
+                  ? "bg-success/15 text-success"
                   : "bg-background/60 text-gold/90"
               }`}
             >
