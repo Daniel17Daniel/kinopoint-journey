@@ -157,18 +157,6 @@ const Apply = () => {
 
           {/* Side */}
           <aside className="lg:col-span-5 space-y-4">
-            <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-surface to-background p-7">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary mb-3">
-                <Sparkles className="size-3.5" /> Пропозиція
-              </div>
-              <p className="font-display text-2xl font-bold leading-tight">
-                −50% на перший місяць навчання для нових учнів.
-              </p>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Достатньо, щоб без ризику відчути формат і зрозуміти, чи це ваше.
-              </p>
-            </div>
-
             <div className="rounded-2xl border border-border bg-surface p-7">
               <p className="font-display text-lg font-bold mb-2">Зручніше написати?</p>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">

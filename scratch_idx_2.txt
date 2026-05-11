@@ -1,0 +1,150 @@
+﻿                Залишити заявку
+              </Link>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      {/* FOR WHO */}
+      <section className="container-wide py-24 md:py-28">
+        <div className="max-w-2xl mb-12">
+          <div className="eyebrow mb-4">Для кого ця школа</div>
+          <h2 className="h-section text-balance">Можливо, це саме для вас.</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {FOR_WHO.map((t, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:bg-surface-2 transition-all duration-300">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
+                  <Check className="size-3.5" />
+                </span>
+                <p className="text-foreground/90 leading-relaxed">{t}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="container-wide py-20 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Про KinoPoint</div>
+            <h2 className="h-section text-balance">
+              Школа, де <span className="text-primary">людина важлива</span> не менше за результат.
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-5 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              KinoPoint — це простір, де творчість поєднується з практикою, а навчання будується на уважній роботі з людиною. Тут важливо не просто отримати досвід, а поступово відчути більше свободи, впевненості та ясності у власному прояві.
+            </p>
+            <p>
+              Ми поєднуємо різні творчі напрями — акторську майстерність, сценарну роботу та тележурналістику — і в кожному з них для нас важливі жива присутність, увага до деталей і реальний розвиток через практику.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold link-underline pt-2">
+              Дізнатися більше <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* MAIN DIRECTIONS */}
+      <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
+        <div className="container-wide">
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
+            <div className="max-w-xl">
+              <div className="eyebrow mb-4">Основні напрями</div>
+              <h2 className="h-section">Два повноцінні курси.</h2>
+            </div>
+            <button onClick={open} className="text-sm text-primary hover:text-primary-glow link-underline inline-flex items-center gap-1.5">
+              Не знаю, що обрати <Compass className="size-4" />
+            </button>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <Link
+              to="/acting"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[440px] flex flex-col justify-end"
+            >
+              <img src={atmActing} alt="" className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
+                <Theater className="size-3.5" /> Напрям 01
+              </div>
+              <div className="relative p-8 md:p-10">
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Акторська майстерність</h3>
+                <p className="text-foreground/80 text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                  Для життя і сцени. Курс про внутрішню свободу, живу присутність і роботу з тілом, голосом та дикцією.
+                </p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                  Перейти до напряму <ArrowRight className="size-4" />
+                </span>
+              </div>
+            </Link>
+
+            <Link
+              to="/screenwriting"
+              className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 min-h-[440px] flex flex-col justify-end"
+            >
+              <img src={atmJourn} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
+              <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
+                <BookOpen className="size-3.5" /> Напрям 02
+              </div>
+              <div className="relative p-8 md:p-10">
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Сценарне мистецтво</h3>
+                <p className="text-foreground/80 text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                  Від ідеї до сценарію. Авторський практичний курс для тих, хто хоче навчитися будувати історію та доводити її до готового проєкту.
+                </p>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                  Перейти до напряму <ArrowRight className="size-4" />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* JOURNALISM EXPRESS */}
+      <section className="container-wide py-24 md:py-28">
+        <Link
+          to="/journalism"
+          className="group relative block overflow-hidden rounded-3xl border border-gold/40 bg-gradient-to-br from-surface to-background p-8 md:p-12 hover:border-gold/70 transition-all"
+        >
+          <div className="absolute -top-32 -right-32 size-96 blur-3xl rounded-full bg-gold/10" />
+          <div className="relative grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7">
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+                  <Sparkles className="size-3" /> Експрес-курс
+                </span>
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-surface border border-border-strong text-foreground/75 text-xs font-semibold uppercase tracking-wider">
+                  Спеціальний формат
+                </span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-4 text-balance">
+                Тележурналістика
+              </h2>
+              <p className="text-foreground/80 text-lg leading-relaxed max-w-2xl mb-6">
+                Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
+              </p>
+              <div className="mb-6">
+                <FactChips facts={JOURN_FACTS} />
+              </div>
+              <span className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                Перейти до курсу <ArrowRight className="size-4" />
+              </span>
+            </div>
+            <div className="lg:col-span-5 flex justify-center">
+               </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="container-wide py-20 md:py-28">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <div className="eyebrow mb-4">Поширені запитання</div>
+            <h2 className="h-section text-balance">Те, про що питають найчастіше.</h2>
+          </div>

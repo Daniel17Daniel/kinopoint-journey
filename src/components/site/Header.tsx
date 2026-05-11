@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram, Compass } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
@@ -135,7 +135,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
           </div>
           <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-8 flex flex-col">
             <ul className="space-y-0">
-              {NAV_MOBILE.slice(0, 4).map((item) => (
+              {NAV_MOBILE.map((item) => (
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
@@ -152,52 +152,18 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                   </NavLink>
                 </li>
               ))}
-              <li>
-                <button
-                  onClick={() => {
-                    setOpen(false);
-                    setTimeout(() => onOpenHelper(), 220);
-                  }}
-                  className="w-full flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-border/40 text-primary"
-                >
-                  <Compass className="size-5" /> Підібрати напрям
-                </button>
-              </li>
-              {NAV_MOBILE.slice(4).map((item) => (
-                <li key={item.to}>
-                  <NavLink
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      cn(
-                        "flex items-center justify-between py-4 text-xl font-display font-semibold border-b border-border/40",
-                        isActive ? "text-primary" : "text-foreground"
-                      )
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="https://instagram.com/kinopoint.film"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 py-4 text-xl font-display font-semibold border-b border-border/40 text-foreground"
-                >
-                  <Instagram className="size-5" /> Instagram
-                </a>
-              </li>
             </ul>
-            <div style={{ marginBottom: "env(safe-area-inset-bottom)" }} className="mt-auto pt-6">
-              <Link
-                to="/apply"
-                onClick={() => setOpen(false)}
-                className="w-full py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-red inline-flex items-center justify-center gap-2"
+            <div style={{ marginBottom: "env(safe-area-inset-bottom)" }} className="mt-auto pt-6 flex flex-col items-center gap-4">
+              <a
+                href="https://instagram.com/kinopoint.film"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center justify-center size-10 rounded-full border border-border-strong hover:border-gold/60 transition-colors"
+                style={{ color: "#E1306C" }}
               >
-                Залишити заявку
-              </Link>
+                <Instagram className="size-5" />
+              </a>
             </div>
           </nav>
         </div>

@@ -35,7 +35,7 @@ export const FactChips = ({
             key={f.kind + f.value}
             className={`group inline-flex items-center gap-2.5 rounded-xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 ${pad} ${
               isPrice
-                ? "border-success/40 hover:border-success/70 shadow-[0_0_18px_-8px_hsl(var(--success)/0.55)] hover:shadow-[0_0_28px_-6px_hsl(var(--success)/0.65)] animate-pulse-glow"
+                ? "border-success/30 hover:border-success/50 shadow-[0_0_14px_-6px_hsl(var(--success)/0.30)] hover:shadow-[0_0_20px_-4px_hsl(var(--success)/0.40)]"
                 : "border-border-strong/70 hover:border-gold/50"
             }`}
           >

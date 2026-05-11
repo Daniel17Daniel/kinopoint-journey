@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/atmosphere-acting.jpg";
-import carouselImg from "@/assets/carousel-screenwriting.png";
 
 const FOR_WHO = [
   "для тих, хто хоче навчитися писати сценарії з нуля",
@@ -91,25 +90,6 @@ const Screenwriting = () => {
             <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
               <Instagram className="size-4" /> Написати в Instagram
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* VISUAL BANNER */}
-      <section className="w-full overflow-hidden">
-        <div className="relative h-[340px] md:h-[460px] overflow-hidden">
-          <img
-            src={carouselImg}
-            alt="Сценарне мистецтво — атмосфера курсу"
-            className="w-full h-full object-cover object-center opacity-80"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/30 to-background/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
-          <div className="absolute bottom-8 left-0 right-0 container-wide">
-            <p className="font-display text-xl md:text-2xl font-bold text-foreground/90 max-w-lg leading-snug">
-              Від ідеї до фінального сценарію —<br />
-              <span className="text-primary">крок за кроком.</span>
-            </p>
           </div>
         </div>
       </section>
