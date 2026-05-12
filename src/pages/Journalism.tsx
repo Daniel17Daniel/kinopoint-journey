@@ -4,10 +4,13 @@ import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
+import { CinematicIcon } from "@/components/site/CinematicIcon";
 import heroImg from "@/assets/journalism-hero.jpg";
 import carouselImg from "@/assets/carousel-journalism.png";
 import cardCamera from "@/assets/card-journalism-camera.png";
 import cardInterview from "@/assets/card-journalism-interview.png";
+import iconCamera from "@/assets/icon-camera.png";
+import iconMic from "@/assets/icon-mic.png";
 
 const AFTER = [
   "унікальний досвід праці на телебаченні",
@@ -104,11 +107,9 @@ const Journalism = () => {
         <div className="max-w-5xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 overflow-hidden grid md:grid-cols-12">
           <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
             <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-            <div className="relative text-center px-6">
-              <div className="inline-flex items-center justify-center size-24 rounded-full bg-gold/10 border border-gold/30 text-gold mb-4">
-                <Tv className="size-10" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
+            <div className="relative text-center px-6 mt-4">
+              <CinematicIcon src={iconCamera} size={100} delay={150} glow="gold" />
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-4">Фото викладача</p>
               <p className="text-sm text-muted-foreground/80 mt-1">з'явиться незабаром</p>
             </div>
           </div>
@@ -133,7 +134,10 @@ const Journalism = () => {
       </section>
 
       {/* FORMAT */}
-      <section className="container-wide py-20 md:py-28">
+      <section className="container-wide py-20 md:py-28 relative">
+        <div className="absolute top-10 right-10 md:top-20 md:right-20 pointer-events-none hidden md:block">
+          <CinematicIcon src={iconMic} size={90} delay={400} glow="red" speed="slow" />
+        </div>
         <div className="max-w-2xl mb-12">
           <div className="eyebrow mb-4">Як проходить курс</div>
           <h2 className="h-section text-balance">Формат — практика в медіасередовищі.</h2>
