@@ -75,7 +75,7 @@ export const CinematicIcon = ({
           height: size,
           objectFit: "contain",
           animationDelay: `${delay}ms`,
-          filter: "drop-shadow(0 8px 24px hsl(0 0% 0% / 0.4))",
+          mixBlendMode: "screen",
           // Shimmer delay matches float delay
         }}
       />
