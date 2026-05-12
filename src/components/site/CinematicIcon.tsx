@@ -1,3 +1,5 @@
+import React from "react";
+
 /**
  * CinematicIcon — premium floating 3D icon wrapper.
  * Renders an image asset with an optional ambient glow ring,
@@ -18,7 +20,6 @@ interface CinematicIconProps {
   className?: string;
 }
 
-import React from "react";
 
 const GLOW_STYLES: Record<"gold" | "red" | "none", React.CSSProperties> = {
   gold: {
