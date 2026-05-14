@@ -73,6 +73,20 @@ const Apply = () => {
           <div className="lg:col-span-7">
             {!submitted ? (
               <form onSubmit={submit} noValidate className="rounded-3xl border border-border-strong bg-surface p-7 md:p-10 shadow-elegant space-y-6">
+                <div className="flex items-start gap-3 rounded-2xl border border-gold/40 bg-gold/[0.06] p-4 md:p-5">
+                  <span className="inline-flex items-center justify-center size-9 rounded-xl bg-gold/15 text-gold shrink-0">
+                    <Sparkles className="size-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-display font-semibold text-foreground text-sm md:text-base leading-snug">
+                      Спеціальна пропозиція для перших учнів групи
+                    </p>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mt-1">
+                      Залиште заявку зараз — і ми збережемо для вас знижку на перший місяць навчання.
+                    </p>
+                  </div>
+                </div>
+
                 <Field label="Ім’я" error={errors.name}>
                   <input
                     value={name}
