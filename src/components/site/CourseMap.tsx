@@ -46,9 +46,15 @@ export const CourseMap = ({
   return (
     <div className="relative">
       {/* Decorative ambient glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[520px] rounded-full bg-gradient-radial from-primary/10 via-transparent to-transparent blur-3xl opacity-60" />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[680px] rounded-full bg-gradient-radial from-gold/5 via-transparent to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[520px] blur-3xl opacity-60"
+          style={{ background: "radial-gradient(circle, hsl(var(--primary) / 0.18), transparent 70%)" }}
+        />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[680px] blur-3xl"
+          style={{ background: "radial-gradient(circle, hsl(var(--gold) / 0.08), transparent 70%)" }}
+        />
       </div>
 
       {/* Center card */}
