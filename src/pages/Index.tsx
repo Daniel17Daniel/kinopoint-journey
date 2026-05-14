@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users,
+  Heart, Mic, Lightbulb, Users, Award, Quote,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
