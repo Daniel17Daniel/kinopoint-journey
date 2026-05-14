@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users,
+  Heart, Mic, Lightbulb, Users, Award, Quote,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
@@ -44,6 +44,12 @@ const FOR_WHO_GROUPS = [
       "готові досліджувати себе у безпечній групі",
     ],
   },
+];
+
+const TESTIMONIALS = [
+  { initials: "МК", name: "Марія К.", course: "Акторська майстерність", text: "Прийшла зі страшним затиском перед людьми. За три місяці відчула себе вільнішою — і на сцені, і в звичайних розмовах." },
+  { initials: "ОР", name: "Олексій Р.", course: "Сценарне мистецтво", text: "Нарешті зрозумів, як з ідеї зробити повноцінну історію. Викладач дійсно вміє пояснювати структуру сценарію." },
+  { initials: "ДС", name: "Дар'я С.", course: "Тележурналістика", text: "Один місяць — і я вже знімала свій перший репортаж. Практики набагато більше, ніж очікувала." },
 ];
 
 const FAQ = [
@@ -105,6 +111,18 @@ const Index = () => {
               >
                 Залишити заявку
               </Link>
+            </div>
+
+            <div className="border-t border-border/30 mt-8 pt-6 flex flex-wrap gap-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <Users className="size-4 text-gold" /> До 12 учнів у групі
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <Award className="size-4 text-gold" /> Сертифікат після курсу
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <MapPin className="size-4 text-gold" /> Офлайн · Одеса
+              </span>
             </div>
           </div>
         </div>
@@ -277,6 +295,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Відгуки учнів</div>
+            <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.initials} className="p-7 rounded-2xl bg-surface border border-border-strong flex flex-col">
+                <Quote className="size-8 text-gold mb-4" />
+                <p className="text-foreground/90 leading-relaxed mb-6 flex-1">{t.text}</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <span className="inline-flex items-center justify-center size-10 rounded-full bg-gold/15 text-gold text-sm font-bold shrink-0">
+                    {t.initials}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-display font-semibold text-sm truncate">{t.name}</p>
+                  </div>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full border border-primary/50 text-primary bg-primary/15 text-[10px] uppercase tracking-wider font-semibold shrink-0">
+                    {t.course}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="container-wide py-20 md:py-28">
         <div className="grid lg:grid-cols-12 gap-10">
@@ -343,7 +390,7 @@ const Index = () => {
                 </span>
                 <div className="min-w-0">
                   <p className="eyebrow mb-1">Адреса</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Надішлемо після підтвердження заявки.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Одеса, центр міста. Точну адресу надсилаємо після підтвердження заявки.</p>
                 </div>
               </div>
             </div>
@@ -362,17 +409,14 @@ const Index = () => {
           </div>
           <div className="lg:col-span-7 min-w-0">
             <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface w-full min-h-[240px] lg:min-h-[320px] lg:h-full">
-              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-gold/[0.08]" />
-              <div className="relative h-full min-h-[240px] flex flex-col items-center justify-center text-center px-6">
-                <span className="inline-flex items-center justify-center size-14 rounded-full bg-background/70 border border-border-strong text-primary mb-4">
-                  <MapPin className="size-6" />
-                </span>
-                <p className="font-display text-xl font-bold mb-2">Карта</p>
-                <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                  Інтерактивна карта з'явиться після підтвердження локації студії.
-                </p>
-              </div>
+              <iframe
+                src="https://www.google.com/maps?q=%D0%9E%D0%B4%D0%B5%D1%81%D0%B0%2C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KinoPoint Location"
+              />
             </div>
           </div>
         </div>
