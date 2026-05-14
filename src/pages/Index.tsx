@@ -1,28 +1,22 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Calendar, Send,
+  Heart, Mic, Lightbulb, Users,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-stage-cold.png";
-import atmActing from "@/assets/atmosphere-acting.jpg";
-import atmJourn from "@/assets/atmosphere-journalism.jpg";
-import liveStudio from "@/assets/live-journ-studio.jpg";
+import cardActing from "@/assets/card-acting-stage.jpg";
+import cardScreen from "@/assets/card-screen-desk.jpg";
+import cardJourn from "@/assets/card-journ-studio.jpg";
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
   { icon: Mic, t: "Голос і подача", d: "Робота з тілом, голосом і дикцією — щоб звучати вільно і впевнено." },
   { icon: Lightbulb, t: "Своя історія", d: "Розуміння драматургії — як народжується ідея і стає сценарієм." },
   { icon: Users, t: "Безпечна група", d: "Камерний формат, де можна пробувати, помилятися й рости разом." },
-];
-
-const HOW_IT_WORKS = [
-  { n: "01", t: "Оберіть напрям", d: "Дослідіть сторінки курсів або пройдіть короткий орієнтир.", icon: Compass },
-  { n: "02", t: "Залиште заявку", d: "Коротка форма — ім'я, контакт і напрям. Без іспитів і прослуховувань.", icon: Send },
-  { n: "03", t: "Ми зв'яжемося", d: "Спокійно з'ясуємо, чи цей формат вам підходить, і розкажемо про деталі та старт групи.", icon: Calendar },
 ];
 
 const FOR_WHO_GROUPS = [
@@ -126,9 +120,9 @@ const Index = () => {
           {FOR_WHO_GROUPS.map((g) => {
             const Icon = g.icon;
             return (
-              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong hover:bg-surface-2 transition-all duration-300">
+              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border-strong hover:border-gold/40 hover:bg-surface-2 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-primary/25 to-primary/10 text-primary border border-primary/30 shadow-red shrink-0">
                     <Icon className="size-4" />
                   </span>
                   <p className="font-display font-semibold text-base">{g.title}</p>
@@ -136,7 +130,7 @@ const Index = () => {
                 <ul className="space-y-2">
                   {g.items.map((t) => (
                     <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/85 leading-relaxed">
-                      <Check className="size-3.5 text-success shrink-0 mt-1" />
+                      <Check className="size-3.5 text-gold shrink-0 mt-1" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -187,46 +181,57 @@ const Index = () => {
             {[
               {
                 to: "/acting",
-                img: atmActing,
+                img: cardActing,
                 tag: "Основний курс",
                 tagIcon: Theater,
-                tagStyle: "border-border-strong text-foreground/85",
+                tagAccent: "red" as const,
                 title: "Акторська майстерність",
                 desc: "Для життя і сцени. Внутрішня свобода, тіло, голос, дикція.",
                 meta: "11 місяців · 2500 грн / міс",
               },
               {
                 to: "/screenwriting",
-                img: atmJourn,
+                img: cardScreen,
                 tag: "Основний курс",
                 tagIcon: BookOpen,
-                tagStyle: "border-border-strong text-foreground/85",
+                tagAccent: "red" as const,
                 title: "Сценарне мистецтво",
                 desc: "Від ідеї до готового сценарію. Авторський практичний курс.",
                 meta: "3 місяці · 4000 грн / міс",
               },
               {
                 to: "/journalism",
-                img: liveStudio,
+                img: cardJourn,
                 tag: "Експрес-курс",
                 tagIcon: Sparkles,
-                tagStyle: "border-gold/40 text-gold bg-gold/10",
+                tagAccent: "gold" as const,
                 title: "Тележурналістика",
                 desc: "Реальна медійна практика. Робота в кадрі та зйомки.",
                 meta: "1 місяць · 3000 грн / міс",
               },
             ].map((c) => {
               const TagIcon = c.tagIcon;
+              const tagClass =
+                c.tagAccent === "gold"
+                  ? "border-gold/50 text-gold bg-gold/15 shadow-gold"
+                  : "border-primary/50 text-primary bg-primary/15 shadow-red";
               return (
                 <Link
                   key={c.to}
                   to={c.to}
-                  className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 transition-all duration-500 flex flex-col"
+                  className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 flex flex-col"
                 >
-                  <div className="relative h-40 sm:h-44 overflow-hidden">
-                    <img src={c.img} alt="" className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
-                    <div className={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/70 backdrop-blur-md border text-[10px] font-semibold uppercase tracking-wider ${c.tagStyle}`}>
+                  <div className="relative h-44 sm:h-48 overflow-hidden">
+                    <img
+                      src={c.img}
+                      alt=""
+                      loading="lazy"
+                      width={1024}
+                      height={768}
+                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
+                    <div className={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border text-[10px] font-semibold uppercase tracking-wider transition-all group-hover:scale-105 ${tagClass}`}>
                       <TagIcon className="size-3" /> {c.tag}
                     </div>
                   </div>
@@ -245,30 +250,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="bg-surface/40 border-y border-border/60 py-24 md:py-28">
-        <div className="container-wide">
-          <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-4">Як це працює</div>
-            <h2 className="h-section text-balance">Три кроки — і ми разом.</h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {HOW_IT_WORKS.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div key={s.n} className="group p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                  <span className="font-display text-4xl font-bold text-primary/20 block mb-4">{s.n}</span>
-                  <span className="inline-flex items-center justify-center size-11 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="size-5" />
-                  </span>
-                  <p className="font-display font-semibold text-lg mb-2">{s.t}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* HOW IT WORKS — removed (redundant) */}
+
 
       {/* WHAT TRAINING GIVES */}
       <section className="container-wide py-24 md:py-28">
