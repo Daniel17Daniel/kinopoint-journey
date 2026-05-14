@@ -4,7 +4,6 @@ import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Hea
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
-import { CinematicIcon } from "@/components/site/CinematicIcon";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-acting.png";
@@ -12,8 +11,6 @@ import cardStage from "@/assets/card-acting-stage.png";
 import cardExpression from "@/assets/card-acting-expression.png";
 import cardVoice from "@/assets/card-acting-voice.png";
 import cardGroup from "@/assets/card-acting-group.png";
-import iconMask from "@/assets/icon-mask.png";
-import iconSpotlight from "@/assets/icon-spotlight.png";
 
 const FOR_WHO = [
   "хоче вийти на сцену або почати з нуля",
@@ -151,12 +148,9 @@ const Acting = () => {
           <img src={atmImg} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="container-wide relative">
-          <div className="max-w-2xl mb-12 flex items-start gap-6">
-            <div className="flex-1">
-              <div className="eyebrow mb-4">Як проходять заняття</div>
-              <h2 className="h-section text-balance">Чотири живі лінії роботи на кожному занятті.</h2>
-            </div>
-            <CinematicIcon src={iconMask} size={88} delay={200} glow="red" speed="slow" className="hidden md:flex mt-2" />
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Як проходять заняття</div>
+            <h2 className="h-section text-balance">Чотири живі лінії роботи на кожному занятті.</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {HOW.map((h) => {
@@ -254,9 +248,6 @@ const Acting = () => {
         <div className="mt-14 relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14 text-center">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-96 blur-3xl rounded-full bg-primary/15" />
           <div className="relative max-w-xl mx-auto">
-            <div className="flex justify-center mb-4">
-              <CinematicIcon src={iconSpotlight} size={72} delay={0} glow="red" />
-            </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight text-balance">
               Готові спробувати? <span className="text-primary">Перший крок — найлегший.</span>
             </h3>

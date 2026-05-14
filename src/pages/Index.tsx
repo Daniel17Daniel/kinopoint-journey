@@ -8,13 +8,9 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
-import { CinematicIcon } from "@/components/site/CinematicIcon";
 import heroImg from "@/assets/hero-stage-cold.png";
 import atmActing from "@/assets/atmosphere-acting.jpg";
 import atmJourn from "@/assets/atmosphere-journalism.jpg";
-import iconSpotlight from "@/assets/icon-spotlight.png";
-import iconCamera from "@/assets/icon-camera.png";
-import iconScript from "@/assets/icon-script.png";
 
 const JOURN_FACTS: Fact[] = [
   { kind: "duration", value: "1 місяць" },
@@ -175,10 +171,6 @@ const Index = () => {
               <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <Theater className="size-3.5" /> Напрям 01
               </div>
-              {/* 3D spotlight icon — floats in the upper-right corner */}
-              <div className="absolute top-4 right-6 pointer-events-none">
-                <CinematicIcon src={iconSpotlight} size={80} delay={0} glow="red" />
-              </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Акторська майстерність</h3>
                 <p className="text-foreground/80 text-base md:text-lg mb-6 max-w-md leading-relaxed">
@@ -198,10 +190,6 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/30" />
               <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border-strong text-foreground/85 text-xs font-semibold uppercase tracking-wider">
                 <BookOpen className="size-3.5" /> Напрям 02
-              </div>
-              {/* 3D script icon — floats in the upper-right corner */}
-              <div className="absolute top-4 right-6 pointer-events-none">
-                <CinematicIcon src={iconScript} size={80} delay={1500} glow="gold" />
               </div>
               <div className="relative p-8 md:p-10">
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-3">Сценарне мистецтво</h3>
@@ -247,8 +235,13 @@ const Index = () => {
                 Перейти до курсу <ArrowRight className="size-4" />
               </span>
             </div>
-            <div className="lg:col-span-4 flex justify-center items-center">
-              <CinematicIcon src={iconCamera} size={120} delay={300} glow="gold" speed="slow" />
+            <div className="lg:col-span-4 hidden lg:flex justify-center items-center">
+              <div className="relative size-40 rounded-2xl border border-gold/30 bg-background/40 flex items-center justify-center">
+                <Tv className="size-14 text-gold/80" />
+                <div className="absolute -top-2 -right-2 size-8 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center">
+                  <Sparkles className="size-3.5 text-gold" />
+                </div>
+              </div>
             </div>
           </div>
         </Link>
