@@ -206,7 +206,7 @@ const Journalism = () => {
         <div className="mt-10 rounded-2xl border border-gold/40 bg-gradient-to-br from-gold/10 to-transparent p-7 md:p-9 flex items-start gap-4">
           <Star className="size-6 text-gold shrink-0 mt-1" />
           <p className="font-display text-lg md:text-xl font-semibold leading-snug">
-            Кращі студенти отримають можливість працевлаштування на одеському телеканалі.
+            Кращі студенти отримують можливість працевлаштування на одеському телеканалі.
           </p>
         </div>
 
