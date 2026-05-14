@@ -1,23 +1,16 @@
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Check, Sparkles, Theater, BookOpen, Tv, Compass, Instagram, MapPin,
+  ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
   Heart, Mic, Lightbulb, Users, Calendar, Send,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FactChips, Fact } from "@/components/site/FactChips";
 import heroImg from "@/assets/hero-stage-cold.png";
 import atmActing from "@/assets/atmosphere-acting.jpg";
 import atmJourn from "@/assets/atmosphere-journalism.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
-
-const JOURN_FACTS: Fact[] = [
-  { kind: "duration", value: "1 місяць" },
-  { kind: "frequency", value: "2 рази на тиждень" },
-  { kind: "price", value: "3000 грн / місяць" },
-];
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
