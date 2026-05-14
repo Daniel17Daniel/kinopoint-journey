@@ -4,12 +4,10 @@ import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, C
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
-import { CinematicIcon } from "@/components/site/CinematicIcon";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 import carouselImg from "@/assets/carousel-screenwriting.png";
 import cardWriting from "@/assets/card-screen-writing.png";
 import cardLaptop from "@/assets/card-screen-laptop.png";
-import iconScript from "@/assets/icon-script.png";
 
 const FOR_WHO = [
   "для тих, хто хоче навчитися писати сценарії з нуля",
@@ -183,9 +181,11 @@ const Screenwriting = () => {
         <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-surface/60 overflow-hidden grid md:grid-cols-12">
           <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
             <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-            <div className="relative text-center px-6 mt-4">
-              <CinematicIcon src={iconScript} size={96} delay={0} glow="gold" />
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mt-4">Фото викладача</p>
+            <div className="relative text-center px-6">
+              <div className="inline-flex items-center justify-center size-24 rounded-full bg-gold/10 border border-gold/30 text-gold mb-4">
+                <PenLine className="size-10" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
               <p className="text-sm text-muted-foreground/80 mt-1">з’явиться незабаром</p>
             </div>
           </div>
