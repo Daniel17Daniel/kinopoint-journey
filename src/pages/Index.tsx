@@ -295,6 +295,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-12">
+            <div className="eyebrow mb-4">Відгуки учнів</div>
+            <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.initials} className="p-7 rounded-2xl bg-surface border border-border-strong flex flex-col">
+                <Quote className="size-8 text-gold mb-4" />
+                <p className="text-foreground/90 leading-relaxed mb-6 flex-1">{t.text}</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <span className="inline-flex items-center justify-center size-10 rounded-full bg-gold/15 text-gold text-sm font-bold shrink-0">
+                    {t.initials}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-display font-semibold text-sm truncate">{t.name}</p>
+                  </div>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full border border-primary/50 text-primary bg-primary/15 text-[10px] uppercase tracking-wider font-semibold shrink-0">
+                    {t.course}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="container-wide py-20 md:py-28">
         <div className="grid lg:grid-cols-12 gap-10">
