@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool, PenLine, AlignLeft, Users, Layers, MessageSquare, Lightbulb } from "lucide-react";
+import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, Clapperboard, PenTool, PenLine, AlignLeft, Users, Layers, MessageSquare, Lightbulb, FileText, Sparkles } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
-import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
+import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 import liveLaptop from "@/assets/live-screen-laptop.jpg";
 import liveNotes from "@/assets/live-screen-notes.jpg";
@@ -55,13 +55,20 @@ const RECEIVE = [
   "матеріал для подальшого просування або подачі",
 ];
 
-const PROCESS_CARDS: CarouselCard[] = [
-  { image: liveNotes, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею — стисло і точно." },
-  { image: liveLaptop, title: "Структура і синопсис", text: "Будуємо каркас історії покрок за кроком." },
-  { image: liveNotes, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
-  { image: liveLaptop, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним ритмом." },
-  { image: liveNotes, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток проєкту." },
-  { image: liveLaptop, title: "Готовий сценарій", text: "Виходите з проєктом, з яким можна працювати далі." },
+const PROCESS_CENTER: CourseMapCenter = {
+  icon: PenLine,
+  eyebrow: "Як ми працюємо",
+  title: "Від ідеї — до завершеного сценарію",
+  text: "Кожен крок — практичний модуль, який наближає вас до готового проєкту.",
+};
+
+const PROCESS_NODES: CourseMapNode[] = [
+  { icon: Lightbulb, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею.", accent: "gold", pulse: true },
+  { icon: Layers, title: "Структура і синопсис", text: "Будуємо каркас історії.", accent: "red" },
+  { icon: Users, title: "Персонажі", text: "Характери, мотивація, конфлікт.", accent: "gold" },
+  { icon: MessageSquare, title: "Сцени і діалоги", text: "Живі сцени з правильним ритмом.", accent: "red" },
+  { icon: FileText, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток.", accent: "gold" },
+  { icon: Clapperboard, title: "Готовий сценарій", text: "Проєкт, з яким можна працювати далі.", accent: "green" },
 ];
 
 const FACTS: Fact[] = [
@@ -166,13 +173,13 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      {/* PROCESS CAROUSEL — replaces SKILLS + HOW lists */}
-      <section className="container-wide py-20 md:py-24">
-        <div className="max-w-2xl mb-10">
+      {/* PROCESS — Course Map */}
+      <section className="container-wide py-20 md:py-28 relative overflow-hidden">
+        <div className="max-w-2xl mb-12">
           <div className="eyebrow mb-4">Як ми працюємо</div>
-          <h2 className="h-section text-balance">Від ідеї до готового сценарію — крок за кроком.</h2>
+          <h2 className="h-section text-balance">Карта курсу — від ідеї до готового сценарію.</h2>
         </div>
-        <CourseCarousel cards={PROCESS_CARDS} />
+        <CourseMap center={PROCESS_CENTER} nodes={PROCESS_NODES} />
       </section>
 
       {/* TEACHER */}
