@@ -121,7 +121,7 @@ const Acting = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={carouselImg}
+            src={liveStage}
             alt="Акторська майстерність — атмосфера занять"
             className="w-full h-full object-cover object-center opacity-80"
           />
@@ -142,16 +142,27 @@ const Acting = () => {
           <h2 className="h-section text-balance">Цей напрям — для тих, хто…</h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {FOR_WHO.map((t, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong transition-colors">
-              <div className="flex items-start gap-3">
-                <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
-                  <Check className="size-3.5" />
-                </span>
-                <p className="text-foreground/90 leading-relaxed">{t}</p>
+          {FOR_WHO_GROUPS.map((g) => {
+            const Icon = g.icon;
+            return (
+              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary shrink-0">
+                    <Icon className="size-4" />
+                  </span>
+                  <p className="font-display font-semibold text-base">{g.title}</p>
+                </div>
+                <ul className="space-y-2">
+                  {g.items.map((t) => (
+                    <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/85 leading-relaxed">
+                      <Check className="size-3.5 text-success shrink-0 mt-1" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
