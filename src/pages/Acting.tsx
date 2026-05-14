@@ -6,21 +6,34 @@ import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
-import carouselImg from "@/assets/carousel-acting.png";
-import cardStage from "@/assets/card-acting-stage.png";
-import cardExpression from "@/assets/card-acting-expression.png";
-import cardVoice from "@/assets/card-acting-voice.png";
-import cardGroup from "@/assets/card-acting-group.png";
+import liveStage from "@/assets/live-acting-stage.jpg";
+import liveVoice from "@/assets/live-acting-voice.jpg";
 
-const FOR_WHO = [
-  "хоче вийти на сцену або почати з нуля",
-  "хоче почуватися впевненіше в житті",
-  "відчуває сором’язливість або внутрішній затиск",
-  "хоче краще відчувати своє тіло і голос",
-  "шукає безпечний простір, де можна пробувати і помилятися",
-  "хоче спробувати щось нове",
-  "готовий поступово виходити із зони звичного і досліджувати себе",
-  "хоче бути живим у кадрі та на сцені",
+const FOR_WHO_GROUPS = [
+  {
+    icon: Sparkles,
+    title: "Перші кроки",
+    items: [
+      "хоче вийти на сцену або почати з нуля",
+      "хоче спробувати щось нове",
+    ],
+  },
+  {
+    icon: Heart,
+    title: "Внутрішня свобода",
+    items: [
+      "відчуває сором'язливість або внутрішній затиск",
+      "шукає безпечний простір, де можна пробувати",
+    ],
+  },
+  {
+    icon: Theater,
+    title: "Жива присутність",
+    items: [
+      "хоче краще відчувати своє тіло і голос",
+      "хоче бути живим у кадрі та на сцені",
+    ],
+  },
 ];
 
 const HOW = [
@@ -31,10 +44,10 @@ const HOW = [
 ];
 
 const GIVES_CARDS: CarouselCard[] = [
-  { image: cardStage, title: "Сценічна присутність", text: "Навчишся бути живим у кадрі і на сцені." },
-  { image: cardVoice, title: "Голос і дикція", text: "Чіткість, інтонація і виразність." },
-  { image: cardExpression, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості." },
-  { image: cardGroup, title: "Безпечна група", text: "Камерний формат, де можна пробувати і помилятися." },
+  { image: liveStage, title: "Сценічна присутність", text: "Навчишся бути живим у кадрі і на сцені." },
+  { image: liveVoice, title: "Голос і дикція", text: "Чіткість, інтонація і виразність." },
+  { image: liveStage, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості." },
+  { image: liveVoice, title: "Безпечна група", text: "Камерний формат, де можна пробувати і помилятися." },
 ];
 
 const AFTER = [
@@ -108,7 +121,7 @@ const Acting = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={carouselImg}
+            src={liveStage}
             alt="Акторська майстерність — атмосфера занять"
             className="w-full h-full object-cover object-center opacity-80"
           />
@@ -129,16 +142,27 @@ const Acting = () => {
           <h2 className="h-section text-balance">Цей напрям — для тих, хто…</h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {FOR_WHO.map((t, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong transition-colors">
-              <div className="flex items-start gap-3">
-                <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
-                  <Check className="size-3.5" />
-                </span>
-                <p className="text-foreground/90 leading-relaxed">{t}</p>
+          {FOR_WHO_GROUPS.map((g) => {
+            const Icon = g.icon;
+            return (
+              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary shrink-0">
+                    <Icon className="size-4" />
+                  </span>
+                  <p className="font-display font-semibold text-base">{g.title}</p>
+                </div>
+                <ul className="space-y-2">
+                  {g.items.map((t) => (
+                    <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/85 leading-relaxed">
+                      <Check className="size-3.5 text-success shrink-0 mt-1" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

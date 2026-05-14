@@ -5,9 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/journalism-hero.jpg";
-import carouselImg from "@/assets/carousel-journalism.png";
-import cardCamera from "@/assets/card-journalism-camera.png";
-import cardInterview from "@/assets/card-journalism-interview.png";
+import liveInterview from "@/assets/live-journ-interview.jpg";
+import liveStudio from "@/assets/live-journ-studio.jpg";
 
 const AFTER = [
   "унікальний досвід праці на телебаченні",
@@ -30,12 +29,12 @@ const FORMAT = [
 ];
 
 const GIVES_CARDS: CarouselCard[] = [
-  { image: cardCamera, title: "Робота в кадрі", text: "Досвід природної подачі перед камерою." },
-  { image: cardInterview, title: "Інтерв'ю і репортаж", text: "Навчишся запитувати і вести живу розмову." },
-  { image: cardCamera, title: "Реальні зйомки", text: "Виходи у місто, реальні події і герої." },
-  { image: cardInterview, title: "Кухня телеканалу", text: "Як влаштована робота телебачення зсередини." },
-  { image: cardCamera, title: "Портфоліо", text: "Матеріал, з яким можна працювати далі." },
-  { image: cardInterview, title: "Рекомендації", text: "Від практиків з реального медійного середовища." },
+  { image: liveStudio, title: "Робота в кадрі", text: "Досвід природної подачі перед камерою." },
+  { image: liveInterview, title: "Інтерв'ю і репортаж", text: "Навчишся запитувати і вести живу розмову." },
+  { image: liveInterview, title: "Реальні зйомки", text: "Виходи у місто, реальні події і герої." },
+  { image: liveStudio, title: "Кухня телеканалу", text: "Як влаштована робота телебачення зсередини." },
+  { image: liveInterview, title: "Портфоліо", text: "Матеріал, з яким можна працювати далі." },
+  { image: liveStudio, title: "Рекомендації", text: "Від практиків з реального медійного середовища." },
 ];
 
 const Journalism = () => {
@@ -84,7 +83,7 @@ const Journalism = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={carouselImg}
+            src={liveInterview}
             alt="Тележурналістика — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />

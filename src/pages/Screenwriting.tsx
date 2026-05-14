@@ -5,9 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
 import heroImg from "@/assets/atmosphere-acting.jpg";
-import carouselImg from "@/assets/carousel-screenwriting.png";
-import cardWriting from "@/assets/card-screen-writing.png";
-import cardLaptop from "@/assets/card-screen-laptop.png";
+import liveLaptop from "@/assets/live-screen-laptop.jpg";
+import liveNotes from "@/assets/live-screen-notes.jpg";
 
 const FOR_WHO = [
   "для тих, хто хоче навчитися писати сценарії з нуля",
@@ -57,12 +56,12 @@ const RECEIVE = [
 ];
 
 const PROCESS_CARDS: CarouselCard[] = [
-  { image: cardWriting, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею — стисло і точно." },
-  { image: cardLaptop, title: "Структура і синопсис", text: "Будуємо каркас історії покрок за кроком." },
-  { image: cardWriting, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
-  { image: cardLaptop, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним ритмом." },
-  { image: cardWriting, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток проєкту." },
-  { image: cardLaptop, title: "Готовий сценарій", text: "Виходите з проєктом, з яким можна працювати далі." },
+  { image: liveNotes, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею — стисло і точно." },
+  { image: liveLaptop, title: "Структура і синопсис", text: "Будуємо каркас історії покрок за кроком." },
+  { image: liveNotes, title: "Персонажі", text: "Прописуємо характери, мотивацію і конфлікт." },
+  { image: liveLaptop, title: "Сцени і діалоги", text: "Пишемо живі сцени з правильним ритмом." },
+  { image: liveNotes, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток проєкту." },
+  { image: liveLaptop, title: "Готовий сценарій", text: "Виходите з проєктом, з яким можна працювати далі." },
 ];
 
 const FACTS: Fact[] = [
@@ -111,7 +110,7 @@ const Screenwriting = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={carouselImg}
+            src={liveLaptop}
             alt="Сценарне мистецтво — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />
