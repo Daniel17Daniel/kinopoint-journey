@@ -106,6 +106,18 @@ const Index = () => {
                 Залишити заявку
               </Link>
             </div>
+
+            <div className="border-t border-border/30 mt-8 pt-6 flex flex-wrap gap-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <Users className="size-4 text-gold" /> До 12 учнів у групі
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <Award className="size-4 text-gold" /> Сертифікат після курсу
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
+                <MapPin className="size-4 text-gold" /> Офлайн · Одеса
+              </span>
+            </div>
           </div>
         </div>
       </section>
