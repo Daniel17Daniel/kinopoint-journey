@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video } from "lucide-react";
+import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video, Newspaper, Award } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
-import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
+import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
 import heroImg from "@/assets/journalism-hero.jpg";
 import liveInterview from "@/assets/live-journ-interview.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
@@ -28,13 +28,20 @@ const FORMAT = [
   { icon: Tv, t: "Кухня телеканалу", d: "Як влаштована робота телебачення зсередини." },
 ];
 
-const GIVES_CARDS: CarouselCard[] = [
-  { image: liveStudio, title: "Робота в кадрі", text: "Досвід природної подачі перед камерою." },
-  { image: liveInterview, title: "Інтерв'ю і репортаж", text: "Навчишся запитувати і вести живу розмову." },
-  { image: liveInterview, title: "Реальні зйомки", text: "Виходи у місто, реальні події і герої." },
-  { image: liveStudio, title: "Кухня телеканалу", text: "Як влаштована робота телебачення зсередини." },
-  { image: liveInterview, title: "Портфоліо", text: "Матеріал, з яким можна працювати далі." },
-  { image: liveStudio, title: "Рекомендації", text: "Від практиків з реального медійного середовища." },
+const GIVES_CENTER: CourseMapCenter = {
+  icon: Tv,
+  eyebrow: "Що дає курс",
+  title: "Реальна медійна практика",
+  text: "Зануритись у роботу телеканалу зсередини, спробувати себе в кадрі і отримати перший досвід.",
+};
+
+const GIVES_NODES: CourseMapNode[] = [
+  { icon: Camera, title: "Робота в кадрі", text: "Природна подача перед камерою.", accent: "red", pulse: true },
+  { icon: Mic, title: "Інтерв'ю та репортаж", text: "Запитувати і вести живу розмову.", accent: "gold" },
+  { icon: Video, title: "Реальні зйомки", text: "Виходи у місто, реальні події і герої.", accent: "red" },
+  { icon: Tv, title: "Кухня телеканалу", text: "Як влаштоване ТБ зсередини.", accent: "gold" },
+  { icon: Newspaper, title: "Портфоліо", text: "Матеріал, з яким можна працювати далі.", accent: "red" },
+  { icon: Award, title: "Рекомендації", text: "Від практиків медійного середовища.", accent: "green" },
 ];
 
 const Journalism = () => {
@@ -121,13 +128,13 @@ const Journalism = () => {
         </div>
       </section>
 
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-24">
+      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28 relative overflow-hidden">
         <div className="container-wide">
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl mb-12">
             <div className="eyebrow mb-4">Що дає курс</div>
-            <h2 className="h-section text-balance">Реальна медійна практика — без теоретичної води.</h2>
+            <h2 className="h-section text-balance">Карта курсу — практика, а не теорія.</h2>
           </div>
-          <CourseCarousel cards={GIVES_CARDS} />
+          <CourseMap center={GIVES_CENTER} nodes={GIVES_NODES} />
         </div>
       </section>
 

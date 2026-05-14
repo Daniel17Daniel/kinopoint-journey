@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Heart, Sparkles, Smile, Volume2, Dumbbell } from "lucide-react";
+import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Heart, Sparkles, Smile, Volume2, Dumbbell, Flame, Eye } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
-import { CourseCarousel, CarouselCard } from "@/components/site/CourseCarousel";
+import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
 import liveStage from "@/assets/live-acting-stage.jpg";
@@ -43,11 +43,20 @@ const HOW = [
   { icon: Theater, t: "Сценічна практика", d: "Етюди, сцени, акторські вправи в безпечній групі." },
 ];
 
-const GIVES_CARDS: CarouselCard[] = [
-  { image: liveStage, title: "Сценічна присутність", text: "Навчишся бути живим у кадрі і на сцені." },
-  { image: liveVoice, title: "Голос і дикція", text: "Чіткість, інтонація і виразність." },
-  { image: liveStage, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості." },
-  { image: liveVoice, title: "Безпечна група", text: "Камерний формат, де можна пробувати і помилятися." },
+const GIVES_CENTER: CourseMapCenter = {
+  icon: Theater,
+  eyebrow: "Що дає курс",
+  title: "Жива присутність — на сцені і в житті",
+  text: "Курс будує впевненість зсередини: тіло, голос, увага й свобода самовираження.",
+};
+
+const GIVES_NODES: CourseMapNode[] = [
+  { icon: Activity, title: "Сценічна присутність", text: "Бути живим у кадрі і на сцені.", accent: "red", pulse: true },
+  { icon: Volume2, title: "Голос і дикція", text: "Чіткість, інтонація і виразність.", accent: "gold" },
+  { icon: Heart, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості.", accent: "red" },
+  { icon: Users, title: "Безпечна група", text: "Камерний формат, де можна пробувати.", accent: "gold" },
+  { icon: Flame, title: "Емоційна гнучкість", text: "Робота з почуттями, не проти них.", accent: "red" },
+  { icon: Eye, title: "Контакт із собою", text: "Відчувати, обирати, проявлятися.", accent: "green" },
 ];
 
 const AFTER = [
@@ -193,13 +202,13 @@ const Acting = () => {
         </div>
       </section>
 
-      {/* GIVES */}
-      <section className="container-wide py-20 md:py-24">
-        <div className="max-w-2xl mb-10">
+      {/* GIVES — Course Map */}
+      <section className="container-wide py-20 md:py-28 relative overflow-hidden">
+        <div className="max-w-2xl mb-12">
           <div className="eyebrow mb-4">Що дає курс</div>
-          <h2 className="h-section text-balance">Конкретні зміни — і всередині, і назовні.</h2>
+          <h2 className="h-section text-balance">Карта курсу — зміни і всередині, і назовні.</h2>
         </div>
-        <CourseCarousel cards={GIVES_CARDS} />
+        <CourseMap center={GIVES_CENTER} nodes={GIVES_NODES} />
       </section>
 
       {/* TEACHER */}
