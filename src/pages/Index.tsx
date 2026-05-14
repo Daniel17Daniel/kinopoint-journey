@@ -1,28 +1,22 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Calendar, Send,
+  Heart, Mic, Lightbulb, Users,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImg from "@/assets/hero-stage-cold.png";
-import atmActing from "@/assets/atmosphere-acting.jpg";
-import atmJourn from "@/assets/atmosphere-journalism.jpg";
-import liveStudio from "@/assets/live-journ-studio.jpg";
+import cardActing from "@/assets/card-acting-stage.jpg";
+import cardScreen from "@/assets/card-screen-desk.jpg";
+import cardJourn from "@/assets/card-journ-studio.jpg";
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
   { icon: Mic, t: "Голос і подача", d: "Робота з тілом, голосом і дикцією — щоб звучати вільно і впевнено." },
   { icon: Lightbulb, t: "Своя історія", d: "Розуміння драматургії — як народжується ідея і стає сценарієм." },
   { icon: Users, t: "Безпечна група", d: "Камерний формат, де можна пробувати, помилятися й рости разом." },
-];
-
-const HOW_IT_WORKS = [
-  { n: "01", t: "Оберіть напрям", d: "Дослідіть сторінки курсів або пройдіть короткий орієнтир.", icon: Compass },
-  { n: "02", t: "Залиште заявку", d: "Коротка форма — ім'я, контакт і напрям. Без іспитів і прослуховувань.", icon: Send },
-  { n: "03", t: "Ми зв'яжемося", d: "Спокійно з'ясуємо, чи цей формат вам підходить, і розкажемо про деталі та старт групи.", icon: Calendar },
 ];
 
 const FOR_WHO_GROUPS = [
