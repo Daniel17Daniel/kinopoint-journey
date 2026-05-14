@@ -8,6 +8,15 @@ import heroImg from "@/assets/journalism-hero.jpg";
 import liveInterview from "@/assets/live-journ-interview.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
 
+const BENEFITS = [
+  "розуміння, як реально працює телебачення, без ілюзій і «глянцю»",
+  "досвід роботи в кадрі: від першої зйомки до повноцінного сюжету",
+  "навички інтерв'ю, репортажу та розслідування",
+  "доступ до «кухні» телеканалу: редакція, зйомки, монтаж, ефіри",
+  "можливість працювати з реальними героями, подіями та проблемами міста",
+  "досвід створення контенту, який впливає на думки людей та змінює реальність на краще",
+];
+
 const AFTER = [
   "унікальний досвід праці на телебаченні",
   "якісне портфоліо",
@@ -160,9 +169,27 @@ const Journalism = () => {
         </div>
       </section>
 
-      <section className="container-wide py-20 md:py-28">
+      {/* BENEFITS */}
+      <section className="container-wide py-20 md:py-24">
         <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Після завершення курсу</div>
+          <div className="eyebrow mb-4">Що ти отримаєш</div>
+          <h2 className="h-section text-balance">Без ілюзій. Тільки реальна практика.</h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {BENEFITS.map((b) => (
+            <div key={b} className="p-5 rounded-2xl bg-surface border border-border-strong flex items-start gap-3">
+              <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-gold/15 text-gold shrink-0">
+                <Check className="size-3.5" />
+              </span>
+              <p className="text-foreground/90 leading-relaxed text-sm md:text-base">{b}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-wide pb-8 md:pb-12">
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Результат після курсу</div>
           <h2 className="h-section">Що ви забираєте із собою.</h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
