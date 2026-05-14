@@ -1,14 +1,18 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Compass, Heart, Theater, BookOpen, Tv } from "lucide-react";
+import { ArrowRight, Compass } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import heroImg from "@/assets/hero-stage.jpg";
+import valPresence from "@/assets/value-presence.jpg";
+import valPractice from "@/assets/value-practice.jpg";
+import valGrowth from "@/assets/value-growth.jpg";
+import valReal from "@/assets/value-real.jpg";
 
 const VALUES = [
-  { icon: Heart, t: "Жива присутність", d: "Робота з людиною, а не з “матеріалом”. Увага до того, що відбувається тут і зараз." },
-  { icon: Theater, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори." },
-  { icon: BookOpen, t: "Поступовий розвиток", d: "Ми будуємо процес так, щоб впевненість і свобода зростали органічно." },
-  { icon: Tv, t: "Реальні умови", d: "Сцена, камера, медіа — простір, де навички перевіряються в дії." },
+  { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз." },
+  { img: valPractice, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори." },
+  { img: valGrowth, t: "Поступовий розвиток", d: "Ми будуємо процес так, щоб впевненість і свобода зростали органічно." },
+  { img: valReal, t: "Реальні умови", d: "Сцена, камера, медіа — простір, де навички перевіряються в дії." },
 ];
 
 const About = () => {
@@ -48,19 +52,29 @@ const About = () => {
             <div className="eyebrow mb-4">Наші принципи</div>
             <h2 className="h-section text-balance">Чотири речі, які формують KinoPoint.</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {VALUES.map((v) => {
-              const Icon = v.icon;
-              return (
-                <div key={v.t} className="p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                  <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5">
-                    <Icon className="size-5" />
-                  </span>
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+            {VALUES.map((v) => (
+              <div
+                key={v.t}
+                className="group relative overflow-hidden rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 flex flex-col"
+              >
+                <div className="relative h-40 sm:h-44 overflow-hidden">
+                  <img
+                    src={v.img}
+                    alt=""
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
+                </div>
+                <div className="relative p-5 md:p-6">
                   <p className="font-display font-semibold text-lg mb-2">{v.t}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">{v.d}</p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
