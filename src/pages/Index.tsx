@@ -390,7 +390,7 @@ const Index = () => {
                 </span>
                 <div className="min-w-0">
                   <p className="eyebrow mb-1">Адреса</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Одеса, центр міста. Точну адресу надсилаємо після підтвердження заявки.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">вул. Святослава Караванського, 22, Одеса</p>
                 </div>
               </div>
             </div>
