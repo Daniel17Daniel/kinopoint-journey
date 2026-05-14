@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
-import { Check, Instagram, ArrowRight, Sparkles } from "lucide-react";
+import { Check, Instagram, ArrowRight, Sparkles, Mail, Phone, MapPin } from "lucide-react";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Будь ласка, введіть ім’я").max(80),
@@ -174,16 +174,37 @@ const Apply = () => {
             <div className="rounded-2xl border border-border bg-surface p-7">
               <p className="font-display text-lg font-bold mb-2">Зручніше написати?</p>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                Ми відповідаємо в Instagram так само швидко, як на заявку.
+                Ми відповідаємо швидко в будь-якому каналі.
               </p>
-              <a
-                href="https://instagram.com/kinopoint.film"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-all font-semibold text-sm"
-              >
-                <Instagram className="size-4" /> Написати в Instagram
-              </a>
+              <div className="space-y-2.5">
+                <a
+                  href="https://instagram.com/kinopoint.film"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold"
+                >
+                  <Instagram className="size-4 shrink-0" />
+                  <span>@kinopoint.film</span>
+                </a>
+                <a
+                  href="mailto:kinopoint.film.odesa@gmail.com"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold break-all"
+                >
+                  <Mail className="size-4 shrink-0" />
+                  <span>kinopoint.film.odesa@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+380123456789"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold"
+                >
+                  <Phone className="size-4 shrink-0" />
+                  <span>+38 (012) 345-67-89</span>
+                </a>
+                <div className="flex items-start gap-3 px-4 py-3 rounded-xl border border-border text-sm text-muted-foreground">
+                  <MapPin className="size-4 shrink-0 mt-0.5 text-primary/80" />
+                  <span>вул. Святослава Караванського, 22, Одеса</span>
+                </div>
+              </div>
             </div>
 
             <div className="rounded-2xl border border-border bg-surface p-7 space-y-3 text-sm">

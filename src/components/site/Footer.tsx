@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, MapPin, ArrowUpRight } from "lucide-react";
+import { Instagram, MapPin, ArrowUpRight, Mail, Phone } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 
 export const Footer = () => {
@@ -41,14 +41,22 @@ export const Footer = () => {
             href="https://instagram.com/kinopoint.film"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4"
+            className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3"
           >
             <Instagram className="size-5" />
             <span>Instagram</span>
           </a>
+          <a href="mailto:kinopoint.film.odesa@gmail.com" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3 break-all">
+            <Mail className="size-5 shrink-0" />
+            <span>kinopoint.film.odesa@gmail.com</span>
+          </a>
+          <a href="tel:+380123456789" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4">
+            <Phone className="size-5 shrink-0" />
+            <span>+38 (012) 345-67-89</span>
+          </a>
           <div className="flex items-start gap-3 text-muted-foreground">
             <MapPin className="size-5 mt-0.5 text-primary/80 shrink-0" />
-            <span>Одеса · адреса студії — після заявки</span>
+            <span>вул. Святослава Караванського, 22, Одеса</span>
           </div>
         </div>
       </div>

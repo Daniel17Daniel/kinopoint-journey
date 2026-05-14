@@ -17,9 +17,7 @@ const FOR_WHO = [
 ];
 
 const FORMATS = [
-  { icon: Film, t: "Кліпи" },
-  { icon: Megaphone, t: "Реклама" },
-  { icon: Tv, t: "Комерційні сценарії" },
+  { icon: Megaphone, t: "Кліпи, реклама, комерційні сценарії" },
   { icon: Clapperboard, t: "Короткий метр" },
   { icon: Film, t: "Повний метр" },
   { icon: Theater, t: "Сценарії театральних вистав" },
@@ -43,9 +41,9 @@ const HOW = [
 ];
 
 const FINAL = [
-  "сценарій короткометражного фільму",
-  "або розробка повнометражного проєкту",
-  "або театральний сценарій",
+  { label: "Option A", t: "сценарій короткометражного фільму" },
+  { label: "Option B", t: "розробка повнометражного проєкту" },
+  { label: "Option C", t: "театральний сценарій" },
 ];
 
 const RECEIVE = [
@@ -213,12 +211,17 @@ const Screenwriting = () => {
             <h2 className="h-section text-balance mb-8">З чим ви виходите з курсу.</h2>
             <ul className="space-y-3">
               {FINAL.map((s) => (
-                <li key={s} className="flex items-start gap-3 p-5 rounded-xl bg-background border border-border-strong">
-                  <Clapperboard className="size-5 text-gold shrink-0 mt-0.5" />
-                  <span className="text-foreground/90 leading-relaxed">{s}</span>
+                <li key={s.label} className="flex items-start gap-4 p-5 rounded-xl bg-background border border-border-strong">
+                  <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-gold/15 text-gold text-[10px] font-bold uppercase tracking-wider shrink-0">
+                    {s.label}
+                  </span>
+                  <span className="text-foreground/90 leading-relaxed">{s.t}</span>
                 </li>
               ))}
             </ul>
+            <blockquote className="mt-6 border-l-2 border-gold pl-5 py-2 italic text-gold/90 leading-relaxed text-base md:text-lg">
+              «Курс дає не знання, а готову роботу, з якою можна входити в індустрію.»
+            </blockquote>
           </div>
           <div>
             <div className="eyebrow mb-4">Що ви отримуєте</div>

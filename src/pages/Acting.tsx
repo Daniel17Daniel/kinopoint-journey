@@ -65,11 +65,11 @@ const AFTER = [
 ];
 
 const FACTS: Fact[] = [
-  { kind: "age", value: "Від 13 років" },
+  { kind: "age", value: "Будь-який вік" },
   { kind: "group", value: "10–12 учнів" },
   { kind: "duration", value: "11 місяців" },
   { kind: "frequency", value: "2 рази на тиждень" },
-  { kind: "price", value: "2500 грн / місяць" },
+  { kind: "price", value: "2500 грн / міс · перший міс 1250 грн" },
 ];
 
 const FAQ = [
