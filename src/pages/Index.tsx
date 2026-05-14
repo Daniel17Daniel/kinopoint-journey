@@ -409,17 +409,14 @@ const Index = () => {
           </div>
           <div className="lg:col-span-7 min-w-0">
             <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface w-full min-h-[240px] lg:min-h-[320px] lg:h-full">
-              <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-gold/[0.08]" />
-              <div className="relative h-full min-h-[240px] flex flex-col items-center justify-center text-center px-6">
-                <span className="inline-flex items-center justify-center size-14 rounded-full bg-background/70 border border-border-strong text-primary mb-4">
-                  <MapPin className="size-6" />
-                </span>
-                <p className="font-display text-xl font-bold mb-2">Карта</p>
-                <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                  Інтерактивна карта з'явиться після підтвердження локації студії.
-                </p>
-              </div>
+              <iframe
+                src="https://www.google.com/maps?q=%D0%9E%D0%B4%D0%B5%D1%81%D0%B0%2C%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KinoPoint Location"
+              />
             </div>
           </div>
         </div>
