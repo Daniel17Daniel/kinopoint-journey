@@ -46,6 +46,33 @@ const About = () => {
         </div>
       </section>
 
+      {/* FOUNDER */}
+      <section className="container-wide pb-12 md:pb-16">
+        <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-surface/60 overflow-hidden grid md:grid-cols-12">
+          <div className="md:col-span-4 relative bg-gradient-to-br from-background to-surface min-h-[260px] flex items-center justify-center p-8">
+            <div className="absolute inset-0 grid-frame opacity-[0.08]" />
+            <div className="relative text-center">
+              <div className="inline-flex items-center justify-center size-28 rounded-full bg-gold/10 border border-gold/40 text-gold font-display text-3xl font-bold shadow-gold">
+                КЛ
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-8 p-8 md:p-12">
+            <div className="eyebrow mb-3">Засновниця</div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-3 leading-tight">Катерина Лебедєва</h2>
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/15 border border-primary/40 text-primary text-[11px] font-semibold uppercase tracking-wider mb-5">
+              Режисерка · Викладачка
+            </span>
+            <p className="text-foreground/85 leading-relaxed mb-5">
+              Засновниця KinoPoint та відеопродакшну КіноPoint. Викладачка курсу «Акторська майстерність та сценічна мова» з 18-річним досвідом на знімальному майданчику. Пройшла весь шлях — від перших епізодичних ролей та каскадерських трюків до створення власних проєктів.
+            </p>
+            <blockquote className="border-l-2 border-gold pl-4 italic text-gold/90 leading-relaxed">
+              «Я ділюся не просто теорією з підручників, а практикою, загартованою роками реальної роботи.»
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-surface/40 border-y border-border/60 py-20 md:py-24">
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
