@@ -110,7 +110,7 @@ const Screenwriting = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={carouselImg}
+            src={liveLaptop}
             alt="Сценарне мистецтво — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />
