@@ -205,7 +205,9 @@ const Index = () => {
                 tagAccent: "red" as const,
                 title: "Акторська майстерність",
                 desc: "Для життя і сцени. Внутрішня свобода, тіло, голос, дикція.",
-                meta: "11 місяців · 2500 грн / міс",
+                duration: "11 місяців",
+                oldPrice: "2500 грн",
+                newPrice: "1250 грн",
               },
               {
                 to: "/screenwriting",
@@ -215,7 +217,9 @@ const Index = () => {
                 tagAccent: "red" as const,
                 title: "Сценарне мистецтво",
                 desc: "Від ідеї до готового сценарію. Авторський практичний курс.",
-                meta: "3 місяці · 4000 грн / міс",
+                duration: "3 місяці",
+                oldPrice: "4000 грн",
+                newPrice: "2000 грн",
               },
               {
                 to: "/journalism",
@@ -225,7 +229,9 @@ const Index = () => {
                 tagAccent: "gold" as const,
                 title: "Тележурналістика",
                 desc: "Реальна медійна практика. Робота в кадрі та зйомки.",
-                meta: "1 місяць · 3000 грн / міс",
+                duration: "1 місяць",
+                oldPrice: "3000 грн",
+                newPrice: "1500 грн",
               },
             ].map((c) => {
               const TagIcon = c.tagIcon;
@@ -256,7 +262,14 @@ const Index = () => {
                   <div className="relative p-6 md:p-7 flex flex-col flex-1">
                     <h3 className="font-display text-xl md:text-2xl font-bold mb-2 leading-tight">{c.title}</h3>
                     <p className="text-foreground/75 text-sm md:text-base leading-relaxed mb-4">{c.desc}</p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-5">{c.meta}</p>
+                    <div className="mb-5">
+                      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">{c.duration}</p>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm text-muted-foreground line-through">{c.oldPrice}</span>
+                        <span className="text-lg font-display font-bold text-gold">{c.newPrice}</span>
+                      </div>
+                      <p className="text-[11px] text-muted-foreground mt-1">перший місяць · потім {c.oldPrice}</p>
+                    </div>
                     <span className="mt-auto inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
                       Перейти до напряму <ArrowRight className="size-4" />
                     </span>
