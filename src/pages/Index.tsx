@@ -327,9 +327,6 @@ const Index = () => {
                   <div className="flex-1 min-w-0">
                     <p className="font-display font-semibold text-sm truncate">{t.name}</p>
                   </div>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full border border-primary/50 text-primary bg-primary/15 text-[10px] uppercase tracking-wider font-semibold shrink-0">
-                    {t.course}
-                  </span>
                 </div>
               </div>
             ))}
@@ -392,7 +389,7 @@ const Index = () => {
       <section className="container-wide pb-24 overflow-x-hidden">
         <div className="max-w-2xl mb-10">
           <div className="eyebrow mb-4">Де ми знаходимося</div>
-          <h2 className="h-section text-balance">Завжди раді бачити вас у KinoPoint.</h2>
+          <h2 className="h-section text-balance">вул. Святослава Караванського, 22 — чекаємо на вас.</h2>
         </div>
         <div className="grid lg:grid-cols-12 gap-5 w-full">
           <div className="lg:col-span-5 space-y-3 min-w-0">
@@ -403,7 +400,8 @@ const Index = () => {
                 </span>
                 <div className="min-w-0">
                   <p className="eyebrow mb-1">Адреса</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">вул. Святослава Караванського, 22, Одеса</p>
+                  <p className="text-foreground/90 text-sm leading-relaxed">вул. Святослава Караванського, 22, Одеса</p>
+                  <p className="text-muted-foreground text-xs leading-relaxed mt-1">Детальний орієнтир надішлемо після підтвердження</p>
                 </div>
               </div>
             </div>
