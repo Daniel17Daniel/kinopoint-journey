@@ -80,7 +80,10 @@ const Journalism = () => {
             Короткий практичний курс для тих, хто хоче зрозуміти, як реально працює телебачення, спробувати себе в кадрі та отримати перший досвід у медіасередовищі.
           </p>
 
-          <div className="mt-10 animate-fade-up">
+          <div className="mt-10 animate-fade-up space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/50 bg-gold/15 text-gold text-xs font-semibold shadow-gold">
+              <Sparkles className="size-3" /> −50% перший місяць
+            </span>
             <FactChips facts={FACTS} />
           </div>
 
