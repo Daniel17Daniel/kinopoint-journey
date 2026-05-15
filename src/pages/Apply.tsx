@@ -28,12 +28,13 @@ const Apply = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     document.title = "Заявка — KinoPoint Film";
   }, []);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (submitting || submitted) return;
     const result = schema.safeParse({ name, contact, direction, comment });
@@ -44,12 +45,25 @@ const Apply = () => {
       return;
     }
     setErrors({});
+    setSubmitError(null);
     setSubmitting(true);
-    // simulate async + lock against double-submit
-    setTimeout(() => {
+
+    try {
+      const token = import.meta.env.VITE_TG_TOKEN;
+      const chatId = import.meta.env.VITE_TG_CHAT_ID;
+      const text = `📋 Нова заявка — KinoPoint\n\n👤 Ім'я: ${name}\n📞 Контакт: ${contact}\n🎭 Напрям: ${directionLabels[direction] || direction}\n💬 Коментар: ${comment || '—'}\n\n⏰ ${new Date().toLocaleString('uk-UA')}`;
+      const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, parse_mode: "HTML", text }),
+      });
+      if (!res.ok) throw new Error("tg failed");
       setSubmitted(true);
+    } catch {
+      setSubmitError("Щось пішло не так. Напишіть нам в Instagram — @kinopoint.film.odesa");
+    } finally {
       setSubmitting(false);
-    }, 400);
+    }
   };
 
   return (
