@@ -1,15 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X, Instagram, Send, Phone } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
+
+const PHONE = "+380123456789";
+const TELEGRAM = "kinopoint_film";
 
 const NAV_DESKTOP = [
   { to: "/acting", label: "Акторська майстерність" },
   { to: "/screenwriting", label: "Сценарне мистецтво" },
   { to: "/journalism", label: "Тележурналістика" },
   { to: "/about", label: "Про кіношколу" },
-  { to: "/apply", label: "Заявка" },
 ];
 
 const NAV_MOBILE = [
@@ -18,7 +20,6 @@ const NAV_MOBILE = [
   { to: "/screenwriting", label: "Сценарне мистецтво" },
   { to: "/journalism", label: "Тележурналістика" },
   { to: "/about", label: "Про кіношколу" },
-  { to: "/apply", label: "Заявка" },
 ];
 
 interface HeaderProps {
@@ -51,7 +52,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
       <img
         src={logoSymbol}
         alt=""
-        className={cn("transition-all duration-500", compact ? "h-8" : "h-9")}
+        className={cn("transition-all duration-500 bg-transparent border-0", compact ? "h-8" : "h-9")}
       />
       <span className="font-display font-bold tracking-tight text-lg md:text-xl">
         <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
@@ -97,11 +98,17 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
               href="https://instagram.com/kinopoint.film"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-foreground/75 hover:text-primary transition-colors px-2 py-2"
               aria-label="Instagram"
+              className="inline-flex items-center justify-center size-9 rounded-full border border-border-strong/60 text-foreground/80 hover:text-gold hover:border-gold/60 transition-colors"
             >
               <Instagram className="size-4" />
             </a>
+            <Link
+              to="/apply"
+              className="inline-flex items-center justify-center h-9 px-4 rounded-md bg-gold text-background text-sm font-semibold hover:bg-gold/90 transition-colors"
+            >
+              Залишити заявку
+            </Link>
           </div>
 
           <button
@@ -147,16 +154,41 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                 </li>
               ))}
             </ul>
-            <div style={{ marginBottom: "env(safe-area-inset-bottom)" }} className="mt-auto pt-6 flex flex-col items-center gap-4">
+
+            <div className="border-t border-border/40 my-4" />
+
+            <div className="flex flex-col gap-3">
+              <Link
+                to="/apply"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center w-full h-12 rounded-md bg-gold text-background font-semibold hover:bg-gold/90 transition-colors"
+              >
+                Залишити заявку
+              </Link>
               <a
                 href="https://instagram.com/kinopoint.film"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Instagram"
-                className="inline-flex items-center justify-center size-10 rounded-full border border-border-strong hover:border-gold/60 transition-colors"
-                style={{ color: "#E1306C" }}
+                className="inline-flex items-center justify-center gap-2 w-full h-12 rounded-md border border-border-strong/60 text-foreground hover:border-gold/60 hover:text-gold transition-colors"
               >
-                <Instagram className="size-5" />
+                <Instagram className="size-4" />
+                Instagram
+              </a>
+              <a
+                href={`https://t.me/${TELEGRAM}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full h-12 rounded-md border border-border-strong/60 text-foreground hover:border-gold/60 hover:text-gold transition-colors"
+              >
+                <Send className="size-4" />
+                Telegram
+              </a>
+              <a
+                href={`tel:${PHONE}`}
+                className="inline-flex items-center justify-center gap-2 w-full h-12 rounded-md border border-border-strong/60 text-foreground hover:border-gold/60 hover:text-gold transition-colors"
+              >
+                <Phone className="size-4" />
+                Зателефонувати
               </a>
             </div>
           </nav>
