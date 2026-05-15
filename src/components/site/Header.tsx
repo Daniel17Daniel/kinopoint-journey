@@ -63,7 +63,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
     <>
       <header
         className={cn(
-          "fixed top-0 inset-x-0 z-40 transition-all duration-500",
+          "fixed top-10 inset-x-0 z-40 transition-all duration-500",
           scrolled
             ? "bg-background/90 backdrop-blur-xl border-b border-border/60 py-3"
             : "bg-gradient-to-b from-background/70 to-transparent py-4"
