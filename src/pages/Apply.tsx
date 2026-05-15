@@ -156,8 +156,18 @@ const Apply = () => {
                   disabled={submitting}
                   className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.01] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  {submitting ? "Надсилаємо…" : "Надіслати заявку"} <ArrowRight className="size-4" />
+                  {submitting ? (
+                    <>
+                      <span className="size-4 rounded-full border-2 border-primary-foreground/40 border-t-primary-foreground animate-spin" />
+                      Надсилаємо...
+                    </>
+                  ) : (
+                    <>Надіслати заявку <ArrowRight className="size-4" /></>
+                  )}
                 </button>
+                {submitError && (
+                  <p className="text-sm text-destructive text-center">{submitError}</p>
+                )}
                 <p className="text-xs text-muted-foreground text-center">
                   Ми відповімо протягом робочого дня. Без розсилок і нав’язливих дзвінків.
                 </p>
