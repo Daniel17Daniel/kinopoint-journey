@@ -10,7 +10,7 @@ interface Props {
   applyTo?: string;
 }
 
-export const WhoIsItFor = ({ heading, items }: Props) => {
+export const WhoIsItFor = ({ heading, items, applyTo = "/apply" }: Props) => {
   const [selected, setSelected] = useState<number | null>(null);
   const active = selected !== null ? items[selected] : null;
 
