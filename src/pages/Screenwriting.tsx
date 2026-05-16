@@ -160,7 +160,7 @@ const Screenwriting = () => {
       />
 
       {/* PROCESS — Course Map */}
-      <section className="container-wide py-20 md:py-28 relative overflow-hidden">
+      <section className="container-wide py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-2xl mb-12">
           <div className="eyebrow mb-4">Як ми працюємо</div>
           <h2 className="h-section text-balance">Карта курсу — від ідеї до готового сценарію.</h2>
@@ -239,7 +239,7 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-20 md:py-28">
+      <section className="container-wide py-16 md:py-24">
         <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14">
           <div className="absolute -top-32 -right-32 size-96 blur-3xl rounded-full bg-primary/15" />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">

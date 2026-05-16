@@ -186,7 +186,7 @@ const Acting = () => {
       />
 
       {/* GIVES — Course Map */}
-      <section className="container-wide py-20 md:py-28 relative overflow-hidden">
+      <section className="container-wide py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-2xl mb-12">
           <div className="eyebrow mb-4">Що дає курс</div>
           <h2 className="h-section text-balance">Карта курсу — зміни і всередині, і назовні.</h2>
@@ -222,7 +222,7 @@ const Acting = () => {
       </section>
 
       {/* SHORT QUESTIONS */}
-      <section className="container-wide py-20 md:py-28">
+      <section className="container-wide py-16 md:py-24">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Короткі запитання</div>

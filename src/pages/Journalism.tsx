@@ -144,7 +144,7 @@ const Journalism = () => {
         </div>
       </section>
 
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-surface/40 border-y border-border/60 py-16 md:py-24 relative overflow-hidden">
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
             <div className="eyebrow mb-4">Що дає курс</div>

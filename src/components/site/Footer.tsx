@@ -24,7 +24,7 @@ export const Footer = () => {
           </Link>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 hidden md:block">
           <div className="eyebrow mb-4">Навігація</div>
           <ul className="space-y-3 text-sm">
             <li><Link to="/" className="text-foreground/80 hover:text-primary transition-colors">Головна</Link></li>
