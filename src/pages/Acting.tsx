@@ -4,6 +4,10 @@ import { ArrowRight, Check, Instagram, Award, Theater, Users, Mic, Activity, Hea
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
+import { WhoIsItFor } from "@/components/site/WhoIsItFor";
+import { SkillsList } from "@/components/site/SkillsList";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
 import liveStage from "@/assets/live-acting-stage.jpg";
@@ -148,62 +152,38 @@ const Acting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-20 md:py-28">
-        <div className="max-w-2xl mb-12">
-          <div className="eyebrow mb-4">Для кого цей курс</div>
-          <h2 className="h-section text-balance">Цей напрям — для тих, хто…</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {FOR_WHO_GROUPS.map((g) => {
-            const Icon = g.icon;
-            return (
-              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border hover:border-border-strong transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary shrink-0">
-                    <Icon className="size-4" />
-                  </span>
-                  <p className="font-display font-semibold text-base">{g.title}</p>
-                </div>
-                <ul className="space-y-2">
-                  {g.items.map((t) => (
-                    <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/85 leading-relaxed">
-                      <Check className="size-3.5 text-success shrink-0 mt-1" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <WhoIsItFor
+        heading="Знайди себе тут"
+        items={[
+          { icon: "🎭", label: "З нуля", desc: "Вперше хочеш спробувати сцену", result: "Почнеш з базових вправ у безпечній групі. Жодних прослуховувань." },
+          { icon: "🔓", label: "Внутрішній затиск", desc: "Сором'язливість або страх публіки", result: "Курс побудований саме для цього — поступово і без тиску." },
+          { icon: "🎙️", label: "Голос і тіло", desc: "Хочеш краще відчувати себе", result: "Робота з диханням, пластикою і дикцією з першого заняття." },
+          { icon: "🎬", label: "Кадр і сцена", desc: "Хочеш бути живим перед камерою", result: "Отримаєш інструменти для роботи в кадрі та на сцені." },
+        ]}
+      />
 
-      {/* HOW */}
-      <section className="relative py-20 md:py-28 bg-surface/40 border-y border-border/60 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.08]">
-          <img src={atmImg} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="container-wide relative">
-          <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-4">Як проходять заняття</div>
-            <h2 className="h-section text-balance">Чотири живі лінії роботи на кожному занятті.</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {HOW.map((h) => {
-              const Icon = h.icon;
-              return (
-                <div key={h.t} className="group p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                  <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="size-5" />
-                  </span>
-                  <p className="font-display font-semibold text-lg mb-2">{h.t}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{h.d}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SkillsList
+        heading="Шість навичок що залишаться з тобою"
+        items={[
+          { title: "Внутрішня свобода", desc: "Менше затиску, більше живої присутності в будь-якій ситуації" },
+          { title: "Робота з тілом", desc: "Пластика, дихання, відчуття простору навколо себе" },
+          { title: "Голос і дикція", desc: "Чіткість, об'єм, інтонація — голос як інструмент" },
+          { title: "Сценічна присутність", desc: "Вміння утримувати увагу глядача без зайвих зусиль" },
+          { title: "Робота в парі", desc: "Реагувати на партнера, чути і відповідати живо" },
+          { title: "Образ і роль", desc: "Створити персонажа і не загубити себе всередині нього" },
+        ]}
+      />
+
+      <HowItWorks
+        heading="Крок за кроком до результату"
+        steps={[
+          { title: "Практичні завдання", desc: "На кожному занятті — конкретна вправа, а не лекція" },
+          { title: "Власний проєкт", desc: "Працюєш зі своєю ідеєю від першого дня" },
+          { title: "Регулярні розбори", desc: "Фідбек після кожного блоку — бачиш свій прогрес" },
+          { title: "Редагування і доопрацювання", desc: "Доводимо до фінального результату разом" },
+          { title: "Готова робота", desc: "Виходиш з проєктом або навичкою для реального застосування" },
+        ]}
+      />
 
       {/* GIVES — Course Map */}
       <section className="container-wide py-20 md:py-28 relative overflow-hidden">
@@ -261,38 +241,15 @@ const Acting = () => {
         </div>
       </section>
 
-      {/* AFTER + CTA */}
-      <section className="container-wide pb-24">
-        <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Після завершення курсу</div>
-          <h2 className="h-section">Що ви забираєте із собою.</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-4">
-          {AFTER.map((a) => {
-            const Icon = a.icon;
-            return (
-              <div key={a.t} className="p-7 rounded-2xl bg-surface border border-border-strong flex items-start gap-4">
-                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-gold/10 text-gold shrink-0">
-                  <Icon className="size-5" />
-                </span>
-                <p className="text-lg text-foreground/90 leading-relaxed">{a.t}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-14 relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14 text-center">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-96 blur-3xl rounded-full bg-primary/15" />
-          <div className="relative max-w-xl mx-auto">
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight text-balance">
-              Готові спробувати? <span className="text-primary">Перший крок — найлегший.</span>
-            </h3>
-            <Link to="/apply?direction=acting" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all">
-              Залишити заявку <ArrowRight className="size-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ResultCard
+        heading="Після курсу ти матимеш"
+        items={[
+          "Внутрішню свободу і впевненість перед аудиторією",
+          "Навички роботи з голосом, тілом і диханням",
+          "Досвід виступу на сцені театру",
+          "Сертифікат завершення курсу",
+        ]}
+      />
     </div>
   );
 };

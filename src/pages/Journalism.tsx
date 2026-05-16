@@ -4,6 +4,10 @@ import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video, N
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
+import { WhoIsItFor } from "@/components/site/WhoIsItFor";
+import { SkillsList } from "@/components/site/SkillsList";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/journalism-hero.jpg";
 import liveInterview from "@/assets/live-journ-interview.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
@@ -150,70 +154,49 @@ const Journalism = () => {
         </div>
       </section>
 
-      {/* FORMAT */}
-      <section className="container-wide py-20 md:py-28 relative">
-        <div className="max-w-2xl mb-12">
-          <div className="eyebrow mb-4">Як проходить курс</div>
-          <h2 className="h-section text-balance">Формат — практика в медіасередовищі.</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {FORMAT.map((f) => {
-            const Icon = f.icon;
-            return (
-              <div key={f.t} className="group p-7 rounded-2xl bg-surface border border-border-strong hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
-                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-primary/10 text-primary mb-5 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="size-5" />
-                </span>
-                <p className="font-display font-semibold text-lg mb-2">{f.t}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.d}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <WhoIsItFor
+        heading="Для кого цей курс"
+        items={[
+          { icon: "📺", label: "В телебачення", desc: "Хочеш працювати на телеканалі", result: "Кращі студенти отримують можливість працевлаштування на одеському телеканалі." },
+          { icon: "🎤", label: "В кадр", desc: "Хочеш впевнено говорити на камеру", result: "Практика в кадрі з першого тижня." },
+          { icon: "📰", label: "Журналістика", desc: "Хочеш писати і знімати репортажі", result: "Навчишся інтерв'ю, репортажу та розслідуванню." },
+          { icon: "🌍", label: "Контент і медіа", desc: "Хочеш створювати контент що впливає", result: "Отримаєш досвід реальних зйомок і повноцінне портфоліо." },
+        ]}
+      />
 
-      {/* BENEFITS */}
-      <section className="container-wide py-20 md:py-24">
-        <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Що ти отримаєш</div>
-          <h2 className="h-section text-balance">Без ілюзій. Тільки реальна практика.</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {BENEFITS.map((b) => (
-            <div key={b} className="p-5 rounded-2xl bg-surface border border-border-strong flex items-start gap-3">
-              <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-gold/15 text-gold shrink-0">
-                <Check className="size-3.5" />
-              </span>
-              <p className="text-foreground/90 leading-relaxed text-sm md:text-base">{b}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <HowItWorks
+        heading="Крок за кроком до результату"
+        steps={[
+          { title: "Практичні завдання", desc: "На кожному занятті — конкретна вправа, а не лекція" },
+          { title: "Власний проєкт", desc: "Працюєш зі своєю ідеєю від першого дня" },
+          { title: "Регулярні розбори", desc: "Фідбек після кожного блоку — бачиш свій прогрес" },
+          { title: "Редагування і доопрацювання", desc: "Доводимо до фінального результату разом" },
+          { title: "Готова робота", desc: "Виходиш з проєктом або навичкою для реального застосування" },
+        ]}
+      />
 
-      <section className="container-wide pb-8 md:pb-12">
-        <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Результат після курсу</div>
-          <h2 className="h-section">Що ви забираєте із собою.</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {AFTER.map((a) => (
-            <div key={a} className="p-6 rounded-2xl bg-surface border border-border-strong flex items-start gap-3">
-              <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
-                <Check className="size-3.5" />
-              </span>
-              <p className="text-foreground/90 leading-relaxed">{a}</p>
-            </div>
-          ))}
-        </div>
+      <SkillsList
+        heading="Що ти отримаєш на курсі"
+        items={[
+          { title: "Робота в кадрі", desc: "Від першої зйомки до повноцінного сюжету" },
+          { title: "Інтерв'ю і репортаж", desc: "Як брати коментарі, будувати матеріал, монтувати" },
+          { title: "Кухня телеканалу", desc: "Редакція, ефіри, монтажна — зсередини без ілюзій" },
+          { title: "Реальні герої", desc: "Робота з живими людьми, подіями і проблемами міста" },
+          { title: "Портфоліо", desc: "Якісні роботи для резюме і подальшого просування" },
+          { title: "Рекомендації", desc: "Від практиків з 19-річним досвідом у медіа" },
+        ]}
+      />
 
-        <div className="mt-10 rounded-2xl border border-gold/40 bg-gradient-to-br from-gold/10 to-transparent p-7 md:p-9 flex items-start gap-4">
-          <Star className="size-6 text-gold shrink-0 mt-1" />
-          <p className="font-display text-lg md:text-xl font-semibold leading-snug">
-            Кращі студенти отримують можливість працевлаштування на одеському телеканалі.
-          </p>
-        </div>
-
-      </section>
+      <ResultCard
+        heading="Після курсу ти матимеш"
+        items={[
+          "Унікальний досвід праці на телебаченні",
+          "Якісне портфоліо з реальними роботами",
+          "Розуміння професії зсередини",
+          "Рекомендації від практиків медіа",
+        ]}
+        note="Кращі студенти отримують можливість працевлаштування на одеському телеканалі."
+      />
 
       {/* FAQ */}
       <section className="container-wide py-20 md:py-24">
