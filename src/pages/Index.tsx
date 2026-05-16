@@ -154,7 +154,7 @@ const Index = () => {
             return (
               <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border-strong hover:border-gold/40 hover:bg-surface-2 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-primary/25 to-primary/10 text-primary border border-primary/30 shadow-red shrink-0">
+                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/15 text-primary border border-primary/30 shrink-0">
                     <Icon className="size-4" />
                   </span>
                   <p className="font-display font-semibold text-base">{g.title}</p>
