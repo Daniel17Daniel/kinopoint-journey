@@ -298,29 +298,6 @@ const Index = () => {
       {/* HOW IT WORKS — removed (redundant) */}
 
 
-      {/* WHAT TRAINING GIVES */}
-      <section className="container-wide py-24 md:py-28">
-        <div className="max-w-2xl mb-12 flex items-start gap-6">
-          <div className="flex-1">
-            <div className="eyebrow mb-4">Що дає навчання</div>
-            <h2 className="h-section text-balance">Не просто навички — якість присутності.</h2>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TRAINING_GIVES.map((g) => {
-            const Icon = g.icon;
-            return (
-              <div key={g.t} className="group p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-all duration-300 hover:-translate-y-1">
-                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-gold/10 text-gold mb-5 group-hover:bg-gold/20 transition-colors">
-                  <Icon className="size-5" />
-                </span>
-                <p className="font-display font-semibold text-lg mb-2">{g.t}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{g.d}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
 
       {/* TESTIMONIALS */}
       <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
