@@ -96,7 +96,11 @@ const FAQ = [
 ];
 
 const Acting = () => {
-  useEffect(() => { document.title = "Акторська майстерність — KinoPoint Film"; }, []);
+  useEffect(() => {
+    document.title = "Акторська майстерність — KinoPoint Film";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс акторської майстерності в Одесі — КіноPoint Film. Робота з тілом, голосом, дикцією. Групи до 12 учнів. Випускний на сцені театру. Перший місяць — 1250 грн.');
+  }, []);
 
   return (
     <div>
