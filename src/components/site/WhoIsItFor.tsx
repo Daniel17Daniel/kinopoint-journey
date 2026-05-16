@@ -14,8 +14,8 @@ export const WhoIsItFor = ({ heading, items }: Props) => {
   const active = selected !== null ? items[selected] : null;
 
   return (
-    <section className="container-wide py-20 md:py-28">
-      <div className="max-w-2xl mb-10">
+    <section className="container-wide py-16 md:py-24">
+      <div className="max-w-2xl mb-8">
         <div className="eyebrow mb-4">Для кого цей курс</div>
         <h2 className="h-section text-balance">{heading}</h2>
       </div>
@@ -44,7 +44,7 @@ export const WhoIsItFor = ({ heading, items }: Props) => {
 
       <div
         className={`max-w-3xl overflow-hidden transition-all duration-300 ${
-          active ? "mt-4 opacity-100 max-h-96" : "mt-0 opacity-0 max-h-0"
+          active ? "mt-3 opacity-100 max-h-96" : "mt-0 opacity-0 max-h-0"
         }`}
       >
         {active && (

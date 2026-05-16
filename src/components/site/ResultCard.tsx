@@ -9,7 +9,7 @@ interface Props {
 
 export const ResultCard = ({ heading, items, note }: Props) => {
   return (
-    <section className="container-wide py-20 md:py-24">
+    <section className="container-wide py-16 md:py-24">
       <div className="max-w-2xl mb-8">
         <div className="eyebrow mb-4">Що ти отримаєш</div>
         <h2 className="h-section text-balance">{heading}</h2>

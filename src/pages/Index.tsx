@@ -99,18 +99,24 @@ const Index = () => {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
+              <Link
+                to="/apply"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all w-full sm:w-auto"
+              >
+                Залишити заявку<span className="sm:hidden"> — перший місяць 50%</span>
+              </Link>
               <button
                 onClick={open}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all duration-300"
+                className="hidden sm:inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong text-foreground hover:border-primary hover:text-primary transition-all font-semibold"
               >
                 <Compass className="size-4" /> Підібрати напрям
               </button>
-              <Link
-                to="/apply"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong text-foreground hover:border-primary hover:text-primary transition-all font-semibold"
+              <button
+                onClick={open}
+                className="sm:hidden text-primary text-sm font-semibold inline-flex items-center gap-1 justify-center"
               >
-                Залишити заявку
-              </Link>
+                <Compass className="size-4" /> Підібрати напрям <ArrowRight className="size-3.5" />
+              </button>
             </div>
 
             <div className="border-t border-border/30 mt-8 pt-6 flex flex-wrap gap-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
@@ -121,7 +127,7 @@ const Index = () => {
                 <Award className="size-4 text-gold" /> Сертифікат після курсу
               </span>
               <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
-                <MapPin className="size-4 text-gold" /> Офлайн · Одеса
+                <MapPin className="size-4 text-gold" /> Одеса
               </span>
             </div>
           </div>
