@@ -139,6 +139,7 @@ const Screenwriting = () => {
 
       <WhoIsItFor
         heading="Хто приходить на курс"
+        applyTo="/apply?direction=screenwriting"
         items={[
           { icon: "💡", label: "Є ідея", desc: "Але не знаєш як її оформити", result: "Саме з цього починається курс — від ідеї до готового сценарію." },
           { icon: "✍️", label: "З нуля", desc: "Хочеш навчитися писати сценарії", result: "Курс веде від основ до завершеного проєкту в портфоліо." },
