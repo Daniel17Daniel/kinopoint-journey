@@ -148,7 +148,7 @@ const Index = () => {
           <div className="eyebrow mb-4">Для кого ця школа</div>
           <h2 className="h-section text-balance">Можливо, це саме для вас.</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {FOR_WHO_GROUPS.map((g) => {
             const Icon = g.icon;
             return (
