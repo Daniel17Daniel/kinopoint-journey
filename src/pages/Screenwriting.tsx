@@ -4,6 +4,10 @@ import { ArrowRight, Check, Instagram, Film, Tv, BookOpen, Theater, Megaphone, C
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
+import { WhoIsItFor } from "@/components/site/WhoIsItFor";
+import { SkillsList } from "@/components/site/SkillsList";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/atmosphere-acting.jpg";
 import liveLaptop from "@/assets/live-screen-laptop.jpg";
 import liveNotes from "@/assets/live-screen-notes.jpg";
@@ -207,41 +211,27 @@ const Screenwriting = () => {
           </div>
         </div>
       </section>
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
-        <div className="container-wide grid lg:grid-cols-2 gap-10">
-          <div>
-            <div className="eyebrow mb-4">Фінальний результат</div>
-            <h2 className="h-section text-balance mb-8">З чим ви виходите з курсу.</h2>
-            <ul className="space-y-3">
-              {FINAL.map((s) => (
-                <li key={s.label} className="flex items-start gap-4 p-5 rounded-xl bg-background border border-border-strong">
-                  <span className="inline-flex items-center justify-center px-2.5 py-1 rounded-md bg-gold/15 text-gold text-[10px] font-bold uppercase tracking-wider shrink-0">
-                    {s.label}
-                  </span>
-                  <span className="text-foreground/90 leading-relaxed">{s.t}</span>
-                </li>
-              ))}
-            </ul>
-            <blockquote className="mt-6 border-l-2 border-gold pl-5 py-2 italic text-gold/90 leading-relaxed text-base md:text-lg">
-              «Курс дає не знання, а готову роботу, з якою можна входити в індустрію.»
-            </blockquote>
-          </div>
-          <div>
-            <div className="eyebrow mb-4">Що ви отримуєте</div>
-            <h2 className="h-section text-balance mb-8">Більше, ніж знання.</h2>
-            <ul className="space-y-3">
-              {RECEIVE.map((s) => (
-                <li key={s} className="flex items-start gap-3 p-5 rounded-xl bg-background border border-border">
-                  <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
-                    <Check className="size-3.5" />
-                  </span>
-                  <span className="text-foreground/90 leading-relaxed">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <HowItWorks
+        heading="Крок за кроком до результату"
+        steps={[
+          { title: "Практичні завдання", desc: "На кожному занятті — конкретна вправа, а не лекція" },
+          { title: "Власний проєкт", desc: "Працюєш зі своєю ідеєю від першого дня" },
+          { title: "Регулярні розбори", desc: "Фідбек після кожного блоку — бачиш свій прогрес" },
+          { title: "Редагування і доопрацювання", desc: "Доводимо до фінального результату разом" },
+          { title: "Готова робота", desc: "Виходиш з проєктом або навичкою для реального застосування" },
+        ]}
+      />
+
+      <ResultCard
+        heading="Фінальний результат"
+        items={[
+          "Завершений сценарний проєкт для портфоліо",
+          "Розуміння структури будь-якої історії",
+          "Практичний досвід роботи зі сценарієм",
+          "Матеріал для подачі або просування",
+        ]}
+        note="Варіанти фіналу: короткометражний фільм, повнометражний проєкт або театральний сценарій — обираєш сам."
+      />
 
       {/* FAQ */}
       <section className="container-wide py-20 md:py-24">

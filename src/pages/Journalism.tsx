@@ -4,6 +4,10 @@ import { ArrowRight, Check, Instagram, Tv, Star, Sparkles, Mic, Camera, Video, N
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FactChips, Fact } from "@/components/site/FactChips";
 import { CourseMap, CourseMapNode, CourseMapCenter } from "@/components/site/CourseMap";
+import { WhoIsItFor } from "@/components/site/WhoIsItFor";
+import { SkillsList } from "@/components/site/SkillsList";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/journalism-hero.jpg";
 import liveInterview from "@/assets/live-journ-interview.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
