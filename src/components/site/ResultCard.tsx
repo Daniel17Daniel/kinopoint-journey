@@ -5,6 +5,7 @@ interface Props {
   heading: string;
   items: string[];
   note?: string | null;
+  softCta?: boolean;
 }
 
 export const ResultCard = ({ heading, items, note }: Props) => {
