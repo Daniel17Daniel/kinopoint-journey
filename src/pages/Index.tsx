@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Award, Quote,
+  Heart, Mic, Lightbulb, Users, Award, Quote, Star,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
@@ -42,6 +42,14 @@ const FOR_WHO_GROUPS = [
     items: [
       "хочете спробувати щось нове",
       "готові досліджувати себе у безпечній групі",
+    ],
+  },
+  {
+    icon: Star,
+    title: "Результат назавжди",
+    items: [
+      "виходиш на сцену театру на випускному",
+      "отримуєш сертифікат завершення курсу",
     ],
   },
 ];
@@ -140,13 +148,13 @@ const Index = () => {
           <div className="eyebrow mb-4">Для кого ця школа</div>
           <h2 className="h-section text-balance">Можливо, це саме для вас.</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {FOR_WHO_GROUPS.map((g) => {
             const Icon = g.icon;
             return (
               <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border-strong hover:border-gold/40 hover:bg-surface-2 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-primary/25 to-primary/10 text-primary border border-primary/30 shadow-red shrink-0">
+                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/15 text-primary border border-primary/30 shrink-0">
                     <Icon className="size-4" />
                   </span>
                   <p className="font-display font-semibold text-base">{g.title}</p>
@@ -290,29 +298,6 @@ const Index = () => {
       {/* HOW IT WORKS — removed (redundant) */}
 
 
-      {/* WHAT TRAINING GIVES */}
-      <section className="container-wide py-24 md:py-28">
-        <div className="max-w-2xl mb-12 flex items-start gap-6">
-          <div className="flex-1">
-            <div className="eyebrow mb-4">Що дає навчання</div>
-            <h2 className="h-section text-balance">Не просто навички — якість присутності.</h2>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TRAINING_GIVES.map((g) => {
-            const Icon = g.icon;
-            return (
-              <div key={g.t} className="group p-7 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-all duration-300 hover:-translate-y-1">
-                <span className="inline-flex items-center justify-center size-12 rounded-xl bg-gold/10 text-gold mb-5 group-hover:bg-gold/20 transition-colors">
-                  <Icon className="size-5" />
-                </span>
-                <p className="font-display font-semibold text-lg mb-2">{g.t}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{g.d}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
 
       {/* TESTIMONIALS */}
       <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
