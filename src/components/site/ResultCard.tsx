@@ -8,7 +8,7 @@ interface Props {
   softCta?: boolean;
 }
 
-export const ResultCard = ({ heading, items, note }: Props) => {
+export const ResultCard = ({ heading, items, note, softCta }: Props) => {
   return (
     <section className="container-wide py-16 md:py-24">
       <div className="max-w-2xl mb-8">
