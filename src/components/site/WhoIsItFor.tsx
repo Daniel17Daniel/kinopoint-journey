@@ -7,6 +7,7 @@ export type WhoItem = { icon: string; label: string; desc: string; result: strin
 interface Props {
   heading: string;
   items: WhoItem[];
+  applyTo?: string;
 }
 
 export const WhoIsItFor = ({ heading, items }: Props) => {
