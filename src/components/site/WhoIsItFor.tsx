@@ -52,10 +52,10 @@ export const WhoIsItFor = ({ heading, items, applyTo = "/apply" }: Props) => {
           <div className="rounded-xl border border-primary/25 bg-primary/10 p-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
             <p className="text-sm text-primary font-medium flex-1">→ {active.result}</p>
             <Link
-              to="/apply"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline whitespace-nowrap"
+              to={applyTo}
+              className="text-primary text-xs font-medium underline underline-offset-2 ml-1"
             >
-              Залишити заявку <ArrowRight className="size-3.5" />
+              Записатись →
             </Link>
           </div>
         )}
