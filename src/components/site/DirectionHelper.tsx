@@ -298,7 +298,7 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
                   onClick={() => { onClose(); navigate(`/apply?direction=${result}`); }}
                   className="flex-1 inline-flex items-center justify-center px-5 py-4 rounded-full border border-border-strong text-foreground hover:border-primary hover:text-primary transition-all font-semibold"
                 >
-                  Залишити заявку
+                  Записатись на цей курс
                 </button>
               </div>
               <button

@@ -257,9 +257,9 @@ export const DirectionPage = ({
             <div className="flex md:justify-end">
               <Link
                 to={`/apply?direction=${applyDirection}`}
-                className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-all hover:scale-[1.02] ${accentBg}`}
+                className="text-primary font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all"
               >
-                Залишити заявку <ArrowRight className="size-4" />
+                Записатись →
               </Link>
             </div>
           </div>
