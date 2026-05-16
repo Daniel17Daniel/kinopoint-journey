@@ -32,6 +32,8 @@ const Apply = () => {
 
   useEffect(() => {
     document.title = "Заявка — KinoPoint Film";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Залишити заявку до КіноPoint Film — школи акторської майстерності в Одесі. Без прослуховувань. Перший місяць зі знижкою 50%.');
   }, []);
 
   const submit = async (e: React.FormEvent) => {

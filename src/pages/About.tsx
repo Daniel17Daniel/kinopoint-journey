@@ -17,7 +17,11 @@ const VALUES = [
 
 const About = () => {
   const { open } = useHelper();
-  useEffect(() => { document.title = "Про KinoPoint — KinoPoint Film"; }, []);
+  useEffect(() => {
+    document.title = "Про KinoPoint — KinoPoint Film";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Про КіноPoint Film — приватну школу акторської майстерності в Одесі. Засновниця Катерина Лебедєва, 18 років на знімальному майданчику.');
+  }, []);
 
   return (
     <div>
