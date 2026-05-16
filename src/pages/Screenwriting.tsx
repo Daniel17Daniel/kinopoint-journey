@@ -137,46 +137,27 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-20 md:py-28">
-        <div className="max-w-2xl mb-12">
-          <div className="eyebrow mb-4">Для кого цей курс</div>
-          <h2 className="h-section text-balance">Кому цей курс буде корисним.</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {FOR_WHO.map((t, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-surface border border-border">
-              <div className="flex items-start gap-3">
-                <span className="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-success/15 text-success shrink-0">
-                  <Check className="size-3.5" />
-                </span>
-                <p className="text-foreground/90 leading-relaxed">{t}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <WhoIsItFor
+        heading="Хто приходить на курс"
+        items={[
+          { icon: "💡", label: "Є ідея", desc: "Але не знаєш як її оформити", result: "Саме з цього починається курс — від ідеї до готового сценарію." },
+          { icon: "✍️", label: "З нуля", desc: "Хочеш навчитися писати сценарії", result: "Курс веде від основ до завершеного проєкту в портфоліо." },
+          { icon: "🎭", label: "Актори і режисери", desc: "Хочеш розуміти структуру історії", result: "Навчишся читати і будувати драматургію зсередини." },
+          { icon: "📱", label: "Контент і відео", desc: "Працюєш з відео або соцмережами", result: "Сценарна логіка зробить твій контент сильнішим." },
+        ]}
+      />
 
-      <section className="bg-surface/40 border-y border-border/60 py-20 md:py-28">
-        <div className="container-wide">
-          <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-4">З чим ми працюємо</div>
-            <h2 className="h-section text-balance">Формати, з якими ви будете писати.</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {FORMATS.map((f) => {
-              const Icon = f.icon;
-              return (
-                <div key={f.t} className="p-6 rounded-2xl bg-background border border-border hover:border-gold/40 transition-colors">
-                  <span className="inline-flex items-center justify-center size-11 rounded-xl bg-gold/10 text-gold mb-4">
-                    <Icon className="size-5" />
-                  </span>
-                  <p className="font-display font-semibold text-lg">{f.t}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SkillsList
+        heading="Шість кроків від ідеї до сценарію"
+        items={[
+          { title: "Ідея і логлайн", desc: "Сформулювати суть історії в одному реченні" },
+          { title: "Синопсис", desc: "Короткий виклад — структура і напрям розповіді" },
+          { title: "Побудова структури", desc: "Акти, повороти, кульмінація — каркас сценарію" },
+          { title: "Персонажі", desc: "Живі герої з власною логікою, бажаннями і суперечностями" },
+          { title: "Сцени і діалоги", desc: "Писати так, щоб це звучало — а не читалось" },
+          { title: "Фінальна версія", desc: "Відредагований сценарій готовий до показу і подачі" },
+        ]}
+      />
 
       {/* PROCESS — Course Map */}
       <section className="container-wide py-20 md:py-28 relative overflow-hidden">
