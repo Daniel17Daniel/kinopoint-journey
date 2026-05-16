@@ -117,8 +117,8 @@ const About = () => {
               <button onClick={open} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red transition-all">
                 <Compass className="size-4" /> Підібрати напрям
               </button>
-              <Link to="/apply" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-all font-semibold">
-                Залишити заявку <ArrowRight className="size-4" />
+              <Link to="/apply" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-primary/50 text-primary hover:bg-primary/5 transition-all font-semibold">
+                Хочу спробувати →
               </Link>
             </div>
           </div>

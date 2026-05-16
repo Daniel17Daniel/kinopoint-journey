@@ -5,9 +5,10 @@ interface Props {
   heading: string;
   items: string[];
   note?: string | null;
+  softCta?: boolean;
 }
 
-export const ResultCard = ({ heading, items, note }: Props) => {
+export const ResultCard = ({ heading, items, note, softCta }: Props) => {
   return (
     <section className="container-wide py-16 md:py-24">
       <div className="max-w-2xl mb-8">
@@ -41,12 +42,21 @@ export const ResultCard = ({ heading, items, note }: Props) => {
             </div>
           )}
 
-          <Link
-            to="/apply"
-            className="mt-5 w-full inline-flex items-center justify-center bg-primary rounded-xl py-3 text-sm font-semibold text-primary-foreground hover:shadow-red transition-all"
-          >
-            Залишити заявку
-          </Link>
+          {softCta ? (
+            <Link
+              to="/apply"
+              className="mt-5 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all"
+            >
+              Записатись →
+            </Link>
+          ) : (
+            <Link
+              to="/apply"
+              className="mt-5 w-full inline-flex items-center justify-center bg-primary rounded-xl py-3 text-sm font-semibold text-primary-foreground hover:shadow-red transition-all"
+            >
+              Залишити заявку
+            </Link>
+          )}
         </div>
       </div>
     </section>

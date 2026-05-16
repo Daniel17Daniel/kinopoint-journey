@@ -20,7 +20,7 @@ export const Footer = () => {
             to="/apply"
             className="inline-flex items-center gap-2 mt-6 px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:shadow-red transition-all"
           >
-            Залишити заявку <ArrowUpRight className="size-4" />
+            Записатись <ArrowUpRight className="size-4" />
           </Link>
         </div>
 
