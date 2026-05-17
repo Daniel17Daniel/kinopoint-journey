@@ -206,7 +206,7 @@ const Screenwriting = () => {
 
       <ResultCard
         heading="Фінальний результат"
-        softCta
+        showDiscount
         items={[
           "Завершений сценарний проєкт для портфоліо",
           "Розуміння структури будь-якої історії",
