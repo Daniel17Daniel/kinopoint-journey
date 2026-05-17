@@ -64,12 +64,16 @@ export const CourseMap = ({
           <div className="absolute inset-0 grid-frame opacity-[0.07]" />
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 size-64 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
           <div className="relative">
-            <span className="inline-flex items-center justify-center size-16 md:size-20 rounded-2xl bg-gradient-to-br from-primary to-primary/60 text-primary-foreground shadow-red mb-5">
-              <CenterIcon className="size-7 md:size-9" />
-            </span>
-            {center.eyebrow && (
-              <div className="eyebrow justify-center mb-3 text-gold">{center.eyebrow}</div>
-            )}
+            <div className="flex flex-col items-center gap-2 mb-3">
+              <span className="inline-flex items-center justify-center size-16 md:size-20 rounded-2xl bg-gradient-to-br from-primary to-primary/60 text-primary-foreground shadow-red">
+                <CenterIcon className="size-7 md:size-9" />
+              </span>
+              {center.eyebrow && (
+                <span className="text-[11px] uppercase tracking-[0.22em] text-gold/90 font-medium">
+                  {center.eyebrow}
+                </span>
+              )}
+            </div>
             <h3 className="font-display text-2xl md:text-3xl font-bold leading-tight mb-3 text-balance">
               {center.title}
             </h3>
