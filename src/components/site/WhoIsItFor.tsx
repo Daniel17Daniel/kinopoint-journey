@@ -15,13 +15,13 @@ export const WhoIsItFor = ({ heading, items, applyTo = "/apply" }: Props) => {
   const active = selected !== null ? items[selected] : null;
 
   return (
-    <section className="container-wide py-16 md:py-24">
+    <section className="container-wide py-14 md:py-20">
       <div className="max-w-2xl mb-8">
         <div className="eyebrow mb-4">Для кого цей курс</div>
         <h2 className="h-section text-balance">{heading}</h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 max-w-3xl">
+      <div className="grid grid-cols-2 gap-4 max-w-3xl">
         {items.map((it, i) => {
           const isActive = selected === i;
           return (

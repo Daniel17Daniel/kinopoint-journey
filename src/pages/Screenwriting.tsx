@@ -165,9 +165,16 @@ const Screenwriting = () => {
       />
 
       {/* PROCESS — Course Map */}
-      <section className="container-wide py-16 md:py-24 relative overflow-hidden">
-        <div className="max-w-2xl mb-12">
-          <div className="eyebrow mb-4">Як ми працюємо</div>
+      <section className="container-wide py-14 md:py-20 relative overflow-hidden">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <div className="flex flex-col items-center gap-3 mb-4">
+            <div className="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/20 flex items-center justify-center">
+              <PenLine className="size-7 text-primary" />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
+              ЯК МИ ПРАЦЮЄМО
+            </span>
+          </div>
           <h2 className="h-section text-balance">Карта курсу — від ідеї до готового сценарію.</h2>
         </div>
         <CourseMap center={PROCESS_CENTER} nodes={PROCESS_NODES} />
@@ -221,7 +228,7 @@ const Screenwriting = () => {
       />
 
       {/* FAQ */}
-      <section className="container-wide py-20 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Короткі запитання</div>
@@ -245,7 +252,7 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-16 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14">
           <div className="absolute -top-32 -right-32 size-96 blur-3xl rounded-full bg-primary/15" />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">

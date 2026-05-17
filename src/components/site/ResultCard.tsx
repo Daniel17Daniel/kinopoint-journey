@@ -10,7 +10,7 @@ interface Props {
 
 export const ResultCard = ({ heading, items, note, softCta }: Props) => {
   return (
-    <section className="container-wide py-16 md:py-24">
+    <section className="container-wide py-14 md:py-20">
       <div className="max-w-2xl mb-8">
         <div className="eyebrow mb-4">Що ти отримаєш</div>
         <h2 className="h-section text-balance">{heading}</h2>
@@ -19,7 +19,7 @@ export const ResultCard = ({ heading, items, note, softCta }: Props) => {
       <div className="max-w-2xl rounded-2xl border border-gold/25 bg-gradient-to-br from-surface to-background p-6 md:p-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
         <div className="relative">
-          <div className="text-3xl mb-4" aria-hidden>🏆</div>
+          <div className="text-3xl mb-4 text-center" aria-hidden>🏆</div>
           <div className="flex flex-col gap-3">
             {items.map((t) => (
               <div key={t} className="flex items-center gap-3">

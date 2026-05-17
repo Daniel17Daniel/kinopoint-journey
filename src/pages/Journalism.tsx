@@ -126,7 +126,7 @@ const Journalism = () => {
       </section>
 
       {/* TEACHER */}
-      <section className="container-wide py-20 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="max-w-5xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 overflow-hidden grid md:grid-cols-12">
           <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
             <div className="absolute inset-0 grid-frame opacity-[0.08]" />
@@ -148,10 +148,17 @@ const Journalism = () => {
         </div>
       </section>
 
-      <section className="bg-surface/40 border-y border-border/60 py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-surface/40 border-y border-border/60 py-14 md:py-20 relative overflow-hidden">
         <div className="container-wide">
-          <div className="max-w-2xl mb-12">
-            <div className="eyebrow mb-4">Що дає курс</div>
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="flex flex-col items-center gap-3 mb-4">
+              <div className="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/20 flex items-center justify-center">
+                <Tv className="size-7 text-primary" />
+              </div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
+                ЩО ДАЄ КУРС
+              </span>
+            </div>
             <h2 className="h-section text-balance">Карта курсу — практика, а не теорія.</h2>
           </div>
           <CourseMap center={GIVES_CENTER} nodes={GIVES_NODES} />
@@ -205,7 +212,7 @@ const Journalism = () => {
       />
 
       {/* FAQ */}
-      <section className="container-wide py-20 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Короткі запитання</div>
