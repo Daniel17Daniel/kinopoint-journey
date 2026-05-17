@@ -252,7 +252,7 @@ const Screenwriting = () => {
         </div>
       </section>
 
-      <section className="container-wide py-16 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-surface to-background p-10 md:p-14">
           <div className="absolute -top-32 -right-32 size-96 blur-3xl rounded-full bg-primary/15" />
           <div className="relative grid md:grid-cols-2 gap-8 items-center">
