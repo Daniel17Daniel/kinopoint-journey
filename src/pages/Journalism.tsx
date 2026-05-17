@@ -127,23 +127,14 @@ const Journalism = () => {
 
       {/* TEACHER */}
       <section className="container-wide py-14 md:py-20">
-        <div className="max-w-5xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 overflow-hidden grid md:grid-cols-12">
-          <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
-            <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-            <div className="relative text-center px-6">
-              <div className="inline-flex items-center justify-center size-24 rounded-full bg-gold/10 border border-gold/30 text-gold mb-4">
-                <Camera className="size-10" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Фото викладача</p>
-              <p className="text-sm text-muted-foreground/80 mt-1">з'явиться незабаром</p>
-            </div>
+        <div className="max-w-2xl mx-auto rounded-2xl border border-white/10 bg-white/5 p-5 flex items-center gap-5">
+          <div className="w-14 h-14 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center text-lg font-bold text-primary shrink-0">
+            НБ
           </div>
-          <div className="md:col-span-7 p-8 md:p-12">
-            <div className="eyebrow mb-4">Куратор курсу</div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 leading-tight">Надія Бондаренко</h2>
-            <p className="text-foreground/85 text-lg leading-relaxed">
-              Журналістка, телеведуча, сценаристка, режисерка та редакторка. 19 років у медіа, робота на провідних телеканалах Одеси та досвід у міжнародному французькому виданні.
-            </p>
+          <div className="min-w-0">
+            <p className="text-[10px] uppercase tracking-widest text-gold/70 mb-1">КУРАТОР КУРСУ</p>
+            <p className="text-base font-bold text-foreground">Надія Бондаренко</p>
+            <p className="text-sm text-foreground/60 leading-snug">Журналіст, телеведуча, редакторка · 19 років у медіа</p>
           </div>
         </div>
       </section>
