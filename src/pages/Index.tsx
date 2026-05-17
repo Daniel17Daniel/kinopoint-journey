@@ -380,7 +380,7 @@ const Index = () => {
       <section className="container-wide pb-24 overflow-x-hidden">
         <div className="max-w-2xl mb-10">
           <div className="eyebrow mb-4">Де ми знаходимося</div>
-          <h2 className="h-section text-balance">вул. Святослава Караванського, 22 — чекаємо на вас.</h2>
+          <h2 className="h-section text-balance">вул. Святослава Караванського, 22, Одеса</h2>
         </div>
         <div className="grid lg:grid-cols-12 gap-5 w-full">
           <div className="lg:col-span-5 space-y-3 min-w-0">

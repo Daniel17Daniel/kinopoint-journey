@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, MapPin, ArrowUpRight, Mail, Phone } from "lucide-react";
+import { Instagram, MapPin, ArrowUpRight, Mail, Phone, Send } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 
 export const Footer = () => {
@@ -38,24 +38,33 @@ export const Footer = () => {
         <div className="md:col-span-4">
           <div className="eyebrow mb-4">Контакти</div>
           <a
-            href="https://instagram.com/kinopoint.film"
+            href="https://instagram.com/kinopoint.film.odesa"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3"
           >
-            <Instagram className="size-5" />
+            <Instagram className="size-5 text-gold" />
             <span>Instagram</span>
           </a>
+          <a
+            href="https://t.me/kinopoint_film"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3"
+          >
+            <Send className="size-5 text-gold" />
+            <span>Telegram</span>
+          </a>
           <a href="mailto:kinopoint.film.odesa@gmail.com" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3 break-all">
-            <Mail className="size-5 shrink-0" />
+            <Mail className="size-5 shrink-0 text-gold" />
             <span>kinopoint.film.odesa@gmail.com</span>
           </a>
           <a href="tel:+380123456789" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4">
-            <Phone className="size-5 shrink-0" />
+            <Phone className="size-5 shrink-0 text-gold" />
             <span>+38 (012) 345-67-89</span>
           </a>
           <div className="flex items-start gap-3 text-muted-foreground">
-            <MapPin className="size-5 mt-0.5 text-primary/80 shrink-0" />
+            <MapPin className="size-5 mt-0.5 text-gold shrink-0" />
             <span>вул. Святослава Караванського, 22, Одеса</span>
           </div>
         </div>
@@ -64,7 +73,6 @@ export const Footer = () => {
       <div className="border-t border-border/40">
         <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} KinoPoint Film. Усі права захищені.</p>
-          <p className="opacity-70">Створено з увагою до деталей.</p>
         </div>
       </div>
     </footer>

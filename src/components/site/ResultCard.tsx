@@ -10,7 +10,7 @@ interface Props {
 export const ResultCard = ({ heading, items, note, showDiscount }: Props) => {
   return (
     <section className="container-wide py-14 md:py-20">
-      <div className="w-full rounded-2xl border border-border-strong bg-surface/60 overflow-hidden">
+      <div className="w-full rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-stretch">
           {/* LEFT COLUMN */}
           <div className="flex-1 p-6 md:p-8">
