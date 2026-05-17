@@ -234,7 +234,7 @@ const Acting = () => {
       </section>
 
       {/* SHORT QUESTIONS */}
-      <section className="container-wide py-16 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="eyebrow mb-4">Короткі запитання</div>
