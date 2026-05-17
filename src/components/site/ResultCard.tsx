@@ -1,60 +1,63 @@
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 
 interface Props {
   heading: string;
   items: string[];
   note?: string | null;
-  softCta?: boolean;
+  showDiscount?: boolean;
 }
 
-export const ResultCard = ({ heading, items, note, softCta }: Props) => {
+export const ResultCard = ({ heading, items, note, showDiscount }: Props) => {
   return (
     <section className="container-wide py-14 md:py-20">
-      <div className="max-w-2xl mb-8">
-        <div className="eyebrow mb-4">Що ти отримаєш</div>
-        <h2 className="h-section text-balance">{heading}</h2>
-      </div>
-
-      <div className="rounded-2xl border border-gold/25 bg-gradient-to-br from-surface to-background p-6 md:p-8 relative overflow-hidden">
-        <div className="relative flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-          <div className="flex-1">
+      <div className="w-full rounded-2xl border border-border-strong bg-surface/60 overflow-hidden">
+        <div className="flex flex-col md:flex-row md:items-stretch">
+          {/* LEFT COLUMN */}
+          <div className="flex-1 p-6 md:p-8">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-gold/70 mb-2 flex items-center gap-2">
+              <span className="inline-block w-4 h-px bg-gold/40"></span>
+              ЩО ТИ ОТРИМАЄШ
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight tracking-tight mb-6">
+              {heading}
+            </h2>
             <div className="flex flex-col gap-3">
-              {items.map((t) => (
-                <div key={t} className="flex items-center gap-3">
-                  <span className="w-5 h-5 rounded-md bg-success/10 border border-success/30 flex items-center justify-center flex-shrink-0">
-                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden>
-                      <path d="M1 4l2.5 2.5L9 1" stroke="hsl(var(--success))" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              {items.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 text-sm text-foreground/80">
+                  <div className="w-5 h-5 rounded-md bg-success/10 border border-success/30 flex items-center justify-center flex-shrink-0">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden>
+                      <path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="hsl(var(--success))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                     </svg>
-                  </span>
-                  <span className="text-sm text-foreground/85">{t}</span>
+                  </div>
+                  {item}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="md:w-56 flex flex-col gap-4 md:border-l md:border-border/30 md:pl-8">
+          {/* DIVIDER */}
+          <div className="hidden md:block w-px bg-border/30 my-6" />
+
+          {/* RIGHT COLUMN */}
+          <div className="md:w-60 p-6 md:p-8 flex flex-col items-center justify-center gap-4 border-t border-border/20 md:border-t-0">
             {note && (
-              <div className="rounded-xl bg-gold/10 border border-gold/20 p-3 flex items-start gap-2 text-sm text-gold font-medium">
-                <Sparkles className="size-4 shrink-0 mt-0.5" />
-                <span>{note}</span>
+              <div className="w-full rounded-xl bg-gold/10 border border-gold/20 p-4 text-xs text-gold leading-relaxed text-center">
+                {note}
               </div>
             )}
-
-            {softCta ? (
-              <Link
-                to="/apply"
-                className="inline-flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all"
-              >
-                Записатись →
-              </Link>
-            ) : (
-              <Link
-                to="/apply"
-                className="w-full inline-flex items-center justify-center bg-primary rounded-xl py-3 text-sm font-semibold text-primary-foreground hover:shadow-red transition-all"
-              >
-                Залишити заявку
-              </Link>
+            <Link
+              to="/apply"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:scale-[1.02] transition-all"
+            >
+              Записатись
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            {showDiscount && (
+              <p className="text-[11px] text-muted-foreground text-center">
+                Перший місяць — знижка 50%
+              </p>
             )}
           </div>
         </div>
