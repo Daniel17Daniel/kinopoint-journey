@@ -192,17 +192,6 @@ const Acting = () => {
 
       {/* GIVES — Course Map */}
       <section className="container-wide py-14 md:py-20 relative overflow-hidden">
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <div className="flex flex-col items-center gap-3 mb-4">
-            <div className="w-16 h-16 rounded-2xl bg-primary/15 border border-primary/20 flex items-center justify-center">
-              <Theater className="size-7 text-primary" />
-            </div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold/80">
-              ЩО ДАЄ КУРС
-            </span>
-          </div>
-          <h2 className="h-section text-balance">Карта курсу — зміни і всередині, і назовні.</h2>
-        </div>
         <CourseMap center={GIVES_CENTER} nodes={GIVES_NODES} />
       </section>
 
