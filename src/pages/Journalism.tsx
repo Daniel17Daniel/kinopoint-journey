@@ -126,7 +126,7 @@ const Journalism = () => {
       </section>
 
       {/* TEACHER */}
-      <section className="container-wide py-20 md:py-24">
+      <section className="container-wide py-14 md:py-20">
         <div className="max-w-5xl mx-auto rounded-3xl border border-gold/30 bg-surface/60 overflow-hidden grid md:grid-cols-12">
           <div className="md:col-span-5 relative bg-gradient-to-br from-background to-surface min-h-[280px] flex items-center justify-center">
             <div className="absolute inset-0 grid-frame opacity-[0.08]" />
