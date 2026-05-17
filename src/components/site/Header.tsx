@@ -94,15 +94,6 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="https://instagram.com/kinopoint.film"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="inline-flex items-center justify-center size-9 rounded-full border border-border-strong/60 text-foreground/80 hover:text-gold hover:border-gold/60 transition-colors"
-            >
-              <Instagram className="size-4" />
-            </a>
             <Link
               to="/apply"
               className="inline-flex items-center justify-center h-9 px-4 rounded-md bg-gold text-background text-sm font-semibold hover:bg-gold/90 transition-colors"
