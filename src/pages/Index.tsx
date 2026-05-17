@@ -378,39 +378,13 @@ const Index = () => {
 
       {/* LOCATION */}
       <section className="container-wide pb-24 overflow-x-hidden">
-        <div className="max-w-2xl mb-10">
-          <div className="eyebrow mb-4">Де ми знаходимося</div>
-          <h2 className="h-section text-balance">вул. Святослава Караванського, 22, Одеса</h2>
-        </div>
-        <div className="grid lg:grid-cols-12 gap-5 w-full">
-          <div className="lg:col-span-5 space-y-3 min-w-0">
-            <div className="p-5 rounded-2xl bg-surface border border-border-strong w-full">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/10 text-primary shrink-0">
-                  <MapPin className="size-4" />
-                </span>
-                <div className="min-w-0">
-                  <p className="eyebrow mb-1">Адреса</p>
-                  <p className="text-foreground/90 text-sm leading-relaxed">вул. Святослава Караванського, 22, Одеса</p>
-                  <p className="text-muted-foreground text-xs leading-relaxed mt-1">Детальний орієнтир надішлемо після підтвердження</p>
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://instagram.com/kinopoint.film"
-              target="_blank"
-              rel="noreferrer"
-              className="p-5 rounded-2xl bg-surface border border-border hover:border-gold/40 transition-colors flex items-center gap-3 w-full"
-            >
-              <Instagram className="size-5 text-gold shrink-0" />
-              <div className="min-w-0">
-                <p className="font-display font-semibold text-sm">Instagram</p>
-                <p className="text-muted-foreground text-xs">Найшвидший спосіб зв'язатися з нами.</p>
-              </div>
-            </a>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <div className="eyebrow mb-4">Де ми знаходимося</div>
+            <h2 className="h-section text-balance">вул. Святослава Караванського, 22, Одеса</h2>
           </div>
-          <div className="lg:col-span-7 min-w-0">
-            <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface w-full min-h-[240px] lg:min-h-[320px] lg:h-full">
+          <div className="min-w-0">
+            <div className="relative rounded-2xl overflow-hidden border border-border-strong bg-surface w-full min-h-[240px] md:min-h-[320px]">
               <iframe
                 src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%B0%20%D0%9A%D0%B0%D1%80%D0%B0%D0%B2%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE%2C%2022%2C%20%D0%9E%D0%B4%D0%B5%D1%81%D0%B0&output=embed"
                 className="absolute inset-0 w-full h-full border-0"
