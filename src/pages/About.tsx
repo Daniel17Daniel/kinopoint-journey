@@ -2,7 +2,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Compass } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
-import heroImg from "@/assets/hero-stage.jpg";
+import heroImg from "@/assets/founder-neon.jpg";
+import founderImg from "@/assets/founder-kateryna.jpg";
+import studentsGroupImg from "@/assets/students-group.jpg";
+import graduationImg from "@/assets/graduation-stage.jpg";
 import valPresence from "@/assets/value-presence.jpg";
 import valPractice from "@/assets/value-practice.jpg";
 import valGrowth from "@/assets/value-growth.jpg";
@@ -53,13 +56,13 @@ const About = () => {
       {/* FOUNDER */}
       <section className="container-wide pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-surface/60 overflow-hidden grid md:grid-cols-12">
-          <div className="md:col-span-4 relative bg-gradient-to-br from-background to-surface min-h-[260px] flex items-center justify-center p-8">
-            <div className="absolute inset-0 grid-frame opacity-[0.08]" />
-            <div className="relative text-center">
-              <div className="inline-flex items-center justify-center size-28 rounded-full bg-gold/10 border border-gold/40 text-gold font-display text-3xl font-bold shadow-gold">
-                КЛ
-              </div>
-            </div>
+          <div className="md:col-span-4 relative min-h-[320px] md:min-h-full overflow-hidden rounded-l-3xl">
+            <img
+              src={founderImg}
+              alt="Катерина Лебедєва — засновниця KinoPoint"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20" />
           </div>
           <div className="md:col-span-8 p-8 md:p-12">
             <div className="eyebrow mb-3">Засновниця</div>
@@ -73,6 +76,34 @@ const About = () => {
             <blockquote className="border-l-2 border-gold pl-4 italic text-gold/90 leading-relaxed">
               «Я ділюся не просто теорією з підручників, а практикою, загартованою роками реальної роботи.»
             </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* STUDENT LIFE */}
+      <section className="container-wide pb-16 md:pb-20">
+        <div className="max-w-2xl mb-10">
+          <div className="eyebrow mb-4">Атмосфера школи</div>
+          <h2 className="h-section text-balance">Живі моменти з KinoPoint.</h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] border border-border-strong">
+            <img
+              src={graduationImg}
+              alt="Випускний показ — учні KinoPoint на сцені"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <p className="absolute bottom-4 left-5 text-sm font-semibold text-foreground/90">Випускний показ</p>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] border border-border-strong">
+            <img
+              src={studentsGroupImg}
+              alt="Учні KinoPoint в просторі школи"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <p className="absolute bottom-4 left-5 text-sm font-semibold text-foreground/90">Простір школи</p>
           </div>
         </div>
       </section>

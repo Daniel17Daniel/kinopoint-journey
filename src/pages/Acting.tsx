@@ -10,7 +10,7 @@ import { HowItWorks } from "@/components/site/HowItWorks";
 import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/acting-hero.jpg";
 import atmImg from "@/assets/atmosphere-acting.jpg";
-import liveStage from "@/assets/live-acting-stage.jpg";
+import liveStage from "@/assets/graduation-stage.jpg";
 import liveVoice from "@/assets/live-acting-voice.jpg";
 
 const FOR_WHO_GROUPS = [

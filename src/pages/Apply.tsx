@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
-import { Check, Instagram, ArrowRight, Sparkles, Mail, Phone, MapPin } from "lucide-react";
+import { Check, Instagram, ArrowRight, Sparkles, Mail, Phone, MapPin, Send } from "lucide-react";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Будь ласка, введіть ім’я").max(80),
@@ -62,7 +62,7 @@ const Apply = () => {
       if (!res.ok) throw new Error("tg failed");
       setSubmitted(true);
     } catch {
-      setSubmitError("Щось пішло не так. Напишіть нам в Instagram — @kinopoint.film.odesa");
+      setSubmitError("Щось пішло не так. Напишіть нам в Telegram — @KinoPointOdesa");
     } finally {
       setSubmitting(false);
     }
@@ -220,11 +220,20 @@ const Apply = () => {
                   <span>kinopoint.film.odesa@gmail.com</span>
                 </a>
                 <a
-                  href="tel:+380123456789"
+                  href="https://t.me/KinoPointOdesa"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold"
+                >
+                  <Send className="size-4 shrink-0" />
+                  <span>@KinoPointOdesa</span>
+                </a>
+                <a
+                  href="tel:+380949980285"
                   className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold"
                 >
                   <Phone className="size-4 shrink-0" />
-                  <span>+38 (012) 345-67-89</span>
+                  <span>+38 (094) 998-02-85</span>
                 </a>
                 <div className="flex items-start gap-3 px-4 py-3 rounded-xl border border-border text-sm text-muted-foreground">
                   <MapPin className="size-4 shrink-0 mt-0.5 text-primary/80" />

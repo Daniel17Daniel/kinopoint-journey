@@ -4,8 +4,8 @@ import { Menu, X, Instagram, Send, Phone } from "lucide-react";
 import logoSymbol from "@/assets/logo-symbol.png";
 import { cn } from "@/lib/utils";
 
-const PHONE = "+380123456789";
-const TELEGRAM = "kinopoint_film";
+const PHONE = "+380949980285";
+const TELEGRAM = "KinoPointOdesa";
 
 const NAV_DESKTOP = [
   { to: "/acting", label: "Акторська майстерність" },

@@ -47,7 +47,7 @@ export const Footer = () => {
             <span>Instagram</span>
           </a>
           <a
-            href="https://t.me/kinopoint_film"
+            href="https://t.me/KinoPointOdesa"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3"
@@ -59,9 +59,9 @@ export const Footer = () => {
             <Mail className="size-5 shrink-0 text-gold" />
             <span>kinopoint.film.odesa@gmail.com</span>
           </a>
-          <a href="tel:+380123456789" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4">
+          <a href="tel:+380949980285" className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-4">
             <Phone className="size-5 shrink-0 text-gold" />
-            <span>+38 (012) 345-67-89</span>
+            <span>+38 (094) 998-02-85</span>
           </a>
           <div className="flex items-start gap-3 text-muted-foreground">
             <MapPin className="size-5 mt-0.5 text-gold shrink-0" />
