@@ -56,13 +56,14 @@ const About = () => {
       {/* FOUNDER */}
       <section className="container-wide pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-surface/60 overflow-hidden grid md:grid-cols-12">
-          <div className="md:col-span-4 relative min-h-[320px] md:min-h-full overflow-hidden rounded-l-3xl">
+          <div className="md:col-span-4 relative min-h-[320px] md:min-h-full overflow-hidden rounded-l-3xl group">
+            <div className="absolute inset-0 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <img
               src={founderImg}
               alt="Катерина Лебедєва — засновниця KinoPoint"
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              className="absolute inset-0 w-full h-full object-cover object-top relative z-10"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20 z-20" />
           </div>
           <div className="md:col-span-8 p-8 md:p-12">
             <div className="eyebrow mb-3">Засновниця</div>
