@@ -212,7 +212,7 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
           ))}
         </div>
 
-        <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 md:px-10 py-6 md:py-8 flex flex-col justify-center">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 md:px-8 py-4 md:py-5 flex flex-col justify-center">
           {step === -1 && (
             <div className="space-y-7 max-w-lg mx-auto text-center md:text-left animate-fade-up">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-primary">
@@ -234,14 +234,14 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
           )}
 
           {step >= 0 && step < TOTAL && (
-            <div key={step} className="max-w-2xl mx-auto space-y-7 animate-fade-up">
+            <div key={step} className="max-w-2xl mx-auto space-y-4 animate-fade-up">
               <p className="text-xs uppercase tracking-[0.22em] text-primary/90 font-semibold">
                 Питання {step + 1} з {TOTAL}
               </p>
-              <h2 className="font-display text-2xl md:text-3xl font-bold leading-snug">
+              <h2 className="font-display text-xl md:text-2xl font-bold leading-snug">
                 {QUESTIONS[step].q}
               </h2>
-              <div className="grid gap-3">
+              <div className="grid gap-2">
                 {QUESTIONS[step].options.map((o) => {
                   const Icon = o.icon;
                   const isSel = selected === o.v;
@@ -250,20 +250,20 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
                       key={o.title}
                       onClick={() => choose(o.v)}
                       disabled={selected !== null}
-                      className={`group text-left p-5 rounded-2xl border transition-all duration-200 flex items-start gap-4 ${
+                      className={`group text-left p-3.5 rounded-2xl border transition-all duration-200 flex items-center gap-3 ${
                         isSel
                           ? "border-primary bg-primary/5 glow-red"
                           : "border-border bg-surface-2 hover:border-primary/50 hover:bg-surface-3"
                       }`}
                     >
-                      <span className={`inline-flex items-center justify-center size-11 rounded-xl shrink-0 transition-colors ${
+                      <span className={`inline-flex items-center justify-center size-9 rounded-xl shrink-0 transition-colors ${
                         isSel ? "bg-primary text-primary-foreground" : "bg-surface-3 text-gold group-hover:bg-primary/10 group-hover:text-primary"
                       }`}>
-                        <Icon className="size-5" />
+                        <Icon className="size-4" />
                       </span>
                       <span className="flex-1 min-w-0">
-                        <span className="block font-display font-semibold text-base md:text-lg leading-tight">{o.title}</span>
-                        <span className="block text-sm text-muted-foreground mt-1 leading-snug">{o.sub}</span>
+                        <span className="block font-display font-semibold text-sm md:text-base leading-tight">{o.title}</span>
+                        <span className="block text-xs text-muted-foreground mt-0.5 leading-snug">{o.sub}</span>
                       </span>
                     </button>
                   );
