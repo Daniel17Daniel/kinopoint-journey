@@ -69,7 +69,7 @@ const AFTER = [
 ];
 
 const FACTS: Fact[] = [
-  { kind: "age", value: "Будь-який вік" },
+  { kind: "age", value: "від 13 років" },
   { kind: "group", value: "10–12 учнів" },
   { kind: "duration", value: "11 місяців" },
   { kind: "frequency", value: "2 рази на тиждень" },
