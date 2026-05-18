@@ -54,11 +54,6 @@ export const ResultCard = ({ heading, items, note, showDiscount }: Props) => {
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
-            {showDiscount && (
-              <p className="text-[11px] text-muted-foreground text-center">
-                Перший місяць — знижка 50%
-              </p>
-            )}
           </div>
         </div>
       </div>
