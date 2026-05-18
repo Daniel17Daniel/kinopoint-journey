@@ -61,7 +61,7 @@ const Journalism = () => {
   useEffect(() => {
     document.title = "Експрес-курс «Тележурналістика» — KinoPoint Film";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Курс тележурналістики в Одесі — КіноPoint Film. 1 місяць, робота в кадрі, реальні зйомки. Куратор — Надія Бондаренко, 19 років у медіа. Перший місяць — 1500 грн.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс тележурналістики в Одесі — КіноPoint Film. 1 місяць, робота в кадрі, реальні зйомки. Куратор — Надія Бондаренко, 19 років у медіа.');
   }, []);
 
   return (

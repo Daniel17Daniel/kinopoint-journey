@@ -83,7 +83,7 @@ const Screenwriting = () => {
   useEffect(() => {
     document.title = "Сценарне мистецтво — KinoPoint Film";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Курс сценарного мистецтва в Одесі — КіноPoint Film. Від ідеї до готового сценарію за 3 місяці. Короткий метр, повний метр або театральна вистава. Перший місяць — 2000 грн.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс сценарного мистецтва в Одесі — КіноPoint Film. Від ідеї до готового сценарію за 3 місяці. Короткий метр, повний метр або театральна вистава.');
   }, []);
 
   return (
