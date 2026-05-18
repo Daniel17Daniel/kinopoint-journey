@@ -111,7 +111,7 @@ const Index = () => {
                 to="/apply"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red hover:scale-[1.02] transition-all w-full sm:w-auto"
               >
-                Залишити заявку<span className="sm:hidden"> — перший місяць 50%</span>
+                Залишити заявку
               </Link>
               <button
                 onClick={open}
@@ -279,10 +279,9 @@ const Index = () => {
                     <div className="mb-5">
                       <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1.5">{c.duration}</p>
                       <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground line-through">{c.oldPrice}</span>
-                        <span className="text-lg font-display font-bold text-gold">{c.newPrice}</span>
+                        <span className="text-lg font-display font-bold text-gold">{c.oldPrice}</span>
                       </div>
-                      <p className="text-[11px] text-muted-foreground mt-1">перший місяць · потім {c.oldPrice}</p>
+                      <p className="text-[11px] text-muted-foreground mt-1">за один місяць</p>
                     </div>
                     <span className="mt-auto inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
                       Перейти до напряму <ArrowRight className="size-4" />
