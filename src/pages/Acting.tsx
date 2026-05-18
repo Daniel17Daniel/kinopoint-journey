@@ -73,7 +73,7 @@ const FACTS: Fact[] = [
   { kind: "group", value: "10–12 учнів" },
   { kind: "duration", value: "11 місяців" },
   { kind: "frequency", value: "2 рази на тиждень" },
-  { kind: "price", value: "2500 грн / міс · перший міс 1250 грн" },
+  { kind: "price", value: "2500 грн / міс" },
 ];
 
 const FAQ = [
@@ -99,7 +99,7 @@ const Acting = () => {
   useEffect(() => {
     document.title = "Акторська майстерність — KinoPoint Film";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Курс акторської майстерності в Одесі — КіноPoint Film. Робота з тілом, голосом, дикцією. Групи до 12 учнів. Випускний на сцені театру. Перший місяць — 1250 грн.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс акторської майстерності в Одесі — КіноPoint Film. Робота з тілом, голосом, дикцією. Групи до 12 учнів. Випускний на сцені театру.');
   }, []);
 
   return (
@@ -120,9 +120,6 @@ const Acting = () => {
           </p>
 
           <div className="mt-10 animate-fade-up space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/50 bg-gold/15 text-gold text-xs font-semibold shadow-gold">
-              <Sparkles className="size-3" /> −50% перший місяць
-            </span>
             <FactChips facts={FACTS} />
           </div>
 

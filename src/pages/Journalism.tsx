@@ -61,7 +61,7 @@ const Journalism = () => {
   useEffect(() => {
     document.title = "Експрес-курс «Тележурналістика» — KinoPoint Film";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Курс тележурналістики в Одесі — КіноPoint Film. 1 місяць, робота в кадрі, реальні зйомки. Куратор — Надія Бондаренко, 19 років у медіа. Перший місяць — 1500 грн.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс тележурналістики в Одесі — КіноPoint Film. 1 місяць, робота в кадрі, реальні зйомки. Куратор — Надія Бондаренко, 19 років у медіа.');
   }, []);
 
   return (
@@ -89,9 +89,6 @@ const Journalism = () => {
           </p>
 
           <div className="mt-10 animate-fade-up space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/50 bg-gold/15 text-gold text-xs font-semibold shadow-gold">
-              <Sparkles className="size-3" /> −50% перший місяць
-            </span>
             <FactChips facts={FACTS} />
           </div>
 

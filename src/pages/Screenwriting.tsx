@@ -83,7 +83,7 @@ const Screenwriting = () => {
   useEffect(() => {
     document.title = "Сценарне мистецтво — KinoPoint Film";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Курс сценарного мистецтва в Одесі — КіноPoint Film. Від ідеї до готового сценарію за 3 місяці. Короткий метр, повний метр або театральна вистава. Перший місяць — 2000 грн.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Курс сценарного мистецтва в Одесі — КіноPoint Film. Від ідеї до готового сценарію за 3 місяці. Короткий метр, повний метр або театральна вистава.');
   }, []);
 
   return (
@@ -105,9 +105,6 @@ const Screenwriting = () => {
           </p>
 
           <div className="mt-10 animate-fade-up space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/50 bg-gold/15 text-gold text-xs font-semibold shadow-gold">
-              <Sparkles className="size-3" /> −50% перший місяць
-            </span>
             <FactChips facts={FACTS} />
           </div>
 
