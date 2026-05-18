@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
 import { Check, Instagram, ArrowRight, Sparkles, Mail, Phone, MapPin, Send } from "lucide-react";
@@ -29,6 +29,7 @@ const Apply = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.title = "Заявка — KinoPoint Film";
@@ -61,6 +62,11 @@ const Apply = () => {
       });
       if (!res.ok) throw new Error("tg failed");
       setSubmitted(true);
+      // Scroll to success block immediately so mobile users see it
+      setTimeout(() => {
+        successRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 50);
     } catch {
       setSubmitError("Щось пішло не так. Напишіть нам в Telegram — @KinoPointOdesa");
     } finally {
@@ -86,7 +92,7 @@ const Apply = () => {
 
       <section className="container-narrow pb-24">
         <div className="grid lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" ref={successRef}>
             {!submitted ? (
               <form onSubmit={submit} noValidate className="rounded-3xl border border-border-strong bg-surface p-7 md:p-10 shadow-elegant space-y-6">
                 <div className="flex items-start gap-3 rounded-2xl border border-gold/40 bg-gold/[0.06] p-4 md:p-5">
@@ -175,14 +181,15 @@ const Apply = () => {
                 </p>
               </form>
             ) : (
-              <div className="rounded-3xl border border-success/40 bg-surface p-10 md:p-14 shadow-elegant animate-scale-in text-center">
-                <div className="inline-flex items-center justify-center size-14 rounded-full bg-success/15 text-success mb-6">
-                  <Check className="size-7" />
+              <div className="rounded-3xl border-2 border-success/60 bg-surface shadow-elegant animate-scale-in text-center min-h-[60vh] flex flex-col items-center justify-center px-8 py-14 md:p-14">
+                <div className="inline-flex items-center justify-center size-20 md:size-14 rounded-full bg-success/15 text-success mb-6 ring-4 ring-success/20">
+                  <Check className="size-10 md:size-7" />
                 </div>
-                <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">Дякуємо за заявку.</h2>
-                <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
-                  Найближчим часом ми зв’яжемося з вами, щоб уточнити деталі.
+                <h2 className="font-display text-3xl md:text-3xl font-bold mb-3">Заявку отримано!</h2>
+                <p className="text-muted-foreground leading-relaxed max-w-md mx-auto text-base md:text-base">
+                  Найближчим часом ми зв'яжемося з вами, щоб уточнити деталі.
                 </p>
+                <p className="mt-3 text-sm text-foreground/50">Зазвичай відповідаємо протягом кількох годин.</p>
                 <a
                   href="https://instagram.com/kinopoint.film"
                   target="_blank"
