@@ -198,20 +198,21 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
           </div>
         </div>
 
-        {step >= 0 && step < TOTAL && (
-          <div className="flex gap-1.5 px-5 md:px-7 pt-4">
-            {Array.from({ length: TOTAL }).map((_, i) => (
-              <div
-                key={i}
-                className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
-                  i <= step ? "bg-primary" : "bg-border"
-                }`}
-              />
-            ))}
-          </div>
-        )}
+        {/* Progress bar — always occupies space to prevent layout shift */}
+        <div className="flex gap-1.5 px-5 md:px-7 pt-4 pb-1">
+          {Array.from({ length: TOTAL }).map((_, i) => (
+            <div
+              key={i}
+              className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
+                step < 0 ? "bg-transparent" :
+                i < step ? "bg-primary" :
+                i === step ? "bg-primary" : "bg-border"
+              }`}
+            />
+          ))}
+        </div>
 
-        <div ref={scrollRef} className="flex-1 overflow-y-auto md:overflow-y-hidden px-5 md:px-10 py-8 md:py-10 flex flex-col justify-center">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 md:px-10 py-6 md:py-8 flex flex-col justify-center">
           {step === -1 && (
             <div className="space-y-7 max-w-lg mx-auto text-center md:text-left animate-fade-up">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-primary">
