@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   X, ArrowRight, Sparkles, ArrowLeft,
@@ -102,6 +102,7 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
   const [step, setStep] = useState(-1);
   const [answers, setAnswers] = useState<V[]>([]);
   const [selected, setSelected] = useState<V | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (open) {
@@ -148,6 +149,8 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
       setAnswers((a) => [...a, v]);
       setSelected(null);
       setStep((s) => s + 1);
+      // reset scroll position so each new question starts at top
+      scrollRef.current?.scrollTo({ top: 0 });
     }, 220);
   };
 
@@ -164,7 +167,7 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
   const r = RESULTS[result];
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center p-0 md:p-6 animate-fade-in">
+    <div className="fixed inset-0 z-[120] flex items-end md:items-center justify-center p-0 md:p-6 animate-fade-in">
       <button
         className="absolute inset-0 bg-background/85 backdrop-blur-md"
         onClick={onClose}
@@ -208,7 +211,7 @@ export const DirectionHelper = ({ open, onClose }: DirectionHelperProps) => {
           </div>
         )}
 
-        <div className="flex-1 overflow-y-auto px-5 md:px-10 py-8 md:py-10">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto md:overflow-y-hidden px-5 md:px-10 py-8 md:py-10 flex flex-col justify-center">
           {step === -1 && (
             <div className="space-y-7 max-w-lg mx-auto text-center md:text-left animate-fade-up">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-primary">
