@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Award, Quote, Star, X,
+  Heart, Mic, Lightbulb, Users, Award, Quote, Star, X, Eye,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
@@ -325,12 +325,15 @@ const Index = () => {
                 onClick={() => setActivePhoto(s.img)}
                 className="relative flex-none w-[260px] md:w-[290px] aspect-[9/16] rounded-2xl overflow-hidden border border-border-strong bg-surface cursor-pointer snap-start group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] hover:-translate-y-1"
               >
-                <img
-                  src={s.img}
-                  alt={`Відгук ${s.user}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+                {/* Inner crop wrapper — hides phone UI (clock, battery top; nav bar bottom) */}
+                <div className="absolute inset-0" style={{ top: '8%', bottom: '6%' }}>
+                  <img
+                    src={s.img}
+                    alt={`Відгук ${s.user}`}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
                   <div className="flex justify-between items-start">
