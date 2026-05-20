@@ -65,12 +65,12 @@ const PROCESS_CENTER: CourseMapCenter = {
 };
 
 const PROCESS_NODES: CourseMapNode[] = [
-  { icon: Lightbulb, title: "Ідея та логлайн", text: "Знаходимо і формулюємо ідею.", accent: "gold", pulse: true },
-  { icon: Layers, title: "Структура і синопсис", text: "Будуємо каркас історії.", accent: "red" },
+  { icon: Lightbulb, title: "Ідея та логлайн", text: "Знаходимо та формулюємо ідею.", accent: "gold", pulse: true },
+  { icon: Layers, title: "Структура й синопсис", text: "Будуємо каркас історії.", accent: "red" },
   { icon: Users, title: "Персонажі", text: "Характери, мотивація, конфлікт.", accent: "gold" },
-  { icon: MessageSquare, title: "Сцени і діалоги", text: "Живі сцени з правильним ритмом.", accent: "red" },
-  { icon: FileText, title: "Фідбек і редагування", text: "Регулярні розбори і розвиток.", accent: "gold" },
-  { icon: Clapperboard, title: "Готовий сценарій", text: "Проєкт, з яким можна працювати далі.", accent: "green" },
+  { icon: MessageSquare, title: "Сцени та діалоги", text: "Живі сцени з правильним ритмом.", accent: "red" },
+  { icon: FileText, title: "Фідбек і редагування", text: "Регулярний аналіз тексту та розвиток ідеї.", accent: "gold" },
+  { icon: Clapperboard, title: "Готовий сценарій", text: "Проєкт, із яким можна працювати далі.", accent: "green" },
 ];
 
 const FACTS: Fact[] = [
