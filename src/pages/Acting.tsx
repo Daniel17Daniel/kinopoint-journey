@@ -55,11 +55,11 @@ const GIVES_CENTER: CourseMapCenter = {
 };
 
 const GIVES_NODES: CourseMapNode[] = [
-  { icon: Activity, title: "Сценічна присутність", text: "Бути живим у кадрі і на сцені.", accent: "red", pulse: true },
-  { icon: Volume2, title: "Голос і дикція", text: "Чіткість, інтонація і виразність.", accent: "gold" },
-  { icon: Heart, title: "Внутрішня свобода", text: "Менше затиску, більше відкритості.", accent: "red" },
-  { icon: Users, title: "Безпечна група", text: "Камерний формат, де можна пробувати.", accent: "gold" },
-  { icon: Flame, title: "Емоційна гнучкість", text: "Робота з почуттями, не проти них.", accent: "red" },
+  { icon: Activity, title: "Сценічна присутність", text: "Бути природним у кадрі та на сцені.", accent: "red", pulse: true },
+  { icon: Volume2, title: "Голос та дикція", text: "Чіткість, інтонація та виразність.", accent: "gold" },
+  { icon: Heart, title: "Внутрішня свобода", text: "Менше скутості, більше відкритості.", accent: "red" },
+  { icon: Users, title: "Безпечний простір", text: "Камерний формат, де можна експериментувати.", accent: "gold" },
+  { icon: Flame, title: "Емоційна гнучкість", text: "Робота з почуттями, а не проти них.", accent: "red" },
   { icon: Eye, title: "Контакт із собою", text: "Відчувати, обирати, проявлятися.", accent: "green" },
 ];
 
