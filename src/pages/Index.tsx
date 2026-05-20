@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Award, Quote, Star,
+  Heart, Mic, Lightbulb, Users, Award, Quote, Star, X,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
@@ -11,6 +12,12 @@ import heroImg from "@/assets/hero-stage-cold.png";
 import cardActing from "@/assets/card-acting-stage.jpg";
 import cardScreen from "@/assets/card-screen-desk.jpg";
 import cardJourn from "@/assets/card-journ-studio.jpg";
+
+import review1 from "@/assets/reviews/review-1.jpg";
+import review2 from "@/assets/reviews/review-2.jpg";
+import review3 from "@/assets/reviews/review-3.jpg";
+import review4 from "@/assets/reviews/review-4.jpg";
+import review5 from "@/assets/reviews/review-5.jpg";
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
@@ -54,10 +61,12 @@ const FOR_WHO_GROUPS = [
   },
 ];
 
-const TESTIMONIALS = [
-  { initials: "МК", name: "Марія К.", course: "Акторська майстерність", text: "Прийшла зі страшним затиском перед людьми. За три місяці відчула себе вільнішою — і на сцені, і в звичайних розмовах." },
-  { initials: "ОР", name: "Олексій Р.", course: "Сценарне мистецтво", text: "Нарешті зрозумів, як з ідеї зробити повноцінну історію. Викладач дійсно вміє пояснювати структуру сценарію." },
-  { initials: "ДС", name: "Дар'я С.", course: "Тележурналістика", text: "Один місяць — і я вже знімала свій перший репортаж. Практики набагато більше, ніж очікувала." },
+const STORIES = [
+  { img: review1, user: "@tushychn", text: "Це місце, де можна на 100% бути собою і щоразу відкривати себе ще глибше" },
+  { img: review2, user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
+  { img: review3, user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
+  { img: review4, user: "@dombrovankaterina", text: "Почуватися більш впевнено на зйомці reels коли навіть не знаєш який сценарій буде" },
+  { img: review5, user: "@damlievaa", text: "Бути більш відкритою, розповідати емоційно історії з життя, анекдоти" },
 ];
 
 const FAQ = [
@@ -81,6 +90,7 @@ const FAQ = [
 
 const Index = () => {
   const { open } = useHelper();
+  const [activePhoto, setActivePhoto] = useState<string | null>(null);
 
   return (
     <div className="overflow-x-hidden">
@@ -301,29 +311,73 @@ const Index = () => {
 
 
       {/* TESTIMONIALS */}
-      <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60">
+      <section className="relative py-24 md:py-28 bg-surface/40 border-y border-border/60 overflow-hidden">
         <div className="container-wide">
           <div className="max-w-2xl mb-12">
             <div className="eyebrow mb-4">Відгуки учнів</div>
             <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.initials} className="p-7 rounded-2xl bg-surface border border-border-strong flex flex-col">
-                <Quote className="size-8 text-gold mb-4" />
-                <p className="text-foreground/90 leading-relaxed mb-6 flex-1">{t.text}</p>
-                <div className="flex items-center gap-3 pt-4 border-t border-border">
-                  <span className="inline-flex items-center justify-center size-10 rounded-full bg-gold/15 text-gold text-sm font-bold shrink-0">
-                    {t.initials}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-display font-semibold text-sm truncate">{t.name}</p>
+          
+          <div className="flex gap-5 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+            {STORIES.map((s, i) => (
+              <div
+                key={i}
+                onClick={() => setActivePhoto(s.img)}
+                className="relative flex-none w-[260px] md:w-[290px] aspect-[9/16] rounded-2xl overflow-hidden border border-border-strong bg-surface cursor-pointer snap-start group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] hover:-translate-y-1"
+              >
+                <img
+                  src={s.img}
+                  alt={`Відгук ${s.user}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
+                  <div className="flex justify-between items-start">
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 backdrop-blur-md">
+                      Instagram Story
+                    </span>
+                    <Instagram className="size-5 text-white/80" />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <p className="text-white font-display font-bold text-sm tracking-wide">
+                      {s.user}
+                    </p>
+                    <p className="text-white/85 text-xs line-clamp-3 leading-relaxed">
+                      {s.text}
+                    </p>
+                    <div className="pt-2 flex items-center gap-1.5 text-primary text-xs font-semibold">
+                      <Eye className="size-4 animate-pulse" /> Натисніть, щоб збільшити
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Cinematic Lightbox Modal */}
+        {activePhoto && (
+          <div 
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+            onClick={() => setActivePhoto(null)}
+          >
+            <div className="relative max-w-lg w-full h-[85vh] flex items-center justify-center animate-in fade-in zoom-in duration-300">
+              <img 
+                src={activePhoto} 
+                alt="Збільшений відгук сторіс" 
+                className="max-w-full max-h-full object-contain rounded-2xl border border-white/10 shadow-2xl"
+              />
+              <button 
+                className="absolute -top-14 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                onClick={() => setActivePhoto(null)}
+              >
+                <X className="size-6" />
+              </button>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* FAQ */}
