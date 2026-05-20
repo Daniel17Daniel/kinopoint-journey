@@ -163,21 +163,21 @@ const Index = () => {
           <div className="eyebrow mb-4">Для кого ця школа</div>
           <h2 className="h-section text-balance">Можливо, це саме для вас.</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {FOR_WHO_GROUPS.map((g) => {
             const Icon = g.icon;
             return (
-              <div key={g.title} className="p-6 rounded-2xl bg-surface border border-border-strong hover:border-gold/40 hover:bg-surface-2 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center justify-center size-10 rounded-xl bg-primary/15 text-primary border border-primary/30 shrink-0">
+              <div key={g.title} className="p-4 sm:p-5 lg:p-6 rounded-2xl bg-surface border border-border-strong hover:border-gold/40 hover:bg-surface-2 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="inline-flex items-center justify-center size-9 sm:size-10 rounded-xl bg-primary/15 text-primary border border-primary/30 shrink-0">
                     <Icon className="size-4" />
                   </span>
-                  <p className="font-display font-semibold text-base">{g.title}</p>
+                  <p className="font-display font-semibold text-sm sm:text-base">{g.title}</p>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {g.items.map((t) => (
-                    <li key={t} className="flex items-start gap-2.5 text-sm text-foreground/85 leading-relaxed">
-                      <Check className="size-3.5 text-gold shrink-0 mt-1" />
+                    <li key={t} className="flex items-start gap-2 text-[13px] sm:text-sm text-foreground/85 leading-relaxed">
+                      <Check className="size-3.5 text-gold shrink-0 mt-0.5" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -322,18 +322,20 @@ const Index = () => {
             <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
           </div>
           
-          <div className="flex gap-5 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-6 -mx-5 px-5 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-none">
             {STORIES.map((s, i) => (
               <div
                 key={i}
                 onClick={() => setActivePhoto(s.img)}
-                className="relative flex-none w-[260px] md:w-[290px] aspect-[9/16] rounded-2xl overflow-hidden border border-border-strong bg-surface cursor-pointer snap-start group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] hover:-translate-y-1"
+                className="relative flex-none w-[220px] sm:w-[260px] md:w-[280px] aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer snap-start group transition-all duration-300 hover:shadow-[0_0_24px_rgba(239,68,68,0.15)] hover:-translate-y-1"
+                style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
               >
                 <img
                   src={s.img}
                   alt={`Відгук ${s.user}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="block w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
@@ -364,21 +366,21 @@ const Index = () => {
         {/* Cinematic Lightbox Modal */}
         {activePhoto && (
           <div 
-            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-4"
             onClick={() => setActivePhoto(null)}
           >
-            <div className="relative max-w-lg w-full h-[85vh] flex items-center justify-center animate-in fade-in zoom-in duration-300">
+            <button 
+              className="absolute top-4 right-4 z-10 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 sm:p-3 rounded-full transition-all"
+              onClick={(e) => { e.stopPropagation(); setActivePhoto(null); }}
+            >
+              <X className="size-5 sm:size-6" />
+            </button>
+            <div className="relative max-w-md w-full max-h-[90vh] flex items-center justify-center">
               <img 
                 src={activePhoto} 
                 alt="Збільшений відгук сторіс" 
-                className="max-w-full max-h-full object-contain rounded-2xl border border-white/10 shadow-2xl"
+                className="max-w-full max-h-[88vh] object-contain rounded-xl sm:rounded-2xl shadow-2xl"
               />
-              <button 
-                className="absolute -top-14 right-0 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
-                onClick={() => setActivePhoto(null)}
-              >
-                <X className="size-6" />
-              </button>
             </div>
           </div>
         )}
