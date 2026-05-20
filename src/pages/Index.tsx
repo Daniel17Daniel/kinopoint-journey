@@ -17,7 +17,7 @@ import review1 from "@/assets/reviews/review-1.jpg";
 import review2 from "@/assets/reviews/review-2.jpg";
 import review3 from "@/assets/reviews/review-3.jpg";
 import review4 from "@/assets/reviews/review-4.jpg";
-import review5 from "@/assets/reviews/review-5.jpg";
+import review6 from "@/assets/reviews/review-6.jpg";
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
@@ -66,7 +66,7 @@ const STORIES = [
   { img: review2, user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
   { img: review3, user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
   { img: review4, user: "@dombrovankaterina", text: "Почуватися більш впевнено на зйомці reels коли навіть не знаєш який сценарій буде" },
-  { img: review5, user: "@damlievaa", text: "Бути більш відкритою, розповідати емоційно історії з життя, анекдоти" },
+  { img: review6, user: "@ilona_prblva_", text: "Навчилась розуміти свої емоції, виражати їх як відчуваю. Знайшла family 2" },
 ];
 
 const FAQ = [
@@ -325,15 +325,12 @@ const Index = () => {
                 onClick={() => setActivePhoto(s.img)}
                 className="relative flex-none w-[260px] md:w-[290px] aspect-[9/16] rounded-2xl overflow-hidden border border-border-strong bg-surface cursor-pointer snap-start group transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(239,68,68,0.15)] hover:-translate-y-1"
               >
-                {/* Inner crop wrapper — hides phone UI (clock, battery top; nav bar bottom) */}
-                <div className="absolute inset-0" style={{ top: '8%', bottom: '6%' }}>
-                  <img
-                    src={s.img}
-                    alt={`Відгук ${s.user}`}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
+                <img
+                  src={s.img}
+                  alt={`Відгук ${s.user}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
                   <div className="flex justify-between items-start">
