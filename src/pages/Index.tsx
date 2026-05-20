@@ -18,6 +18,8 @@ import review2 from "@/assets/reviews/review-2.jpg";
 import review3 from "@/assets/reviews/review-3.jpg";
 import review4 from "@/assets/reviews/review-4.jpg";
 import review6 from "@/assets/reviews/review-6.jpg";
+import review7 from "@/assets/reviews/review-7.jpg";
+import review8 from "@/assets/reviews/review-8.jpg";
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
@@ -62,6 +64,8 @@ const FOR_WHO_GROUPS = [
 ];
 
 const STORIES = [
+  { img: review7, user: "@anastasiaaaaa_h", text: "Кіношкола стала для мене опорою та підтримкою, міні-світом за яким я зараз сумую. Стала більш впевненою в собі і своїх силах" },
+  { img: review8, user: "@damlievaa", text: "Кіношкола навчила мене не боятися особистої думки, випускати свою творчість у світ. Навчилася не боятися сцени" },
   { img: review1, user: "@tushychn", text: "Це місце, де можна на 100% бути собою і щоразу відкривати себе ще глибше" },
   { img: review2, user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
   { img: review3, user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
