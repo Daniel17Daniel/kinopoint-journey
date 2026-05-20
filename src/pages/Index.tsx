@@ -99,7 +99,8 @@ const Index = () => {
               Простір, де не грають ролі — <span className="text-primary">тут стають собою</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "140ms" }}>
-              KinoPoint Film — камерна творча школа, де акторська майстерність і сценарне мистецтво стають точкою входу в живу творчу практику.
+              KinoPoint Film — камерна школа акторської майстерності.{" "}
+              Тут ти вчишся не грати, а жити в кадрі та на сцені. Відчувати себе, володіти голосом і тілом — і не втрачати цієї свободи під поглядами глядачів.
             </p>
             <p className="mt-5 text-base animate-fade-up font-display font-semibold tracking-tight" style={{ animationDelay: "180ms" }}>
               <span className="text-foreground">Kino</span><span className="text-gold">Point</span>
