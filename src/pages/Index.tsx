@@ -66,8 +66,8 @@ const FAQ = [
     a: "Так. Більшість наших учнів починають з нуля. Ми працюємо з людьми, які ніколи не виходили на сцену й не стояли перед камерою — і саме на цьому будуємо програму.",
   },
   {
-    q: "Що робити, якщо я дуже сором'язлива людина?",
-    a: 'Ми це чуємо часто. Ніхто не змусить вас робити те, до чого ви не готові. Перші заняття — про звикання й довіру, а не про "проявися негайно".',
+    q: "Що робити, якщо я дуже сором’язлива людина?",
+    a: "Ми часто це чуємо. І відповідь проста: ніхто не змушуватиме вас робити те, до чого ви не готові. Перші заняття — це про звикання, безпеку й довіру, а не про негайний прояв себе.",
   },
   {
     q: "Чи допомагають заняття стати впевненішим у житті?",
@@ -130,10 +130,10 @@ const Index = () => {
 
             <div className="border-t border-border/30 mt-8 pt-6 flex flex-wrap gap-6 animate-fade-up" style={{ animationDelay: "280ms" }}>
               <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
-                <Users className="size-4 text-gold" /> До 12 учнів у групі
+                <Users className="size-4 text-gold" /> До 12 учнів в групі
               </span>
               <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
-                <Award className="size-4 text-gold" /> Сертифікат після курсу
+                <Award className="size-4 text-gold" /> Сертифікат після завершення курсу
               </span>
               <span className="inline-flex items-center gap-2 text-sm text-foreground/60">
                 <MapPin className="size-4 text-gold" /> Одеса
