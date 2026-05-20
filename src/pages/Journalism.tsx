@@ -49,11 +49,11 @@ const GIVES_CENTER: CourseMapCenter = {
 };
 
 const GIVES_NODES: CourseMapNode[] = [
-  { icon: Camera, title: "Робота в кадрі", text: "Природна подача перед камерою.", accent: "red", pulse: true },
-  { icon: Mic, title: "Інтерв'ю та репортаж", text: "Запитувати і вести живу розмову.", accent: "gold" },
-  { icon: Video, title: "Реальні зйомки", text: "Виходи у місто, реальні події і герої.", accent: "red" },
+  { icon: Camera, title: "Робота в кадрі", text: "Природність і впевненість перед камерою.", accent: "red", pulse: true },
+  { icon: Mic, title: "Інтерв'ю та репортаж", text: "Як ставити запитання й вести живу розмову.", accent: "gold" },
+  { icon: Video, title: "Реальні зйомки", text: "Виходи в місто, справжні події та герої.", accent: "red" },
   { icon: Tv, title: "Кухня телеканалу", text: "Як влаштоване ТБ зсередини.", accent: "gold" },
-  { icon: Newspaper, title: "Портфоліо", text: "Матеріал, з яким можна працювати далі.", accent: "red" },
+  { icon: Newspaper, title: "Портфоліо", text: "Матеріал, із яким можна працювати далі.", accent: "red" },
   { icon: Award, title: "Рекомендації", text: "Від практиків медійного середовища.", accent: "green" },
 ];
 
