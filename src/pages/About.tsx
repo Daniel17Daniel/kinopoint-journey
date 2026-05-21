@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Compass } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
-import heroImg from "@/assets/founder-neon.jpg";
+import heroImg from "@/assets/practice-wide.jpg";
 import founderImg from "@/assets/founder-kateryna.jpg";
 import studentsGroupImg from "@/assets/students-group.jpg";
 import graduationImg from "@/assets/graduation-stage.jpg";
 import valPresence from "@/assets/value-presence.jpg";
 import valPractice from "@/assets/value-practice.jpg";
 import valGrowth from "@/assets/value-growth.jpg";
-import valReal from "@/assets/value-real.jpg";
+import valReal from "@/assets/practice-crew.jpg";
 
 const VALUES = [
   { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз." },
@@ -30,7 +30,7 @@ const About = () => {
     <div>
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-40" />
+          <img src={heroImg} alt="" className="w-full h-full object-cover object-center opacity-45" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
           <div className="absolute inset-0 grid-frame opacity-[0.06]" />
         </div>

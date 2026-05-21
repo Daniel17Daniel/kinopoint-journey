@@ -12,6 +12,7 @@ import heroImg from "@/assets/hero-stage-cold.png";
 import cardActing from "@/assets/card-acting-stage.jpg";
 import cardScreen from "@/assets/card-screen-desk.jpg";
 import cardJourn from "@/assets/card-journ-studio.jpg";
+import practiceDirecting from "@/assets/practice-directing.jpg";
 
 import review1 from "@/assets/reviews/review-1.jpg";
 import review2 from "@/assets/reviews/review-2.jpg";
@@ -197,7 +198,7 @@ const Index = () => {
               Простір, де кожна людина проходить свій <span className="text-primary">унікальний шлях</span> розвитку
             </h2>
           </div>
-          <div className="lg:col-span-8 space-y-5 text-lg text-foreground/85 leading-relaxed">
+          <div className="lg:col-span-4 space-y-5 text-lg text-foreground/85 leading-relaxed">
             <p>
               KinoPoint — творче середовище для тих, хто розвивається через реальну роботу, а не лише теорію.
               Ми поєднуємо акторську майстерність, сценарне мистецтво та тележурналістику в єдиному навчальному процесі, де кожен напрям підсилює інший.
@@ -208,6 +209,17 @@ const Index = () => {
             <Link to="/about" className="inline-flex items-center gap-2 text-primary font-semibold link-underline pt-2">
               Дізнатися більше <ArrowRight className="size-4" />
             </Link>
+          </div>
+          <div className="lg:col-span-4">
+            <div className="relative rounded-2xl overflow-hidden border border-border-strong aspect-[3/4] group">
+              <img
+                src={practiceDirecting}
+                alt="Режисер працює з акторами на зйомці"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
       </section>
