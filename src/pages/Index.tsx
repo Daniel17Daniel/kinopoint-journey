@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight, Check, Sparkles, Theater, BookOpen, Compass, Instagram, MapPin,
-  Heart, Mic, Lightbulb, Users, Award, Quote, Star, X, Eye,
+  Heart, Mic, Lightbulb, Users, Award, Quote, Star,
 } from "lucide-react";
 import { useHelper } from "@/components/site/HelperContext";
 import {
@@ -14,13 +13,7 @@ import cardScreen from "@/assets/card-screen-desk.jpg";
 import cardJourn from "@/assets/card-journ-studio.jpg";
 import practiceDirecting from "@/assets/practice-directing.jpg";
 
-import review1 from "@/assets/reviews/review-1.jpg";
-import review2 from "@/assets/reviews/review-2.jpg";
-import review3 from "@/assets/reviews/review-3.jpg";
-import review4 from "@/assets/reviews/review-4.jpg";
-import review6 from "@/assets/reviews/review-6.jpg";
-import review7 from "@/assets/reviews/review-7.jpg";
-import review8 from "@/assets/reviews/review-8.jpg";
+
 
 const TRAINING_GIVES = [
   { icon: Heart, t: "Внутрішня свобода", d: "Менше затиску, більше живої присутності в кадрі, на сцені й у житті." },
@@ -64,14 +57,14 @@ const FOR_WHO_GROUPS = [
   },
 ];
 
-const STORIES = [
-  { img: review7, user: "@anastasiaaaaa_h", text: "Кіношкола стала для мене опорою та підтримкою, міні-світом за яким я зараз сумую. Стала більш впевненою в собі і своїх силах" },
-  { img: review8, user: "@damlievaa", text: "Кіношкола навчила мене не боятися особистої думки, випускати свою творчість у світ. Навчилася не боятися сцени" },
-  { img: review1, user: "@tushychn", text: "Це місце, де можна на 100% бути собою і щоразу відкривати себе ще глибше" },
-  { img: review2, user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
-  { img: review3, user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
-  { img: review4, user: "@dombrovankaterina", text: "Почуватися більш впевнено на зйомці reels коли навіть не знаєш який сценарій буде" },
-  { img: review6, user: "@ilona_prblva_", text: "Навчилась розуміти свої емоції, виражати їх як відчуваю. Знайшла family 2" },
+const REVIEWS = [
+  { user: "@anastasiaaaaa_h", text: "Кіношкола стала для мене опорою та підтримкою, міні-світом за яким я зараз сумую. Стала більш впевненою в собі і своїх силах" },
+  { user: "@damlievaa", text: "Кіношкола навчила мене не боятися особистої думки, випускати свою творчість у світ. Навчилася не боятися сцени" },
+  { user: "@tushychn", text: "Це місце, де можна на 100% бути собою і щоразу відкривати себе ще глибше" },
+  { user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
+  { user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
+  { user: "@dombrovankaterina", text: "Почуватися більш впевнено на зйомці reels коли навіть не знаєш який сценарій буде" },
+  { user: "@ilona_prblva_", text: "Навчилась розуміти свої емоції, виражати їх як відчуваю. Знайшла family 2" },
 ];
 
 const FAQ = [
@@ -95,7 +88,6 @@ const FAQ = [
 
 const Index = () => {
   const { open } = useHelper();
-  const [activePhoto, setActivePhoto] = useState<string | null>(null);
 
   return (
     <div className="overflow-x-hidden">
@@ -333,69 +325,29 @@ const Index = () => {
             <div className="eyebrow mb-4">Відгуки учнів</div>
             <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
           </div>
-          
-          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-6 -mx-5 px-5 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-none">
-            {STORIES.map((s, i) => (
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                onClick={() => setActivePhoto(s.img)}
-                className="relative flex-none w-[220px] sm:w-[260px] md:w-[280px] aspect-[9/16] rounded-2xl overflow-hidden bg-black cursor-pointer snap-start group transition-all duration-300 hover:shadow-[0_0_24px_rgba(239,68,68,0.15)] hover:-translate-y-1"
-                style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                className="group relative p-6 md:p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
               >
-                <img
-                  src={s.img}
-                  alt={`Відгук ${s.user}`}
-                  className="block w-full h-full object-cover transition-transform duration-500 will-change-transform group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
-                  <div className="flex justify-between items-start">
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 backdrop-blur-md">
-                      Instagram Story
-                    </span>
-                    <Instagram className="size-5 text-white/80" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <p className="text-white font-display font-bold text-sm tracking-wide">
-                      {s.user}
-                    </p>
-                    <p className="text-white/85 text-xs line-clamp-3 leading-relaxed">
-                      {s.text}
-                    </p>
-                    <div className="pt-2 flex items-center gap-1.5 text-primary text-xs font-semibold">
-                      <Eye className="size-4 animate-pulse" /> Натисніть, щоб збільшити
-                    </div>
-                  </div>
+                <div>
+                  <Quote className="size-5 text-primary/40 mb-4 rotate-180" />
+                  <p className="text-foreground/90 leading-relaxed text-[15px] md:text-base">
+                    {r.text}
+                  </p>
+                </div>
+                <div className="mt-5 pt-4 border-t border-border/50 flex items-center gap-2">
+                  <Instagram className="size-4 text-primary/60" />
+                  <span className="text-sm font-semibold text-foreground/60 group-hover:text-primary/80 transition-colors">
+                    {r.user}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Cinematic Lightbox Modal */}
-        {activePhoto && (
-          <div 
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-4"
-            onClick={() => setActivePhoto(null)}
-          >
-            <button 
-              className="absolute top-4 right-4 z-10 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 sm:p-3 rounded-full transition-all"
-              onClick={(e) => { e.stopPropagation(); setActivePhoto(null); }}
-            >
-              <X className="size-5 sm:size-6" />
-            </button>
-            <div className="relative max-w-md w-full max-h-[90vh] flex items-center justify-center">
-              <img 
-                src={activePhoto} 
-                alt="Збільшений відгук сторіс" 
-                className="max-w-full max-h-[88vh] object-contain rounded-xl sm:rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
-        )}
       </section>
 
       {/* FAQ */}
