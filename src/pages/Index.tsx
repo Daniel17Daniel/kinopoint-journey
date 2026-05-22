@@ -58,8 +58,8 @@ const FOR_WHO_GROUPS = [
 ];
 
 const REVIEWS = [
-  { user: "@anastasiaaaaa_h", text: "Кіношкола стала для мене опорою та підтримкою, міні-світом за яким я зараз сумую. Стала більш впевненою в собі і своїх силах" },
-  { user: "@damlievaa", text: "Кіношкола навчила мене не боятися особистої думки, випускати свою творчість у світ. Навчилася не боятися сцени" },
+  { user: "@anastasiaaaaa_h", text: "Кіношкола стала для мене опорою та підтримкою, міні-світом за яким я зараз сумую. Я заглибилась у теми, які мені цікаві і які надихають. Кіношкола стала місцем віри в мене. Я дізналась багато нового, отримала неймовірний досвід і знайомства. Стала більш впевненою в собі і своїх силах. Період кіношколи однозначно назавжди змінив мене і я дуже за це вдячна!" },
+  { user: "@damlievaa", text: "Кіношкола навчила мене не боятися особистої думки, випускати свою творчість у світ, а не замикатися в кімнаті та писати в стіл. Допомогла розкритися та просто стати відкритою. Я навчилася не боятися сцени та розповідати про своє письменництво на велику аудиторію." },
   { user: "@tushychn", text: "Це місце, де можна на 100% бути собою і щоразу відкривати себе ще глибше" },
   { user: "@ulliashine", text: "Не тільки корисні знання, а ще й комфортна атмосфера!" },
   { user: "@_svitlyachok__", text: "Кіношкола навчила мене бути різною, проявляти себе, знаходити вихід із різних ситуацій" },
@@ -326,15 +326,15 @@ const Index = () => {
             <h2 className="h-section text-balance">Вони вже зробили перший крок.</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <div className="flex gap-4 overflow-x-auto pb-6 -mx-5 px-5 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-none">
             {REVIEWS.map((r, i) => (
               <div
                 key={i}
-                className="group relative p-6 md:p-7 rounded-2xl bg-background border border-border-strong hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+                className="group relative flex-none w-[300px] sm:w-[340px] p-6 rounded-2xl bg-background border border-border-strong hover:border-primary/40 transition-all duration-300 flex flex-col justify-between snap-start"
               >
                 <div>
                   <Quote className="size-5 text-primary/40 mb-4 rotate-180" />
-                  <p className="text-foreground/90 leading-relaxed text-[15px] md:text-base">
+                  <p className="text-foreground/90 leading-relaxed text-[15px]">
                     {r.text}
                   </p>
                 </div>
