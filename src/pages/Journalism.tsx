@@ -107,7 +107,7 @@ const Journalism = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={liveInterview}
+            src={liveStudio}
             alt="Тележурналістика — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />
