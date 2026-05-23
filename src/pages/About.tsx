@@ -12,10 +12,10 @@ import valGrowth from "@/assets/value-growth.jpg";
 import valReal from "@/assets/practice-crew.jpg";
 
 const VALUES = [
-  { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз." },
-  { img: valPractice, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори." },
-  { img: valGrowth, t: "Поступовий розвиток", d: "Ми будуємо процес так, щоб впевненість і свобода зростали органічно." },
-  { img: valReal, t: "Реальні умови", d: "Сцена, камера, медіа — простір, де навички перевіряються в дії." },
+  { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз.", pos: "center 30%" },
+  { img: valPractice, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори.", pos: "center 60%" },
+  { img: valGrowth, t: "Поступовий розвиток", d: "Ми будуємо процес так, щоб впевненість і свобода зростали органічно.", pos: "center" },
+  { img: valReal, t: "Реальні умови", d: "Сцена, камера, медіа — простір, де навички перевіряються в дії.", pos: "center" },
 ];
 
 const About = () => {
@@ -128,6 +128,7 @@ const About = () => {
                     loading="lazy"
                     width={1024}
                     height={768}
+                    style={{ objectPosition: v.pos }}
                     className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
