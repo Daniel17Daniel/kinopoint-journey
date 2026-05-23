@@ -12,8 +12,8 @@ import valGrowth from "@/assets/value-growth.jpg";
 import valReal from "@/assets/practice-crew.jpg";
 
 const VALUES = [
-  { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз.", pos: "center 30%" },
-  { img: valPractice, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори.", pos: "center 60%" },
+  { img: valPresence, t: "Жива присутність", d: "Робота з людиною, а не з «матеріалом». Увага до того, що відбувається тут і зараз.", pos: "center 20%" },
+  { img: valPractice, t: "Практика над теорією", d: "Більшість часу — це дія: етюди, сцени, тексти, зйомки, розбори.", pos: "center 30%" },
   { img: valGrowth, t: "Поступовий розвиток", d: "Ми будуємо процес так, щоб впевненість і свобода зростали органічно.", pos: "center" },
   { img: valReal, t: "Реальні умови", d: "Сцена, камера, медіа — простір, де навички перевіряються в дії.", pos: "center" },
 ];
@@ -92,7 +92,7 @@ const About = () => {
             <img
               src={graduationImg}
               alt="Випускний показ — учні KinoPoint на сцені"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-[center_25%] scale-[1.02] hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
             <p className="absolute bottom-4 left-5 text-sm font-semibold text-foreground/90">Випускний показ</p>
@@ -101,7 +101,7 @@ const About = () => {
             <img
               src={studentsGroupImg}
               alt="Учні KinoPoint в просторі школи"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-[center_25%] scale-[1.02] hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
             <p className="absolute bottom-4 left-5 text-sm font-semibold text-foreground/90">Простір школи</p>
@@ -129,7 +129,7 @@ const About = () => {
                     width={1024}
                     height={768}
                     style={{ objectPosition: v.pos }}
-                    className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    className="absolute inset-0 w-full h-full object-cover scale-[1.02] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
                 </div>

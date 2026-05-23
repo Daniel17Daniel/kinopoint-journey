@@ -206,7 +206,7 @@ export const DirectionPage = ({
                   i === 0 ? "md:col-span-2 md:row-span-2 aspect-square md:aspect-[4/3]" : "aspect-square"
                 }`}
               >
-                <img src={src} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={src} alt="" loading="lazy" className="w-full h-full object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700" />
               </div>
             ))}
           </div>

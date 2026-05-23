@@ -93,8 +93,8 @@ const Index = () => {
     <div className="overflow-x-hidden">
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-50 animate-spotlight" />
+        <div className="absolute inset-0 bg-background">
+          <img src={heroImg} alt="" className="w-full h-full object-cover scale-[1.02] opacity-50 animate-spotlight" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/65 to-background" />
           <div className="absolute inset-0 grid-frame opacity-[0.06]" />
         </div>
@@ -207,7 +207,7 @@ const Index = () => {
               <img
                 src={practiceDirecting}
                 alt="Режисер працює з акторами на зйомці"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-top scale-[1.02] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
@@ -234,6 +234,7 @@ const Index = () => {
               {
                 to: "/acting",
                 img: cardActing,
+                pos: "center 25%",
                 tag: "Основний курс",
                 tagIcon: Theater,
                 tagAccent: "red" as const,
@@ -246,6 +247,7 @@ const Index = () => {
               {
                 to: "/screenwriting",
                 img: cardScreen,
+                pos: "center 20%",
                 tag: "Основний курс",
                 tagIcon: BookOpen,
                 tagAccent: "red" as const,
@@ -258,6 +260,7 @@ const Index = () => {
               {
                 to: "/journalism",
                 img: cardJourn,
+                pos: "center 25%",
                 tag: "Експрес-курс",
                 tagIcon: Sparkles,
                 tagAccent: "gold" as const,
@@ -286,7 +289,8 @@ const Index = () => {
                       loading="lazy"
                       width={1024}
                       height={768}
-                      className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                      style={{ objectPosition: c.pos }}
+                      className="absolute inset-0 w-full h-full object-cover scale-[1.02] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
                     <div className={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border text-[10px] font-semibold uppercase tracking-wider transition-all group-hover:scale-105 ${tagClass}`}>
