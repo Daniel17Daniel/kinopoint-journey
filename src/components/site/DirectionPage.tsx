@@ -173,14 +173,14 @@ export const DirectionPage = ({
       <section className="container-wide py-24 md:py-28">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border-strong shadow-elegant bg-background [transform:translateZ(0)]">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-background [transform:translateZ(0)]">
               <img src={teacher.img} alt={teacher.name} className="w-full h-full object-cover" />
               <div 
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background: `
-                    radial-gradient(ellipse at 50% 30%, transparent 50%, rgba(10,10,10,0.3) 100%),
-                    linear-gradient(to bottom, transparent 70%, rgba(10,10,10,0.4) 100%)
+                    radial-gradient(ellipse at 50% 30%, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.3) 100%),
+                    linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 70%, rgba(10,10,10,0.4) 100%)
                   `
                 }}
               />
@@ -220,7 +220,7 @@ export const DirectionPage = ({
             {gallery.map((src, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden rounded-2xl border border-border group bg-background [transform:translateZ(0)] ${
+                className={`relative overflow-hidden rounded-2xl group bg-background [transform:translateZ(0)] ${
                   i === 0 ? "md:col-span-2 md:row-span-2 aspect-square md:aspect-[4/3]" : "aspect-square"
                 }`}
               >
@@ -229,7 +229,7 @@ export const DirectionPage = ({
                   className="absolute inset-0 pointer-events-none opacity-60"
                   style={{
                     background: `
-                      radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)
+                      radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.5) 100%)
                     `
                   }}
                 />

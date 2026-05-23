@@ -132,9 +132,9 @@ const Screenwriting = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `
-                radial-gradient(ellipse at center, transparent 40%, rgba(10,10,10,0.5) 85%, rgba(10,10,10,1) 100%),
-                linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.7) 90%, rgba(10,10,10,1) 100%),
-                linear-gradient(to top, transparent 70%, rgba(10,10,10,0.4) 100%)
+                radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 40%, rgba(10,10,10,0.5) 85%, rgba(10,10,10,1) 100%),
+                linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.7) 90%, rgba(10,10,10,1) 100%),
+                linear-gradient(to top, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 70%, rgba(10,10,10,0.4) 100%)
               `
             }}
           />

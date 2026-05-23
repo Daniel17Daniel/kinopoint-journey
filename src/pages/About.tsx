@@ -67,8 +67,8 @@ const About = () => {
               className="absolute inset-0 pointer-events-none z-10"
               style={{
                 background: `
-                  radial-gradient(ellipse at 50% 30%, transparent 50%, rgba(10,10,10,0.3) 100%),
-                  linear-gradient(to bottom, transparent 70%, rgba(10,10,10,0.4) 100%)
+                  radial-gradient(ellipse at 50% 30%, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.3) 100%),
+                  linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 70%, rgba(10,10,10,0.4) 100%)
                 `
               }}
             />
@@ -128,7 +128,7 @@ const About = () => {
             {VALUES.map((v) => (
               <div
                 key={v.t}
-                className="group relative overflow-hidden rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 flex flex-col [transform:translateZ(0)]"
+                className="group relative overflow-hidden rounded-2xl bg-background transition-all duration-500 hover:-translate-y-1 flex flex-col [transform:translateZ(0)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
@@ -143,7 +143,7 @@ const About = () => {
                   <div 
                     className="absolute inset-0 pointer-events-none opacity-60"
                     style={{
-                      background: `radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)`
+                      background: `radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.5) 100%)`
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />

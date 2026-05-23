@@ -91,9 +91,11 @@
     color: hsl(var(--foreground));
   }
   img {
+    display: block !important;
+    border: 0 !important;
+    outline: none !important;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;

@@ -111,7 +111,7 @@ export const CourseCarousel = ({
         {cards.map((card, i) => (
           <div
             key={i}
-            className="snap-start shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] flex flex-col rounded-2xl border border-border-strong bg-surface overflow-hidden hover:border-primary/40 transition-colors duration-300"
+            className="snap-start shrink-0 w-[calc(100%-1rem)] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] flex flex-col rounded-2xl bg-surface overflow-hidden transition-colors duration-300"
           >
             {/* Image area */}
             {card.image ? (
@@ -124,7 +124,7 @@ export const CourseCarousel = ({
                 <div 
                   className="absolute inset-0 pointer-events-none"
                   style={{
-                    background: `linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.6) 100%)`
+                    background: `linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.6) 100%)`
                   }}
                 />
               </div>

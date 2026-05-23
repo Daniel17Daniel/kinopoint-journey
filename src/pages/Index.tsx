@@ -99,8 +99,8 @@ const Index = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `
-                radial-gradient(ellipse at center, transparent 30%, rgba(10,10,10,0.6) 80%, rgba(10,10,10,1) 100%),
-                linear-gradient(to bottom, transparent 60%, rgba(10,10,10,1) 100%)
+                radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 30%, rgba(10,10,10,0.6) 80%, rgba(10,10,10,1) 100%),
+                linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 60%, rgba(10,10,10,1) 100%)
               `
             }}
           />
@@ -289,7 +289,7 @@ const Index = () => {
                 <Link
                   key={c.to}
                   to={c.to}
-                  className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 flex flex-col [transform:translateZ(0)]"
+                  className="group relative overflow-hidden rounded-3xl bg-background hover:-translate-y-1 transition-all duration-500 flex flex-col [transform:translateZ(0)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
@@ -304,7 +304,7 @@ const Index = () => {
                     <div 
                       className="absolute inset-0 pointer-events-none opacity-60"
                       style={{
-                        background: `radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)`
+                        background: `radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.5) 100%)`
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
