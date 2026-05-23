@@ -106,7 +106,7 @@ const Journalism = () => {
 
       {/* VISUAL BANNER */}
       <section className="w-full overflow-hidden">
-        <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden rounded-2xl">
+        <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden rounded-2xl bg-background [transform:translateZ(0)]">
           <img
             src={newsStudio}
             alt="Тележурналістика — атмосфера курсу"

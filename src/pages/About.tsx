@@ -56,7 +56,7 @@ const About = () => {
       {/* FOUNDER */}
       <section className="container-wide pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto rounded-3xl border border-border-strong bg-surface/60 overflow-hidden grid md:grid-cols-12">
-          <div className="md:col-span-4 relative min-h-[320px] md:min-h-full overflow-hidden rounded-l-3xl group">
+          <div className="md:col-span-4 relative min-h-[320px] md:min-h-full overflow-hidden rounded-l-3xl group [transform:translateZ(0)]">
             <div className="absolute inset-0 bg-gold/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <img
               src={founderImg}
@@ -128,7 +128,7 @@ const About = () => {
             {VALUES.map((v) => (
               <div
                 key={v.t}
-                className="group relative overflow-hidden rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 flex flex-col"
+                className="group relative overflow-hidden rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 flex flex-col [transform:translateZ(0)]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img

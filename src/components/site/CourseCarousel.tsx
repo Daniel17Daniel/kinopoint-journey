@@ -115,7 +115,7 @@ export const CourseCarousel = ({
           >
             {/* Image area */}
             {card.image ? (
-              <div className="relative aspect-[16/9] overflow-hidden shrink-0 bg-background/60">
+              <div className="relative aspect-[16/9] overflow-hidden shrink-0 bg-background [transform:translateZ(0)]">
                 <img
                   src={card.image}
                   alt={card.title}

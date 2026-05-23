@@ -93,7 +93,7 @@ const Index = () => {
     <div className="overflow-x-hidden">
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-background">
+        <div className="absolute inset-0 bg-background [transform:translateZ(0)]">
           <img src={heroImg} alt="" className="w-full h-full object-cover scale-[1.02] opacity-50 animate-spotlight" />
           <div 
             className="absolute inset-0 pointer-events-none"
@@ -289,7 +289,7 @@ const Index = () => {
                 <Link
                   key={c.to}
                   to={c.to}
-                  className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 flex flex-col"
+                  className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 flex flex-col [transform:translateZ(0)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img

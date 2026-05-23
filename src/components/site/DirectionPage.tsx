@@ -173,7 +173,7 @@ export const DirectionPage = ({
       <section className="container-wide py-24 md:py-28">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border-strong shadow-elegant">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border-strong shadow-elegant bg-background [transform:translateZ(0)]">
               <img src={teacher.img} alt={teacher.name} className="w-full h-full object-cover" />
               <div 
                 className="absolute inset-0 pointer-events-none"
@@ -220,7 +220,7 @@ export const DirectionPage = ({
             {gallery.map((src, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden rounded-2xl border border-border group ${
+                className={`relative overflow-hidden rounded-2xl border border-border group bg-background [transform:translateZ(0)] ${
                   i === 0 ? "md:col-span-2 md:row-span-2 aspect-square md:aspect-[4/3]" : "aspect-square"
                 }`}
               >
