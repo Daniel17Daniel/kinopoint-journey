@@ -11,6 +11,7 @@ import { ResultCard } from "@/components/site/ResultCard";
 import heroImg from "@/assets/journalism-hero.jpg";
 import liveInterview from "@/assets/live-journ-interview.jpg";
 import liveStudio from "@/assets/live-journ-studio.jpg";
+import newsStudio from "@/assets/news-studio.jpg";
 
 const BENEFITS = [
   "розуміння, як реально працює телебачення, без ілюзій і «глянцю»",
@@ -107,7 +108,7 @@ const Journalism = () => {
       <section className="w-full overflow-hidden">
         <div className="relative h-[340px] md:h-[460px] overflow-hidden">
           <img
-            src={liveStudio}
+            src={newsStudio}
             alt="Тележурналістика — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />
