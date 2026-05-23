@@ -95,6 +95,15 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-background">
           <img src={heroImg} alt="" className="w-full h-full object-cover scale-[1.02] opacity-50 animate-spotlight" />
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `
+                radial-gradient(ellipse at center, transparent 30%, rgba(10,10,10,0.6) 80%, rgba(10,10,10,1) 100%),
+                linear-gradient(to bottom, transparent 60%, rgba(10,10,10,1) 100%)
+              `
+            }}
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/65 to-background" />
           <div className="absolute inset-0 grid-frame opacity-[0.06]" />
         </div>
@@ -282,7 +291,7 @@ const Index = () => {
                   to={c.to}
                   className="group relative overflow-hidden rounded-3xl border border-border-strong bg-background hover:border-primary/60 hover:-translate-y-1 transition-all duration-500 flex flex-col"
                 >
-                  <div className="relative h-44 sm:h-48 overflow-hidden">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <img
                       src={c.img}
                       alt=""
@@ -291,6 +300,12 @@ const Index = () => {
                       height={768}
                       style={{ objectPosition: c.pos }}
                       className="absolute inset-0 w-full h-full object-cover scale-[1.02] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div 
+                      className="absolute inset-0 pointer-events-none opacity-60"
+                      style={{
+                        background: `radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)`
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background" />
                     <div className={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border text-[10px] font-semibold uppercase tracking-wider transition-all group-hover:scale-105 ${tagClass}`}>

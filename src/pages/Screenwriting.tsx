@@ -121,14 +121,23 @@ const Screenwriting = () => {
 
       {/* VISUAL BANNER */}
       <section className="w-full overflow-hidden">
-        <div className="relative h-[340px] md:h-[460px] overflow-hidden">
+        <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden rounded-2xl">
           <img
             src={liveLaptop}
             alt="Сценарне мистецтво — атмосфера курсу"
             className="w-full h-full object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/30 to-background/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+          {/* Cinematic vignette overlay */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `
+                radial-gradient(ellipse at center, transparent 40%, rgba(10,10,10,0.5) 85%, rgba(10,10,10,1) 100%),
+                linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.7) 90%, rgba(10,10,10,1) 100%),
+                linear-gradient(to top, transparent 70%, rgba(10,10,10,0.4) 100%)
+              `
+            }}
+          />
           <div className="absolute bottom-8 left-0 right-0 container-wide">
             <p className="font-display text-xl md:text-2xl font-bold text-foreground/90 max-w-lg leading-snug">
               Від ідеї до фінального сценарію —<br />

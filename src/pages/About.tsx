@@ -63,6 +63,15 @@ const About = () => {
               alt="Катерина Лебедєва — засновниця KinoPoint"
               className="absolute inset-0 w-full h-full object-cover object-top relative z-10"
             />
+            <div 
+              className="absolute inset-0 pointer-events-none z-10"
+              style={{
+                background: `
+                  radial-gradient(ellipse at 50% 30%, transparent 50%, rgba(10,10,10,0.3) 100%),
+                  linear-gradient(to bottom, transparent 70%, rgba(10,10,10,0.4) 100%)
+                `
+              }}
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/20 z-20" />
           </div>
           <div className="md:col-span-8 p-8 md:p-12">
@@ -121,7 +130,7 @@ const About = () => {
                 key={v.t}
                 className="group relative overflow-hidden rounded-2xl bg-background border border-border-strong hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 flex flex-col"
               >
-                <div className="relative h-40 sm:h-44 overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={v.img}
                     alt=""
@@ -130,6 +139,12 @@ const About = () => {
                     height={768}
                     style={{ objectPosition: v.pos }}
                     className="absolute inset-0 w-full h-full object-cover scale-[1.02] opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div 
+                    className="absolute inset-0 pointer-events-none opacity-60"
+                    style={{
+                      background: `radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)`
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
                 </div>

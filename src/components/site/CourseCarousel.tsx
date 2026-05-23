@@ -115,13 +115,18 @@ export const CourseCarousel = ({
           >
             {/* Image area */}
             {card.image ? (
-              <div className="relative h-[160px] overflow-hidden shrink-0 bg-background/60">
+              <div className="relative aspect-[16/9] overflow-hidden shrink-0 bg-background/60">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover opacity-85 grayscale-[20%] transition-all duration-500 hover:opacity-100 hover:grayscale-0"
+                  className="w-full h-full object-cover opacity-95 transition-all duration-500 hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface/70 via-transparent to-transparent" />
+                <div 
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.6) 100%)`
+                  }}
+                />
               </div>
             ) : card.icon ? (
               <div className="flex items-center justify-center h-[100px] bg-background/60 border-b border-border/60 shrink-0">

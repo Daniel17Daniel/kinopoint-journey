@@ -49,8 +49,17 @@ export const DirectionPage = ({
     <div>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-background">
           <img src={heroImg} alt="" className="w-full h-full object-cover opacity-55" />
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `
+                radial-gradient(ellipse at center, transparent 30%, rgba(10,10,10,0.6) 80%, rgba(10,10,10,1) 100%),
+                linear-gradient(to bottom, transparent 60%, rgba(10,10,10,1) 100%)
+              `
+            }}
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/65 to-background" />
           <div className="absolute inset-0 grid-frame opacity-[0.06]" />
         </div>
@@ -166,6 +175,15 @@ export const DirectionPage = ({
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border-strong shadow-elegant">
               <img src={teacher.img} alt={teacher.name} className="w-full h-full object-cover" />
+              <div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: `
+                    radial-gradient(ellipse at 50% 30%, transparent 50%, rgba(10,10,10,0.3) 100%),
+                    linear-gradient(to bottom, transparent 70%, rgba(10,10,10,0.4) 100%)
+                  `
+                }}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <p className={`text-xs uppercase tracking-[0.2em] font-semibold mb-1 ${accentText}`}>{teacher.role}</p>
@@ -207,6 +225,14 @@ export const DirectionPage = ({
                 }`}
               >
                 <img src={src} alt="" loading="lazy" className="w-full h-full object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700" />
+                <div 
+                  className="absolute inset-0 pointer-events-none opacity-60"
+                  style={{
+                    background: `
+                      radial-gradient(ellipse at center, transparent 50%, rgba(10,10,10,0.5) 100%)
+                    `
+                  }}
+                />
               </div>
             ))}
           </div>
