@@ -115,7 +115,7 @@ const Apply = () => {
                     onChange={(e) => setName(e.target.value)}
                     maxLength={80}
                     placeholder="Як до вас звертатися"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
                   />
                 </Field>
 
@@ -125,7 +125,7 @@ const Apply = () => {
                     onChange={(e) => setContact(e.target.value)}
                     maxLength={120}
                     placeholder="+380… або @username"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
                   />
                 </Field>
 
@@ -155,7 +155,7 @@ const Apply = () => {
                     maxLength={600}
                     rows={4}
                     placeholder="Що було б важливо нам знати наперед"
-                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                    className="w-full bg-input border border-border rounded-xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all resize-none"
                   />
                 </Field>
 
