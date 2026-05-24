@@ -38,7 +38,7 @@ export const Footer = () => {
         <div className="md:col-span-4">
           <div className="eyebrow mb-4">Контакти</div>
           <a
-            href="https://instagram.com/kinopoint.film.odesa"
+            href="https://www.instagram.com/kinopoint.film/"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-3 text-foreground/85 hover:text-primary transition-colors mb-3"

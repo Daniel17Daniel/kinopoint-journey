@@ -157,7 +157,7 @@ export const Header = ({ onOpenHelper }: HeaderProps) => {
                 Залишити заявку
               </Link>
               <a
-                href="https://instagram.com/kinopoint.film"
+                href="https://www.instagram.com/kinopoint.film/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full h-12 rounded-md border border-border-strong/60 text-foreground hover:border-gold/60 hover:text-gold transition-colors"

@@ -127,7 +127,7 @@ const Acting = () => {
             <Link to="/apply?direction=acting" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red transition-all">
               Залишити заявку <ArrowRight className="size-4" />
             </Link>
-            <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
+            <a href="https://www.instagram.com/kinopoint.film/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
               <Instagram className="size-4" /> Написати в Instagram
             </a>
           </div>
@@ -226,10 +226,16 @@ const Acting = () => {
         heading="Після курсу ти матимеш"
         showDiscount
         items={[
-          "Внутрішню свободу і впевненість перед аудиторією",
-          "Навички роботи з голосом, тілом і диханням",
+          "Внутрішню свободу і впевненість перед аудиторією.",
+          "Навички роботи з голосом, тілом і диханням — навчишся звучати переконливо.",
+          "Чітку вимову та природне звучання в кадрі й на сцені.",
+          "Свободу від страху й скутості в житті та під час виступів",
+          "Практичні навички сценічної взаємодії з партнером",
+          "Практичні навички розбору тексту та створення ролі.",
+          "Професійну відеовізитку для кастингів",
           "Досвід виступу на сцені театру",
-          "Сертифікат завершення курсу",
+          "Сертифікат завершення курсу — офіційне підтвердження твоїх навичок.",
+          "Запис в акторську базу",
         ]}
       />
     </div>

@@ -191,7 +191,7 @@ const Apply = () => {
                 </p>
                 <p className="mt-3 text-sm text-foreground/50">Зазвичай відповідаємо протягом кількох годин.</p>
                 <a
-                  href="https://instagram.com/kinopoint.film"
+                  href="https://www.instagram.com/kinopoint.film/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full border border-border-strong hover:border-primary hover:text-primary transition-all font-semibold"
@@ -211,7 +211,7 @@ const Apply = () => {
               </p>
               <div className="space-y-2.5">
                 <a
-                  href="https://instagram.com/kinopoint.film"
+                  href="https://www.instagram.com/kinopoint.film/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border-strong hover:border-primary hover:text-primary transition-all text-sm font-semibold"

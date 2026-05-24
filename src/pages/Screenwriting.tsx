@@ -112,7 +112,7 @@ const Screenwriting = () => {
             <Link to="/apply?direction=screenwriting" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-red transition-all">
               Залишити заявку <ArrowRight className="size-4" />
             </Link>
-            <a href="https://instagram.com/kinopoint.film" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
+            <a href="https://www.instagram.com/kinopoint.film/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold">
               <Instagram className="size-4" /> Написати в Instagram
             </a>
           </div>

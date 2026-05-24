@@ -79,7 +79,7 @@ export const DirectionPage = ({
               Залишити заявку <ArrowRight className="size-4" />
             </Link>
             <a
-              href="https://instagram.com/kinopoint.film"
+              href="https://www.instagram.com/kinopoint.film/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border-strong hover:border-foreground transition-all font-semibold"
@@ -208,7 +208,7 @@ export const DirectionPage = ({
               <h2 className="font-display text-2xl md:text-3xl font-bold">Як це виглядає зсередини.</h2>
             </div>
             <a
-              href="https://instagram.com/kinopoint.film"
+              href="https://www.instagram.com/kinopoint.film/"
               target="_blank"
               rel="noreferrer"
               className="text-sm text-muted-foreground hover:text-gold inline-flex items-center gap-2 link-underline"
