@@ -10,7 +10,7 @@ export const SkillsList = ({ heading, items }: Props) => {
     <section className="container-wide py-14 md:py-20">
       <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 lg:gap-16">
         <div className="md:w-2/5 md:sticky md:top-8">
-          <div className="eyebrow mb-4">Що ти навчишся</div>
+          <div className="eyebrow mb-4">Чому ти навчишся</div>
           <h2 className="h-section text-balance">{heading}</h2>
         </div>
 
